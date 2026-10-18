@@ -1,0 +1,31 @@
+site_name: Warmtepomp Wiki
+site_description: Kennis uit de Tweakers-warmtepomptopics, met een link naar elk bronbericht.
+docs_dir: docs
+
+theme:
+  name: material
+  language: nl
+  features:
+    - navigation.sections
+    - navigation.indexes
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
+plugins:
+  - search:
+      lang: [nl, en]
+
+markdown_extensions:
+  - admonition
+  - footnotes
+  - tables
+  - toc:
+      permalink: true
+  - pymdownx.details
+  - pymdownx.superfences
+
+nav:
+  - Start: index.md
+  - Bronnen: sources.md
+  - Bijdragen: contributing.md

@@ -34,6 +34,7 @@ def ci(c):
     lint(c)
     test(c)
     build(c)
+    cite(c)
     print("All checks passed!")
 
 
@@ -49,6 +50,19 @@ def scrape(c, thread="", refresh=False):
 def stats(c):
     """Summarize scraped posts into data/stats.md."""
     c.run("uv run wp-wiki stats")
+
+
+@task(help={"topic": "Dossier name or TOPICS key", "pattern": "Regex", "n": "Number of posts"})
+def dossier(c, topic, pattern="", n=40):
+    """Dump the top posts for one topic into data/dossiers/<topic>.md."""
+    flag = f" --pattern '{pattern}'" if pattern else ""
+    c.run(f"uv run wp-wiki dossier {topic}{flag} --n {n}")
+
+
+@task
+def cite(c):
+    """Check that source links in docs/ match post author and date."""
+    c.run("uv run wp-wiki cite")
 
 
 @task

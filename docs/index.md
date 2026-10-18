@@ -3,7 +3,7 @@
 Deze wiki verzamelt technische kennis uit de warmtepomptopics op Tweakers.
 Onderwerpen: installatie, bedrading, stooklijn, HeishaMon, MQTT, Home Assistant en storingen.
 
-Elke technische bewering linkt naar het forumbericht waar deze vandaan komt. Zie [Bronnen](sources.md).
+Elke pagina noemt onderaan de forumberichten waar de kennis vandaan komt. Zie [Bronnen](sources.md).
 
 - **Algemeen:** kennis die voor elke warmtepomp geldt.
 - **Per merk:** kennis die afhangt van merk, model of firmware. Nu: Panasonic Aquarea.

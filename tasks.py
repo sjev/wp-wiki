@@ -46,6 +46,12 @@ def scrape(c, thread="", refresh=False):
 
 
 @task
+def stats(c):
+    """Summarize scraped posts into data/stats.md."""
+    c.run("uv run wp-wiki stats")
+
+
+@task
 def serve(c):
     """Serve docs locally with live reload."""
     c.run("uv run mkdocs serve", pty=True)

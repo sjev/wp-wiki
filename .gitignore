@@ -63,3 +63,6 @@ data/
 
 # MkDocs build output
 site/
+
+# Work-in-progress notes and agent handovers
+wip/

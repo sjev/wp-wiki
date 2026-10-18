@@ -1,5 +1,6 @@
 import json
 import logging
+import time
 from pathlib import Path
 from typing import Annotated
 
@@ -7,8 +8,11 @@ import typer
 
 from wp_wiki import THREADS
 from wp_wiki.fetch import Fetcher, cached_pages, fetch_thread
+from wp_wiki.log import setup_logging
 from wp_wiki.parse import Post, parse_page
+from wp_wiki.stats import load_posts, report
 
+log = logging.getLogger(__name__)
 app = typer.Typer(no_args_is_help=True)
 
 DataDir = Annotated[Path, typer.Option(help="Root of raw/ and posts/ data.")]
@@ -16,10 +20,12 @@ ThreadIds = Annotated[list[int] | None, typer.Argument(help="Thread IDs; default
 
 
 @app.callback()
-def main(verbose: bool = False) -> None:
+def main(
+    verbose: bool = False,
+    log_file: Annotated[Path, typer.Option(help="Debug log file.")] = Path("data/logs/wp-wiki.log"),
+) -> None:
     """Heat pump wiki tooling."""
-    logging.basicConfig(level=logging.DEBUG if verbose else logging.INFO, format="%(message)s")
-    logging.getLogger("httpx").setLevel(logging.WARNING)
+    setup_logging(verbose, log_file)
 
 
 @app.command()
@@ -32,8 +38,9 @@ def fetch(
     """Download thread pages into data/raw/<thread>/<page>.html."""
     fetcher = Fetcher(delay=delay)
     for thread_id in threads or THREADS:
+        start = time.monotonic()
         n = fetch_thread(fetcher, thread_id, data / "raw", refresh=refresh)
-        print(f"{thread_id}: fetched {n} pages")
+        log.info("%d: fetched %d pages in %.0fs", thread_id, n, time.monotonic() - start)
 
 
 @app.command()
@@ -51,4 +58,13 @@ def parse(threads: ThreadIds = None, data: DataDir = Path("data")) -> None:
         with out.open("w", encoding="utf-8") as f:
             for post in sorted(posts.values(), key=lambda p: p["id"]):
                 f.write(json.dumps(post, ensure_ascii=False) + "\n")
-        print(f"{thread_id}: {len(posts)} posts -> {out}")
+        log.info("%d: %d posts -> %s", thread_id, len(posts), out)
+
+
+@app.command()
+def stats(data: DataDir = Path("data")) -> None:
+    """Summarize data/posts/*.jsonl into data/stats.md."""
+    posts = load_posts(data / "posts")
+    out = data / "stats.md"
+    out.write_text(report(posts), encoding="utf-8")
+    log.info("%d posts -> %s", len(posts), out)

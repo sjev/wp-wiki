@@ -26,6 +26,16 @@ koude leidingen, vloeren en radiatoren.
 - **Vuistregel 18 °C.** Daarom koelt men met een gewoon verwarmingssysteem meestal niet onder
   18 °C aanvoer. Bij warm en vochtig weer is ook dat soms al te koud.
 
+```mermaid
+flowchart LR
+    A["Dauwpunt bepalen (kamertemperatuur en RV)"] --> B{"Oppervlak kouder dan dauwpunt?"}
+    B -->|Ja| C{"Condensafvoer aanwezig?"}
+    B -->|Nee| D["Koelen zonder condens"]
+    C -->|Ja| E["Fancoil: ontvochtigt"]
+    C -->|Nee| F["Condens op leiding, vloer of radiator"]
+    F --> G["Water warmer maken of koelen stoppen"]
+```
+
 ### Bronnen
 
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Koelen met de warmtepomp*: condensatie, niet onder 18 °C
@@ -101,6 +111,8 @@ koude leidingen, vloeren en radiatoren.
   bij de koude leiding.
 - **Koppelingen.** Platen Armaflex met de bijbehorende lijm passen ook om brede koppelingen.
   Zwachtel daarna af met tape.
+- **Platen lijmen.** Lijm de naden en randen volledig, volgens de handleiding van het
+  isolatiemateriaal. Zwachtel daarna af met tape en isoleer de koppelingen apart.
 - **In de grond.** Isoleer ook in een mantelbuis dampdicht. Er kan water in de buis staan.
   Alternatief: een kant-en-klare geïsoleerde grondleiding.
 
@@ -113,7 +125,7 @@ koude leidingen, vloeren en radiatoren.
 
 - [natural colour, 2023-09-15](https://gathering.tweakers.net/forum/list_message/76524414#76524414): dampdicht isoleren, geen kier, niet elke lookalike is dampdicht
 - [FransvWoerkom, 2023-09-15](https://gathering.tweakers.net/forum/list_message/76526706#76526706): Armaflex en Tubolit zijn merken van Armacell
-- [dof, 2023-07-05](https://gathering.tweakers.net/forum/list_message/75852800#75852800): platen Armaflex met lijm, koppelingen apart, afzwachtelen; harde isolatie slechter
+- [dof, 2023-07-05](https://gathering.tweakers.net/forum/list_message/75852800#75852800): platen Armaflex met lijm, koppelingen apart, afzwachtelen; harde isolatie slechter; lijmstappen (handleiding)
 - [The Lord, 2022-06-14](https://gathering.tweakers.net/forum/list_message/71833522#71833522): dampdicht bij koelen en in mantelbuis
 - [twain4me, 2022-06-14](https://gathering.tweakers.net/forum/list_message/71829504#71829504): alle leidingen dampdicht isoleren
 
@@ -126,6 +138,10 @@ koude leidingen, vloeren en radiatoren.
   draait dan ongeveer één keer per uur 30 minuten.
 - **Radiatoren met ventilatoren:** het water koelt snel af, de compressor stopt en daarna pompt
   hij lang rond. Reken op [pendelen](cycling.md).
+- **Vloer op laagste vermogen:** een compressor op 19–20 Hz nam 450–570 W op. Het water
+  ging met 17,7 l/min van 18,5 °C retour naar 15,3 °C aanvoer bij 22 °C buiten. Een
+  dag met koelen van ongeveer 06:30 tot 19:00 kostte 5,7 kWh. Bij de start piekte het
+  vermogen kort op 650–850 W.
 - **Verbruik:** een 7 kW-warmtepomp verbruikte van juni tot september 170 kWh voor koelen.
   De woonkamer werd niet warmer dan 22 °C.
 - **Afgifte is de grens, niet de buitenunit.** Het water moet warmte uit de kamer opnemen.
@@ -142,7 +158,7 @@ koude leidingen, vloeren en radiatoren.
 
 ### Bronnen
 
-- [martijn v o, 2026-06-21](https://gathering.tweakers.net/forum/list_message/85537056#85537056): vloer ongeveer 20 W/m²
+- [martijn v o, 2026-06-21](https://gathering.tweakers.net/forum/list_message/85537056#85537056): vloer ongeveer 20 W/m²; vermogen, debiet en temperaturen op 19 Hz (grafiek, screenshot)
 - [sailor_dg, 2022-08-15](https://gathering.tweakers.net/forum/list_message/72435780#72435780): 19 W/m² bij 120 m², huis snel leefbaar
 - [martijn v o, 2023-06-11](https://gathering.tweakers.net/forum/list_message/75606274#75606274): 3,1 kW bij 100 m², EER 5,42
 - [blb4, 2026-07-15](https://gathering.tweakers.net/forum/list_message/85717754#85717754): convectoren met ventilatoren, 14 °C haalbaar, praktijk 16–18 °C

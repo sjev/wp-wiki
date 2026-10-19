@@ -38,14 +38,16 @@ een eigen kabel.
 
 ## Automaten: B16, B20 of C16
 
-De service manual van de 9L noemt 25 A voor *power supply 1* en 16 A voor de backup heater.
+De service manual van de L-serie (5, 7 en 9 kW) noemt 25 A voor *power supply 1* (kabel
+3×2,5 mm², aardlek type A) en 15/16 A voor de backup heater (kabel 3×1,5 mm², aardlek type AC).
+Bij de binnenunit SDC0509L6E5 staat voor de backup heater 30 A en 3×4,0 mm².
 Met een netaansluiting van 3×25 A kiezen de meeste gebruikers lager:
 
 | Model | Praktijk |
 |---|---|
-| 5 kW | B16 is ruim genoeg. |
+| 5 kW | B16 is ruim genoeg. Service manual 5L: terugtoeren bij 12,0 A, stop bij 15,0 A. |
 | 7 en 9 kW | Formeel tot 17 A. Meestal gaat B16 goed; B20 geeft meer marge. |
-| 9L | Toert terug bij 14,8 A en stopt met een foutcode bij 18 A (service manual). |
+| 9L | Toert terug bij 14,8 A (koelen 14,0 A) en stopt met een foutcode bij 18 A (service manual). Maximale stroom 15,8 A (3,56 kW); backup heater 13,0 A (3,00 kW). |
 
 Een C-automaat mag. De kans dat de hoofdzekering eerder uitschakelt, is dan iets groter.
 Een C-karakteristiek lost een te lage stroomwaarde niet op.
@@ -60,7 +62,7 @@ Een C-karakteristiek lost een te lage stroomwaarde niet op.
 - [twain4me, 2022-10-06](https://gathering.tweakers.net/forum/list_message/73030708#73030708): 5 kW op B16; 7 en 9 kW tot 17 A; liever 20 A dan C
 - [FransvWoerkom, 2023-11-28](https://gathering.tweakers.net/forum/list_message/77326300#77326300): C mag, hoofdzekering slaat iets eerder af
 - [Tranquility, 2023-11-28](https://gathering.tweakers.net/forum/list_message/77326712#77326712): 2×C16 zonder problemen
-- [ErikVers, 2024-10-11](https://gathering.tweakers.net/forum/list_message/80374756#80374756): 9L: manual 25 A / 16 A; terugtoeren bij 14,8 A, stop bij 18 A
+- [ErikVers, 2024-10-11](https://gathering.tweakers.net/forum/list_message/80374756#80374756): 9L: manual 25 A / 16 A; terugtoeren bij 14,8 A, stop bij 18 A; kabel- en aardlekwaarden, maximale stroom (handleiding)
 - [Thorsd, 2024-10-12](https://gathering.tweakers.net/forum/list_message/80375484#80375484): B20 bij 3×25 A; selectiviteit en kabellengte
 - [Tinkerer84, 2024-10-12](https://gathering.tweakers.net/forum/list_message/80375478#80375478): keuze 16 of 20 A hangt af van de kans op maximaal vermogen
 
@@ -68,7 +70,8 @@ Een C-karakteristiek lost een te lage stroomwaarde niet op.
 
 - Gebruik een aardlekautomaat of aardlekschakelaar **type A**. Type AC reageert alleen op
   sinusvormige lekstroom. Een oude type AC is ongeschikt voor de warmtepomp.
-- De handleiding van de J-serie noemt voor één voeding type AC. Type A kan altijd.
+- De handleiding van de J-serie noemt type AC voor *power supply 2* (de backup heater) en
+  type A voor *power supply 1*. Beide: 30 mA, 2-polig. Type A kan altijd.
 - Het beste is per voeding een eigen aardlekautomaat. Deelt de warmtepomp een aardlek met
   andere groepen, dan tellen de lekstromen op. De aardlek kan dan uitschakelen terwijl er
   geen fout is. U ziet dan ook niet of het lek in de unit, de kabel of de werkschakelaar zit.
@@ -82,7 +85,7 @@ aardlek zaten ook drie lichtgroepen. Een eigen aardlekautomaat voor de warmtepom
 ### Bronnen
 
 - [FransvWoerkom, 2022-02-16](https://gathering.tweakers.net/forum/list_message/70618924#70618924): type A en AC; interne RCCB's laten zitten; per groep aardlekautomaat type A
-- [.Frank, 2022-02-16](https://gathering.tweakers.net/forum/list_message/70613368#70613368): J-handleiding noemt type AC voor één voeding
+- [.Frank, 2022-02-16](https://gathering.tweakers.net/forum/list_message/70613368#70613368): J-handleiding noemt type AC voor één voeding (handleiding)
 - [FransvWoerkom, 2024-02-20](https://gathering.tweakers.net/forum/list_message/78192564#78192564): eigen aardlekautomaten; oude type AC ongeschikt
 - [John lamers, 2024-02-20](https://gathering.tweakers.net/forum/list_message/78193260#78193260): aardlek met lichtgroepen schakelt uit
 - [John lamers, 2024-02-28](https://gathering.tweakers.net/forum/list_message/78280176#78280176): opgelost met eigen aardlekautomaat
@@ -129,11 +132,14 @@ Gangbaar zijn twee 3-fase aardlekautomaten van 16 A en twee 5-aderige kabels.
 - In het installateursmenu kiest u een backup heater van 3, 6 of 9 kW.
 - Volgens het schema van de MXC12H9E8 gebruikt de heater L1 en L2 alleen bij 6 en 9 kW.
   De detectie zit op L3. Sluit toch alle drie de fasen aan; de kabel trekt u toch al.
+- In dat schema heet de 3-fase voeding van de backup heater *power supply 3*. Drie relais
+  (`RY-HT` L1, L2, L3) schakelen de drie heaterelementen. Een nul met zekering (`FUSE2`) loopt
+  naar de elementen. De SWW-booster (`RY-BOOSTER`) hangt aan dezelfde voeding.
 - *Power supply 1* van de T-CAP kan ook op een 16 A-aardlekautomaat.
 
 ### Bronnen
 
-- [FransvWoerkom, 2022-01-13](https://gathering.tweakers.net/forum/list_message/70207402#70207402): T-CAP 12 kW: 16 A voor PS1, 3/6/9 kW instelbaar, L1/L2 alleen bij 6/9 kW
+- [FransvWoerkom, 2022-01-13](https://gathering.tweakers.net/forum/list_message/70207402#70207402): T-CAP 12 kW: 16 A voor PS1, 3/6/9 kW instelbaar, L1/L2 alleen bij 6/9 kW; heaterschema (schema)
 - [flippy, 2022-01-12](https://gathering.tweakers.net/forum/list_message/70201950#70201950): detectie op L3; sluit alle drie de fasen aan
 - [FransvWoerkom, 2023-06-15](https://gathering.tweakers.net/forum/list_message/75653868#75653868): T-CAP: twee groepen 3×16 A, twee 5-aderige kabels
 
@@ -196,10 +202,17 @@ Bij de meterkast voegt hij niets toe.
   print schakelt 230 V tussen `O` en `C`. Gebruik kabel met isolatie voor 230 V.
 - WH-MDC07J3E5: de klep gaat op `CN1`-4/5/6. Gebruik geen geel-groene ader voor iets anders
   dan aarde.
-- De handleiding (J-serie) noemt 1,5 mm² en maximaal 9,8 W voor de klepuitgang. Twee kleppen
-  op één uitgang mogen samen niet boven 9,8 W komen.
+- De handleiding (J-serie) noemt voor de driewegklep: 3×min. 1,5 mm², maximaal 9,8 VA,
+  maximale kabellengte 50 m, een klep met veer (stroomloos staat de doorgang naar de
+  verwarmingskant) en een CE-markering. Twee kleppen op één uitgang mogen samen niet boven
+  9,8 VA komen.
 - Kies een klep die standaard open of dicht is (NO/NC) zoals u hem nodig hebt. Draden
   omwisselen werkt niet: veel kleppen gebruiken de waterstroom om te sluiten.
+- Op de print van de WH-MDC07J3E5 zitten `CN1` (tweewegklep: `C` `O` `N`; driewegklep: `C` `O`
+  `N`), `CN2` (optionele thermostaat: `H` `C` `N` `L`), `CN3` (bivalente bron of ontdooisignaal,
+  extra pomp, elektrische SWW-heater met maximaal 3 kW), `CN4` (externe regeling, afstandsbediening),
+  `CN5` (buitentemperatuur- en tanksensor) en `CN6` (kamersensor, beveiliging tegen oververhitting
+  van de SWW-heater).
 - Een droogkookbeveiliging van de SWW-tank gaat op `CN6`-1/2, anders een draadbrug.
   Zie [`H91`](../troubleshooting.md#heaters-h70-h91).
 - Aquarea M standalone (SDC0316M9E8): op `CN3` zit een schakelcontact voor een ketel of een
@@ -214,11 +227,11 @@ schroefklemmen of de print.
 
 - [FransvWoerkom, 2022-11-29](https://gathering.tweakers.net/forum/list_message/73627274#73627274): MDC07J3E5: klep op `CN1`-4/5/6; geel-groen alleen voor aarde
 - [FransvWoerkom, 2023-08-01](https://gathering.tweakers.net/forum/list_message/76101190#76101190): drie draden; isolatie voor 230 V
-- [Pejdref, 2023-08-02](https://gathering.tweakers.net/forum/list_message/76107334#76107334): handleiding: 1,5 mm², maximaal 9,8 W
-- [.Frank, 2023-08-06](https://gathering.tweakers.net/forum/list_message/76141556#76141556): twee kleppen samen onder 9,8 W
+- [Pejdref, 2023-08-02](https://gathering.tweakers.net/forum/list_message/76107334#76107334): handleiding: 1,5 mm², maximaal 9,8 VA
+- [.Frank, 2023-08-06](https://gathering.tweakers.net/forum/list_message/76141556#76141556): twee kleppen samen onder 9,8 VA (handleiding)
 - [flippy, 2023-08-06](https://gathering.tweakers.net/forum/list_message/76141662#76141662): NO/NC kiezen; omdraaien werkt niet
 - [FransvWoerkom, 2023-06-19](https://gathering.tweakers.net/forum/list_message/75696494#75696494): droogkookbeveiliging op `CN6`-1/2 of draadbrug
 - [Tinkerer84, 2023-10-05](https://gathering.tweakers.net/forum/list_message/76738982#76738982): 9J: 0 V op klepuitgang, 230 V op tweewegklep
 - [Thorsd, 2023-10-05](https://gathering.tweakers.net/forum/list_message/76739208#76739208): relais `RY-V3` of schroefklemmen
-- [blb4, 2023-10-04](https://gathering.tweakers.net/forum/list_message/76731410#76731410): 230 V schakelt tussen `O` en `C`
+- [blb4, 2023-10-04](https://gathering.tweakers.net/forum/list_message/76731410#76731410): 230 V schakelt tussen `O` en `C`; klemmen van de print (foto)
 - [FransvWoerkom, 2026-02-05](https://gathering.tweakers.net/forum/list_message/84575740#84575740): M standalone: `CN3` voor ketel of ontdooiklep

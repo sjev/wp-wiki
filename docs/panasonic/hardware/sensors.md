@@ -97,7 +97,8 @@ aantal decimalen van de entiteit.
 Bij een flow van 15 l/min geeft 1 °C fout in ΔT al ongeveer 1 kW fout in het berekende
 vermogen. Zie [Stooklijn: controleren in de praktijk](../../general/heating-curve.md#controleren-in-de-praktijk).
 Wilt u nauwkeuriger meten, plaats dan eigen sensoren (bijv. DS18B20) in een dompelbuis met
-koelpasta.
+koelpasta. Op HeishaMon hangen meerdere DS18B20-sensoren parallel aan één 1-wire-bus
+(GND, data, 3,3 V).
 
 !!! note "Meningen verschillen"
     Op een `WH-WXG16ME8` met control box `WH-CME8` gaf de warmtepomp alleen hele graden door,
@@ -114,6 +115,7 @@ koelpasta.
 - [FransvWoerkom, 2023-02-21](https://gathering.tweakers.net/forum/list_message/74542678#74542678): display rondt naar beneden af
 - [sjimmie, 2023-02-22](https://gathering.tweakers.net/forum/list_message/74552412#74552412): hele graden in HeishaMon
 - [Erwin94, 2023-01-22](https://gathering.tweakers.net/forum/list_message/74222506#74222506): DS18B20 in dompelbuis met koelpasta
+- [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): DS18B20-sensoren op één 1-wire-bus (schema)
 
 ## Tanksensor (SWW)
 
@@ -154,6 +156,15 @@ Wat de sensoren doen, met een buffervat ingesteld:
 - De buffersensor schakelt de warmtepomp uit als het vat te warm wordt.
 - De zonesensoren regelen alleen een mengklep.
 
+Montage volgens de service manual (paragraaf 11.3.1.3):
+
+| Sensor | Montage |
+|---|---|
+| `PAW-A2W-TSBU` (buffer) | In de sensorhuls van het vat, of op het oppervlak van het vat met contactpasta |
+| `PAW-A2W-TSHC` (zonewater, ook zwembad) | Op de waterleiding met de bijgeleverde RVS-band en contactpasta |
+| `PAW-A2W-TSSO` (solar) | In de sensorhuls, of op het oppervlak van het zonnepaneel |
+| `PAW-A2W-TSRT` (kamer) | In de kamer die de kamerregeling nodig heeft |
+
 Zie ook [Buffervat](../../general/buffer-tank.md).
 
 ### Bronnen
@@ -170,7 +181,25 @@ Zie ook [Buffervat](../../general/buffer-tank.md).
 | Buiten (TSOD), buffer (TSBU), kamer (TSRT), zone-aanvoer (TSHC), solar (TSSO) | 6523 Ω (≈ 6,5 kΩ) | 3700–3750 K |
 | SWW-tank | 2 kΩ | 3420–3450 K |
 
-De tabel met weerstanden staat in de service manual (paragraaf 11.3.1.3). De sensoren in de
+De tabel met weerstanden staat in de service manual (paragraaf 11.3.1.3). Die tabel geldt
+voor de sensoren uit de eerste rij: 19,70 kΩ bij 0 °C, 6,523 kΩ bij 25 °C en 0,511 kΩ bij 100 °C.
+Elke 10 °C stijging verlaagt de weerstand sterk, vooral bij lage temperaturen.
+
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#1e88e5"
+---
+xychart-beta
+    title "Weerstand NTC (6,5 kΩ-type) volgens de service manual"
+    x-axis "Temperatuur (°C)" ["-40", "-30", "-20", "-10", "0", "10", "20", "30", "40", "50", "60", "70", "80", "90", "100"]
+    y-axis "Weerstand (kΩ)" 0 --> 170
+    line [167.82, 93.05, 53.92, 32.10, 19.70, 12.443, 8.044, 5.326, 3.615, 2.508, 1.777, 1.279, 0.932, 0.686, 0.511]
+```
+
+De sensoren in de
 eerste rij zijn elektrisch gelijk en dus uitwisselbaar; ze verschillen alleen in behuizing
 en kabel. De goedkoopste is meestal de solar- of buffersensor.
 
@@ -198,9 +227,9 @@ bij B = 3560 K en circa 5,5 °C bij B = 4000 K.
 
 ### Bronnen
 
-- [FransvWoerkom, 2021-09-24](https://gathering.tweakers.net/forum/list_message/68832864#68832864): TSOD, TSBU, TSRT, TSHC, TSSO gelijk; R25 6,5k, B 3700 K
+- [FransvWoerkom, 2021-09-24](https://gathering.tweakers.net/forum/list_message/68832864#68832864): TSOD, TSBU, TSRT, TSHC, TSSO gelijk; R25 6,5k, B 3700 K; weerstandstabel (handleiding)
 - [FransvWoerkom, 2021-11-04](https://gathering.tweakers.net/forum/list_message/69306682#69306682): B ≈ 3750 K; 6k8 zonder correctie 1 °C fout
-- [FransvWoerkom, 2022-08-25](https://gathering.tweakers.net/forum/list_message/72549896#72549896): service manual paragraaf 11.3.1.3
+- [FransvWoerkom, 2022-08-25](https://gathering.tweakers.net/forum/list_message/72549896#72549896): service manual paragraaf 11.3.1.3; montage en weerstandstabel (handleiding)
 - [FransvWoerkom, 2022-12-01](https://gathering.tweakers.net/forum/list_message/73660940#73660940): 6523 Ω; Vishay met 123k en 100 Ω; buitensensor andere waarden
 - [FransvWoerkom, 2022-10-10](https://gathering.tweakers.net/forum/list_message/73078776#73078776): B-waarden; 87k en 240 Ω; tolerantie 5 %
 - [FransvWoerkom, 2022-01-02](https://gathering.tweakers.net/forum/list_message/70066054#70066054): TSRT met 91k en 200 Ω
@@ -222,7 +251,8 @@ Er zijn drie manieren:
 1. **Kalibratie +2 °C** (zie [Kalibratie](#kalibratie)). De grens van 35 Hz zakt dan naar
    circa 2–3 °C. Pas de stooklijn aan op de verschuiving.
 2. **Vaste weerstand.** Een vaste weerstand van 15 kΩ op de ingang voor de alternatieve
-   buitensensor geeft een constante 6 °C. Een HeishaMon-rule schakelt tussen de interne
+   buitensensor geeft een constante 6 °C. Op de klemmenstrook staan de ingangen `OUTDOOR AIR SENSOR` en `TANK SENSOR` naast elkaar;
+   de weerstand zit op de klemmen van `OUTDOOR AIR SENSOR`. Een HeishaMon-rule schakelt tussen de interne
    sensor en de weerstand, op basis van een eigen sensor (DS18B20). De stooklijn werkt dan
    niet; gebruik een vaste Ta.
 3. **Geschakelde weerstand parallel aan een losse buitensensor.** Een parallelle weerstand
@@ -259,6 +289,13 @@ Schakel nooit onder 0 °C.
     niet veranderen; volgens één van hen gebruikt het ontdooien de alternatieve sensor niet.
     Een ander zag ontdooicycli iets eerder of later starten.
 
+    De T-CAP service manual (paragraaf 14.2.2) laat de ontdooigrens zien als lijn van
+    buitentemperatuur tegen pijptemperatuur. Boven circa 5 °C buiten ligt de grens vlak
+    bij −6 °C pijptemperatuur. Daaronder daalt de grens tot circa −28 °C bij −20 °C buiten.
+    Bij AUTO force defrost op de afstandsbediening start de warmtepomp na 3 uur zonder
+    ontdooien onder 5 °C buiten een geforceerde ontdooicyclus. Een gebruiker met een
+    alternatieve sensor op 6 °C las in die grafiek −6 °C pijptemperatuur af.
+
 Een alternatief zonder hardware is sturen met HeishaMon, zie
 [Instellingen: sturen op minimaal vermogen](../settings.md#sturen-op-minimaal-vermogen-heishamon).
 
@@ -273,7 +310,7 @@ Een alternatief zonder hardware is sturen met HeishaMon, zie
 - [Heronimo, 2022-12-15](https://gathering.tweakers.net/forum/list_message/73813390#73813390): met +2 °C pas bij 3 °C naar 35 Hz
 - [Tiesert, 2022-12-15](https://gathering.tweakers.net/forum/list_message/73813686#73813686): sensor verschuiven alleen boven 0 °C
 - [Kuraya, 2023-01-24](https://gathering.tweakers.net/forum/list_message/74242344#74242344): vaste 15 kΩ = 6 °C; schakelen via HeishaMon; risico compressor
-- [Kuraya, 2023-01-25](https://gathering.tweakers.net/forum/list_message/74252124#74252124): vaste Ta; ontdooien lijkt alternatieve sensor niet te gebruiken
+- [Kuraya, 2023-01-25](https://gathering.tweakers.net/forum/list_message/74252124#74252124): vaste Ta; ontdooien lijkt alternatieve sensor niet te gebruiken; klemmenstrook (foto)
 - [Tiesert, 2023-02-08](https://gathering.tweakers.net/forum/list_message/74405598#74405598): variant met 75 kΩ en 100 kΩ; 23–27 Hz bij 2 °C
 - [Tiesert, 2023-11-13](https://gathering.tweakers.net/forum/list_message/77155492#77155492): nooit onder 0 °C; ontdooien iets eerder of later
-- [doek55, 2023-01-19](https://gathering.tweakers.net/forum/list_message/74187520#74187520): ontdooien hangt af van buiten- en verdampertemperatuur
+- [doek55, 2023-01-19](https://gathering.tweakers.net/forum/list_message/74187520#74187520): ontdooien hangt af van buiten- en verdampertemperatuur; ontdooigrens (grafiek, handleiding)

@@ -32,6 +32,20 @@ Zie [Panasonic: instellingen](../settings.md) en [Stooklijn](../../general/heati
   vaak onderhoud. Een gebruiker stapte daarom over op HeishaMon: lokaal, meer opties en
   stabieler.
 
+```mermaid
+flowchart LR
+    WP["Aquarea"] --> HM["HeishaMon"]
+    HM --> MQTT["MQTT"]
+    MQTT --> HACS["HeishaMon-integratie (HACS)"]
+    MQTT --> YAML["Eigen YAML met MQTT-sensoren"]
+    HACS --> HA["Home Assistant"]
+    YAML --> HA
+    WP --> CM["Cloudmodule"]
+    CM --> CLOUD["Panasonic-cloud (Service Cloud / Smart Cloud)"]
+    CLOUD --> AQ["home-assistant-aquarea"]
+    AQ --> HA
+```
+
 ### Bronnen
 
 - [timovd, 2023-11-02](https://gathering.tweakers.net/forum/list_message/77039830#77039830): HACS-integratie of handmatige YAML
@@ -55,6 +69,14 @@ Gebruikers maken grafieken op drie manieren:
 - **Node-RED.** Er is een kant-en-klaar Node-RED-dashboard voor HeishaMon. Node-RED kan ook
   binnen HA draaien.
 
+De HACS-integratie geeft de sensoren namen als `Aquarea Compressor Frequency`,
+`Aquarea Inlet Temperature`, `Aquarea Outlet Temperature`, `Aquarea Outdoor Ambient`,
+`Aquarea Pump Flow` en `Aquarea Tank Actual Tank Temperature`. Een kWh-meter op de S0-ingang
+verschijnt als eigen entiteit, bijv. `HeishaMon s0 2 Watt`. Een compleet dashboard bevat ook
+de kamertemperatuur, de doeltemperatuur (*T-vraag*), een keuzelijst voor de bedrijfsstand
+(`Aquarea Mode`), de vakantieschakelaar, het aantal ontdooiingen vandaag en de COP.
+In zulke grafieken ziet u de compressor in blokken op ongeveer 20 Hz draaien.
+
 Let op de resolutie. Sommige units sturen temperaturen in hele graden. Dat vertekent de
 grafieken. De web-UI van HeishaMon toont in- en uitlaat soms in stappen van 0,25 °C. HA rondt die
 waarde af op het aantal decimalen van de entiteit. Dat aantal kunt u verhogen naar 2.
@@ -62,12 +84,14 @@ waarde af op het aantal decimalen van de entiteit. Dat aantal kunt u verhogen na
 ### Bronnen
 
 - [ErikKo, 2024-10-04](https://gathering.tweakers.net/forum/list_message/80306244#80306244): grafieken in HA via MQTT, doeltemperatuur
-- [wheli, 2023-10-15](https://gathering.tweakers.net/forum/list_message/76844748#76844748): grafiek compressorfrequentie in HA
+- [wheli, 2023-10-15](https://gathering.tweakers.net/forum/list_message/76844748#76844748): grafiek compressorfrequentie in HA (screenshot)
 - [Beer070, 2025-12-30](https://gathering.tweakers.net/forum/list_message/84286086#84286086): HA, InfluxDB en Grafana; hele graden
 - [Erwin94, 2023-01-22](https://gathering.tweakers.net/forum/list_message/74222506#74222506): InfluxDB met Telegraf en Grafana
 - [Thorsd, 2024-01-21](https://gathering.tweakers.net/forum/list_message/77882942#77882942): kleine logintervallen met HeishaMon en HA
 - [hemertje, 2025-02-21](https://gathering.tweakers.net/forum/list_message/81720206#81720206): Node-RED-dashboard voor HeishaMon
 - [dirkdeman, 2021-08-29](https://gathering.tweakers.net/forum/list_message/68546946#68546946): Node-RED werkt onder HA of Domoticz
+- [tieske_janssen, 2024-06-18](https://gathering.tweakers.net/forum/list_message/79317176#79317176): entiteit `HeishaMon s0 2 Watt`, tanktemperatuur (screenshot)
+- [vandermark, 2025-10-08](https://gathering.tweakers.net/forum/list_message/83628328#83628328): compleet dashboard met `Aquarea Mode` (screenshot)
 - [blb4, 2025-11-05](https://gathering.tweakers.net/forum/list_message/83859934#83859934): 0,25 °C in web-UI, decimalen in HA
 
 ## Energie en COP bijhouden
@@ -97,7 +121,7 @@ tijdgemiddelde is 4, de werkelijke dag-COP is 132 ÷ 62 ≈ 2,1.
 
 ### Bronnen
 
-- [ErikVers, 2022-10-01](https://gathering.tweakers.net/forum/list_message/72975110#72975110): verbruik onbruikbaar, eigen kWh-meter en S0
+- [ErikVers, 2022-10-01](https://gathering.tweakers.net/forum/list_message/72975110#72975110): verbruik onbruikbaar, eigen kWh-meter en S0 (screenshot)
 - [Amrod, 2026-01-07](https://gathering.tweakers.net/forum/list_message/84350618#84350618): L-serie, COP stijgt bij ontdooien
 - [blb4, 2026-01-07](https://gathering.tweakers.net/forum/list_message/84351084#84351084): absolute waarde TOP15, formule, afronding TOP16
 - [cerebrum, 2026-01-07](https://gathering.tweakers.net/forum/list_message/84351038#84351038): vermogen zelf berekenen met templates
@@ -200,7 +224,7 @@ Een verfijning: maak het setpoint een formule in plaats van twee standen, bijv.
 
 ### Bronnen
 
-- [vandermark, 2025-10-08](https://gathering.tweakers.net/forum/list_message/83628328#83628328): 5J, HA-thermostaat met nachtverlaging
+- [vandermark, 2025-10-08](https://gathering.tweakers.net/forum/list_message/83628328#83628328): 5J, HA-thermostaat met nachtverlaging (screenshot)
 - [vandermark, 2025-10-29](https://gathering.tweakers.net/forum/list_message/83802312#83802312): KNMI-sensor, 22:00, scheduler
 - [The_Woesh, 2025-10-29](https://gathering.tweakers.net/forum/list_message/83803148#83803148): formule, geen fan van nachtverlaging
 
@@ -261,7 +285,7 @@ Zie [Legionella](../../general/legionella.md).
 
 - [FransvWoerkom, 2023-02-28](https://gathering.tweakers.net/forum/list_message/74606766#74606766): holiday mode met timer, uit en vloerverwarming
 - [Binifada, 2022-09-08](https://gathering.tweakers.net/forum/list_message/72701102#72701102): MQTT-topics `SetHolidayMode`, `Holiday_Mode_State`
-- [tieske_janssen, 2024-06-18](https://gathering.tweakers.net/forum/list_message/79317176#79317176): TOP19, TOP25, TOP45
+- [tieske_janssen, 2024-06-18](https://gathering.tweakers.net/forum/list_message/79317176#79317176): TOP19, TOP25, TOP45 (screenshot)
 - [nokiaan958GB, 2023-12-07](https://gathering.tweakers.net/forum/list_message/77438030#77438030): 9J, vakantiestand via cloud niet opgeslagen
 - [thehog, 2022-03-12](https://gathering.tweakers.net/forum/list_message/70911282#70911282): HeishaMon heeft geen cloud
 - [dof, 2023-02-27](https://gathering.tweakers.net/forum/list_message/74606660#74606660): uit, via HA op afstand weer aan

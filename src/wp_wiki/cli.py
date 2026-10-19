@@ -10,6 +10,7 @@ from wp_wiki import THREADS
 from wp_wiki.cite import check as check_cites
 from wp_wiki.dossier import dossier as make_dossier
 from wp_wiki.fetch import Fetcher, cached_pages, fetch_thread
+from wp_wiki.images import fetch_images
 from wp_wiki.log import setup_logging
 from wp_wiki.parse import Post, parse_page
 from wp_wiki.read import show_post, show_replies
@@ -118,6 +119,18 @@ def post(
     if post_id not in by_id:
         raise typer.BadParameter(f"post {post_id} not found")
     typer.echo(show_post(by_id[post_id], start, end, chars))
+
+
+@app.command()
+def images(ids: PostIds, data: DataDir = Path("data")) -> None:
+    """Download the images of these posts into data/images/ and print the file paths."""
+    by_id = {p["id"]: p for p in load_posts(data / "posts")}
+    fetcher = Fetcher()
+    for pid in ids:
+        if pid not in by_id:
+            raise typer.BadParameter(f"post {pid} not found")
+        for path in fetch_images(fetcher, by_id[pid], data / "images"):
+            typer.echo(path)
 
 
 @app.command()

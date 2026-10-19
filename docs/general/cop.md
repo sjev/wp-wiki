@@ -56,9 +56,31 @@ Het vermogen of de compressorfrequentie heeft veel minder invloed; zie
 - **Tapwater en ontdooien** verlagen de COP. Zie [Tapwater: temperatuur en
   COP](hot-water.md#temperatuur-en-cop) en [Ontdooien: wat ontdooien kost](defrost.md#wat-ontdooien-kost).
 
+Een meetreeks over 25 weken (gemiddelden per 30 minuten, externe meters, vooral radiatoren
+met ongeveer 35 °C aanvoer bij 0 °C buiten en 30 °C bij 10 °C) laat het verband zien. Zonder
+ontdooien daalt de COP van ongeveer 6,5 bij een lift van 20 K naar ongeveer 3 bij 40 K.
+Ontdooicycli en tapwaterruns geven een aparte wolk rond een COP van 2 tot 3.
+
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#1e88e5"
+---
+xychart-beta
+    title "COP zonder ontdooien, afgelezen uit meetgrafiek"
+    x-axis "Buitentemperatuur (°C)" ["0", "2", "4", "6", "8", "10"]
+    y-axis "COP" 2 --> 7
+    line [3.5, 4.0, 4.6, 5.3, 5.8, 6.3]
+```
+
+Waarden zijn bij benadering afgelezen uit de puntenwolk (ongeveer ±0,3). Met ontdooien ligt
+de COP bij 0 tot 4 °C rond 2,7.
+
 ### Bronnen
 
-- [Thorsd, 2024-02-24](https://gathering.tweakers.net/forum/list_message/78247670#78247670): COP uitgezet tegen lift en buitentemperatuur; ontdooien en SWW lager; Carnot 50 %
+- [Thorsd, 2024-02-24](https://gathering.tweakers.net/forum/list_message/78247670#78247670): COP uitgezet tegen lift en buitentemperatuur; ontdooien en SWW lager; Carnot 50 % (grafiek)
 - [pgeene, 2022-12-27](https://gathering.tweakers.net/forum/list_message/73931842#73931842): lagere aanvoertemperatuur geeft altijd een betere COP
 - [Heronimo, 2022-03-25](https://gathering.tweakers.net/forum/list_message/71046988#71046988): ongeveer 2 % COP per graad lagere aanvoer
 - [Pejdref, 2024-01-04](https://gathering.tweakers.net/forum/list_message/77693968#77693968): 2 % per graad als aanname
@@ -196,7 +218,7 @@ Een jaarverbruik zegt alleen iets samen met de woning. Gemeld door gebruikers:
 | ~220 m², 1970, matig geïsoleerd; verwarming en tapwater | 90 % radiatoren | 2000 m³ | 3820 kWh + 171 kWh element; 16 000 kWh warmte |
 | Grote vrijstaande woning, 1997 | radiatoren met ventilatoren | 1400–1500 m³ | gemiddeld 2500 kWh per jaar over 5 jaar |
 | Woning met 7 kW split; tapwater apart | onbekend | 1000 m³ | 1006 kWh van half december tot begin maart |
-| Woning met 5 kW; tapwater met warmtepompboiler | onbekend | 1000 m³ verwarming + 200 m³ tapwater | binnen de vuistregel 2 × m³, extern gemeten |
+| Woning met 5 kW; tapwater met warmtepompboiler | onbekend | 1000 m³ verwarming + 200 m³ tapwater | 1548–1821 kWh per jaar (2019–2022) plus boiler 79–447 kWh; samen 1900–2237 kWh |
 
 Het tweede getal komt deels uit de app van de fabrikant. Die wijkt af van een eigen meter.
 
@@ -206,4 +228,4 @@ Het tweede getal komt deels uit de app van de fabrikant. Die wijkt af van een ei
 - [Carboy54, 2022-02-20](https://gathering.tweakers.net/forum/list_message/70661962#70661962): vrijstaand 1997, radiatoren met ventilatoren, 2500 kWh per jaar
 - [Carboy54, 2022-11-22](https://gathering.tweakers.net/forum/list_message/73562956#73562956): 2500 kWh gemiddeld over 5 jaar voor 1400–1500 m³; afwijking ten opzichte van eigen meter
 - [Cige, 2023-03-15](https://gathering.tweakers.net/forum/list_message/74769516#74769516): 1000 m³, 1005,7 kWh van 12-12-2022 tot 8-3-2023
-- [t.oswald, 2023-03-15](https://gathering.tweakers.net/forum/list_message/74770098#74770098): 1000 + 200 m³, haalt 2 × m³ zonder moeite
+- [t.oswald, 2023-03-15](https://gathering.tweakers.net/forum/list_message/74770098#74770098): 1000 + 200 m³, haalt 2 × m³ zonder moeite; jaartabel met kWh (screenshot)

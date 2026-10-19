@@ -19,9 +19,12 @@ def test_parse_page_extracts_posts_with_backlinks() -> None:
     assert first["links"] == ["https://github.com/Egyras/HeishaMon"]
     assert "SetZ1HeatRequestTemperature" in first["text"]
     assert "gewijzigd" not in first["text"]
+    assert first["images"] == ["https://tweakers.net/i/a.png"]
+    assert "[afbeelding]" in first["text"]
     assert "<b>SetZ1HeatRequestTemperature</b>" in first["html"]
 
     assert reply["quotes"] == [100]
+    assert reply["images"] == []
     assert reply["topicstarter"] is False
     assert "> Set it via MQTT." in reply["text"]
     assert reply["text"].endswith("Works for me.")

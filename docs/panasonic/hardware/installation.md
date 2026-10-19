@@ -37,6 +37,8 @@ Voor Panasonic komt daar bij:
 - **Ruimte achter de unit.** Houd ruimte voor de luchttoevoer, de leidingen, de buigstraal
   van de flexslangen en onderhoud. In de praktijk houden
   gebruikers 250 tot 300 mm aan.
+- **Meerdere units.** Plaats ze naast elkaar met minimaal 100 mm ertussen. Plaats ze niet
+  achter of tegenover elkaar: de ene unit zuigt dan de uitblaaslucht van de andere aan.
 - **Gewicht.** Een unit met water en steunen weegt ongeveer 100 kg. Houd daar rekening mee
   bij plaatsing op een dak.
 
@@ -44,6 +46,8 @@ Voor Panasonic komt daar bij:
     - Volgens de handleiding van de J-serie is 100 mm aan de achterkant genoeg.
     - De oudere design manual (H-serie) noemt 300 mm. Gebruikers vinden 100 mm te krap voor
       leidingen en onderhoud.
+    - De pagina *Minimum distances for outdoor units* in de design manual noemt drie afstanden
+      per zijde: 100, 300 en 1000 mm.
     - 250–300 mm is volgens een leverancier genoeg, omdat er ook lucht van onderen komt.
 
 ### Bronnen
@@ -52,7 +56,7 @@ Voor Panasonic komt daar bij:
 - [Carboy54, 2022-04-04](https://gathering.tweakers.net/forum/list_message/71144616#71144616): 25–30 cm is genoeg; toevoer ook van onderen
 - [twain4me, 2022-04-04](https://gathering.tweakers.net/forum/list_message/71145618#71145618): J-serie 100 mm, toch 300 mm aanhouden voor leidingen
 - [davevleugel, 2022-04-04](https://gathering.tweakers.net/forum/list_message/71147754#71147754): 100 mm in handleiding J, 300 mm in design manual (H); 250 mm voor buigstraal flex
-- [davevleugel, 2022-03-07](https://gathering.tweakers.net/forum/list_message/70854712#70854712): 100 mm te weinig voor onderhoud
+- [davevleugel, 2022-03-07](https://gathering.tweakers.net/forum/list_message/70854712#70854712): 100 mm te weinig voor onderhoud; afstanden 100/300/1000 mm en opstelling van meerdere units (handleiding)
 - [ErikVers, 2021-02-11](https://gathering.tweakers.net/forum/list_message/66118272#66118272): unit met water en steunen ongeveer 100 kg
 
 ## Fundering
@@ -98,7 +102,9 @@ er veel water uit de hele bodemplaat (*base pan*), ook uit de gaten helemaal lin
     Onder sommige binnenunits zit een extra afvoeropening. Wat die doet, is niet duidelijk.
     Panasonic noemde hem een waterafvoer en adviseerde aansluiten op het riool (K-serie).
     Een installateur noemt het een aftappunt om de tank te legen. Bij een L-serie bibloc
-    schrijft Panasonic een 17 mm slang voor, geïsoleerd als er condens kan ontstaan (koelen).
+    schrijft Panasonic een 17 mm slang voor. De handleiding eist doorlopend afschot, een
+    vorstvrije plek en een uitlaat naar buiten, niet in een rioolbuis waar ammoniak of
+    zwavelgas kan ontstaan. Bij condens (koelen) komt er minstens 6 mm extra isolatie bij.
     Een gebruiker met een split T-CAP ziet er geen water uit komen.
 
 ### Bronnen
@@ -110,7 +116,7 @@ er veel water uit de hele bodemplaat (*base pan*), ook uit de gaten helemaal lin
 - [twain4me, 2022-05-03](https://gathering.tweakers.net/forum/list_message/71411014#71411014): grind tussen opsluitbanden; plaat ijs; zout tijdelijk
 - [kjoosten, 2023-10-16](https://gathering.tweakers.net/forum/list_message/76853968#76853968): Panasonic: afvoer H op riool
 - [ErikVers, 2023-10-31](https://gathering.tweakers.net/forum/list_message/77027640#77027640): afvoer is een aftapkraan voor de tank
-- [Jeroenrobbins, 2025-01-16](https://gathering.tweakers.net/forum/list_message/81332636#81332636): L-serie bibloc: 17 mm slang, geïsoleerd
+- [Jeroenrobbins, 2025-01-16](https://gathering.tweakers.net/forum/list_message/81332636#81332636): L-serie bibloc: 17 mm slang, afschot, vorstvrij, 6 mm extra isolatie bij condens (handleiding)
 - [BiLLY_daKid, 2023-10-16](https://gathering.tweakers.net/forum/list_message/76854886#76854886): split T-CAP: geen water uit afvoer H
 
 ## Wateraansluitingen
@@ -128,9 +134,29 @@ niet.
 - **Filter en kranen.** Zet een afsluiter voor en na het vuilfilter en een in de aanvoer.
   Zorg dat u het filter makkelijk kunt legen; anders doet u het niet. Meer over filters staat
   bij [Hydrauliek: water](../../general/hydraulics.md#water-filter-lucht-druk-en-spoelen).
+- **Binnenunit (bibloc).** Het Panasonic-schema voor een hydraulische binnenunit noemt een
+  filter van minimaal 500 µm als verplicht. Een luchtscheider is optioneel. Een
+  debietregelklep met directe aflaat is aanbevolen. Bij een warmwatervat is een buffer van
+  50 L verplicht.
 - **Zand.** Dop de buizen af tot u ze aansluit.
 - Blijft de oude cv-ketel in het circuit? Zie
   [Hydrauliek: bypass](../../general/hydraulics.md#bypass-en-overstort).
+
+Voorbeeld van de volgorde bij een monoblock met een warmwatervat op zolder en
+vloerverwarming via een platenwisselaar. De hoofdleidingen zijn 32 mm.
+
+```mermaid
+flowchart LR
+    U["Buitenunit"] -->|aanvoer| O[Ontluchter]
+    O --> K[Klep]
+    K --> V["Vloerverwarming (via platenwisselaar)"]
+    K --> D[Driewegklep]
+    D --> S["Warmwatervat"]
+    D --> R[Radiatoren]
+    V -->|retour| F[Vuilfilter]
+    R -->|retour| F
+    F --> U
+```
 
 !!! note "Meningen verschillen"
     - Gebruik binnen liever meerlaagse buis of Hep2O, en houd de omvlochten slang buiten.
@@ -138,13 +164,14 @@ niet.
 
 ### Bronnen
 
-- [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Koppelingen* en *Lek dichting*: 5/4" buitendraad, RVS-flex, Loctite 55
+- [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Koppelingen* en *Lek dichting*: 5/4" buitendraad, RVS-flex, Loctite 55; Panasonic-schema met filter 500 µm en buffer 50 L (schema)
 - [flippy, 2022-01-31](https://gathering.tweakers.net/forum/list_message/70430756#70430756): 1¼" op de buitenunit, adapter naar 1" nodig
 - [twain4me, 2022-01-31](https://gathering.tweakers.net/forum/list_message/70430766#70430766): 5/4", 1" past niet
 - [Thorsd, 2023-07-27](https://gathering.tweakers.net/forum/list_message/76046320#76046320): wartel 5/4" aan de WP, slang nominaal 1"
 - [Diedo70, 2022-11-09](https://gathering.tweakers.net/forum/list_message/73403836#73403836): 1" RVS-flex, dan Hep2O 28 mm
 - [marcop23, 2023-09-03](https://gathering.tweakers.net/forum/list_message/76412730#76412730): 5/4"-fittingen duur; stalen perssok 5/4" × 28
 - [Boxbal, 2023-09-05](https://gathering.tweakers.net/forum/list_message/76433398#76433398): knelpuntstuk en verloopbus; dubbel afdichten, één lekte
+- [Erwin94, 2023-01-22](https://gathering.tweakers.net/forum/list_message/74222506#74222506): schema met ontluchter, filter, klep en driewegklep (schema)
 - [FransvWoerkom, 2022-07-26](https://gathering.tweakers.net/forum/list_message/72251000#72251000): afsluiters rond vuilafscheider en in aanvoer; buizen afdoppen
 - [twain4me, 2022-07-26](https://gathering.tweakers.net/forum/list_message/72247430#72247430): voorkeur meerlaagse buis; vuilafscheider goed te legen
 - [Carboy54, 2022-07-26](https://gathering.tweakers.net/forum/list_message/72247876#72247876): flexslang makkelijk voor doe-het-zelf, problematisch bij koelen
@@ -198,6 +225,10 @@ van de warmtepomp het water: de pomp gaat draaien en zo nodig ook de compressor.
   minder dan 0 °C. Zet de unit bij nachtvorst liever niet uit.
 - **Backup heater op een aparte groep** helpt alleen als de voeding van de buitenunit
   uitvalt, niet bij een volledige stroomuitval.
+- **Vorstkleppen: handleiding.** Monteer ze buiten, op de plek waar het het koudst wordt.
+  Houd ze ver van warmtebronnen, anders werken ze niet goed. Plaats er een in de aanvoer en
+  een in de retour. De installatie moet altijd onder druk staan, ook tijdens het aftappen via
+  de klep.
 - **Glycol** wordt afgeraden.
 
 !!! warning "Bevriezing bij stroomuitval"
@@ -221,6 +252,7 @@ van de warmtepomp het water: de pomp gaat draaien en zo nodig ook de compressor.
 - [Thorsd, 2023-11-09](https://gathering.tweakers.net/forum/list_message/77122120#77122120): grootste risico als u niet thuis bent; afsluiters dicht en slangen los
 - [twain4me, 2020-12-20](https://gathering.tweakers.net/forum/list_message/65324014#65324014): meeste mensen nemen het risico; afsluiters en aftappunt
 - [dirkdeman, 2020-12-20](https://gathering.tweakers.net/forum/list_message/65324170#65324170): gecalculeerd risico
+- [LinuZZ, 2022-08-26](https://gathering.tweakers.net/forum/list_message/72557010#72557010): handleiding vorstkleppen: plaats, beide leidingen, druk (handleiding)
 - [Carboy54, 2022-09-13](https://gathering.tweakers.net/forum/list_message/72758358#72758358): vorstbeveiliging standaard bij installatie; glycol afgeraden
 - [ErikVers, 2025-11-16](https://gathering.tweakers.net/forum/list_message/83950984#83950984): vorstkleppen vragen een vulautomaat
 - [Beer070, 2025-11-15](https://gathering.tweakers.net/forum/list_message/83946556#83946556): Caleffi kan storen met interne vorstbeveiliging

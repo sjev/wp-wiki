@@ -15,6 +15,25 @@ Op Tweakers heeft HeishaMon een eigen topic.
 **Zie ook:** [Panasonic: instellingen](../settings.md) · [Stooklijn](../../general/heating-curve.md) ·
 [Pendelen](../../general/cycling.md) · [Home Assistant](home-assistant.md) · [Sensoren](../hardware/sensors.md) · [Bekabeling](../hardware/wiring.md)
 
+Zo loopt de data. De CZ-TAW1 hangt op de proxypoort van de Large-versie (zie [Hardware](#hardware)).
+
+```mermaid
+flowchart LR
+    WP["Warmtepomp<br/>hoofdprint"]
+    HM["HeishaMon"]
+    TAW["CZ-TAW1<br/>(optioneel, Large-versie)"]
+    BR["MQTT-broker<br/>(bijv. Mosquitto)"]
+    DOM["Domotica"]
+    HIST["InfluxDB, Node-RED, Grafana"]
+    WP <-->|"CN-CNT"| HM
+    HM <-.->|"proxypoort"| TAW
+    HM -->|"wifi of ethernet<br/>panasonic_heat_pump/main/#lt;naam#gt;"| BR
+    BR -->|"panasonic_heat_pump/commands/#lt;commando#gt;"| HM
+    BR --> DOM
+    BR --> HIST
+    DOM -.->|"HTTP: /command?..."| HM
+```
+
 ### Bronnen
 
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, hoofdstuk *Heishamon*
@@ -30,7 +49,8 @@ Op Tweakers heeft HeishaMon een eigen topic.
 - **Zelf bouwen.** De firmware is open source. Een gebruiker stelt een zelf gecompileerde
   HeishaMon op een ESP32 met ethernet voor.
 - **Extra aansluitingen.** S0-ingangen voor twee kWh-meters (`S0_0`, `S0_1` en GND) en een
-  schroefconnector voor 1-wire-sensoren. Het bordje vanaf v3.3 heeft drie vrije GPIO's.
+  schroefconnector voor 1-wire-sensoren (GND, data, 3,3 V). Op de foto van de v3-print heten de
+  S0-klemmen `S0_1`, `S0_2` en GND; de print heeft ook een programmeerheader (3V, TX, RX, GND). Het bordje vanaf v3.3 heeft drie vrije GPIO's.
   Er is ook een versie voor een OpenTherm-thermostaat (in 2023 nog in bèta). De logica
   daarvoor maakt u zelf, bijv. met rules.
 
@@ -44,7 +64,7 @@ Op Tweakers heeft HeishaMon een eigen topic.
 
 ### Bronnen
 
-- [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart: Tindie, S0, Dallas-sensoren
+- [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart: Tindie, S0, Dallas-sensoren; klemmen v3-print (foto)
 - [FransvWoerkom, 2026-01-01](https://gathering.tweakers.net/forum/list_message/84303098#84303098): Large-versie met proxypoort
 - [Tiesert, 2026-04-06](https://gathering.tweakers.net/forum/list_message/85008894#85008894): cloudadapter op de proxy, instellingen wijzigen werkt
 - [blb4, 2025-01-12](https://gathering.tweakers.net/forum/list_message/81293842#81293842): ethernet-versie, maximale kabellengte, OpenTherm via rules
@@ -68,8 +88,9 @@ De print heeft ook `CN-NMODE`, een 4-pins JST PH-connector. Die is elektrisch ve
   voor het uitbreidingsboard.
 
 !!! warning "Netspanning op de print"
-    Op de hoofdprint staan hoge spanningen (bijv. 320 V op `CN-PUMP1`). Schakel de spanning uit
-    voordat u een kabel aansluit.
+    Op de hoofdprint staan hoge spanningen (bijv. 320 V op `CN-PUMP1`; handleiding H20: 280–373 V DC (handleiding, foto)). Schakel de spanning uit
+    voordat u een kabel aansluit. De handleiding noemt voor de pomp-aansluiting 280–373 V DC (pin 1 en 4)
+    en noemt die `CN-PUMP2`; op de print van een J-serie heet hij `CN-PUMP1`.
 
 ### Bronnen
 
@@ -77,7 +98,7 @@ De print heeft ook `CN-NMODE`, een 4-pins JST PH-connector. Die is elektrisch ve
 - [thehog, 2023-02-20](https://gathering.tweakers.net/forum/list_message/74523396#74523396): alleen nog `CN-NMODE`-kabels, normaal of listen only
 - [thehog, 2023-02-20](https://gathering.tweakers.net/forum/list_message/74523546#74523546): `CN-NMODE` elektrisch verbonden; geen 12 V
 - [FransvWoerkom, 2026-01-01](https://gathering.tweakers.net/forum/list_message/84303098#84303098): M-serie: `CN-CNT2` en `CN-CNT`
-- [bazzzzzz, 2024-05-12](https://gathering.tweakers.net/forum/list_message/78965128#78965128): 320 V op `CN-PUMP1`
+- [bazzzzzz, 2024-05-12](https://gathering.tweakers.net/forum/list_message/78965128#78965128): 320 V op `CN-PUMP1`; handleiding H20: 280–373 V DC (handleiding, foto)
 
 ## Alleen lezen of ook sturen
 

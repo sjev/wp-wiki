@@ -17,6 +17,17 @@ kamerthermostaat gebruikt.
   Voorbeeld: doel 30 °C → op 31 °C toert hij af naar minimum → na 3 min op 32 °C stopt hij.
 - Hij start weer als de watertemperatuur 3 °C onder de retourtemperatuur bij het stoppen
   ligt en hij minstens 3 minuten uit is geweest.
+
+```mermaid
+flowchart LR
+    A["Doel (Ta): lineair, naar boven afgerond"] --> B["Aanvoer bereikt doel: compressor toert terug"]
+    B --> C{"Aanvoer 2 °C of meer boven doel, 3 min?"}
+    C -- nee --> B
+    C -- ja --> D["Warmteproductie stopt"]
+    D --> E{"Water 3 °C onder retour bij stop en 3 min uit?"}
+    E -- nee --> D
+    E -- ja --> A
+```
 - Met de **shift** verschuift u de stooklijn van −5 tot +5 °C, op de afstandsbediening, in
   de cloud of met HeishaMon.
 
@@ -225,7 +236,10 @@ Algemene regels over SWW staan op [Tapwater](../general/hot-water.md). Panasonic
 
 - **DHW capacity** (*System setup → DHW capacity*, J-serie en nieuwer). *Standaard*: eerst
   vol vermogen tot de maximale aanvoer (57 °C bij een gebruiker met 9 kW), daarna hogere flow en
-  dalend vermogen. *Variabel*: niet het volle vermogen, dus minder geluid, bijv. 's nachts.
+  dalend vermogen. *Variabel*: niet het volle vermogen, dus minder geluid, bijv. 's nachts. Volgens de
+  handleiding verwarmt *Variabel* de tank snel op en houdt hij de temperatuur daarna efficiënt
+  vast; *Standaard* verwarmt met het nominale vermogen. De optie is er alleen als de
+  tankaansluiting (*Tank connection*) op *YES* staat.
   Bij `F12` adviseerde een Panasonic-monteur *standaard*, zie
   [Storingen](troubleshooting.md#koelcircuit-en-compressor-f12-f14).
 - **Smart DHW** (J-serie): de tank overdag binnen een band van 5 °C houden. De H-serie kent
@@ -242,7 +256,7 @@ Algemene regels over SWW staan op [Tapwater](../general/hot-water.md). Panasonic
 
 ### Bronnen
 
-- [Thorsd, 2023-03-12](https://gathering.tweakers.net/forum/list_message/74738364#74738364): *System setup → DHW capacity*, gedrag bij *standaard*
+- [Thorsd, 2023-03-12](https://gathering.tweakers.net/forum/list_message/74738364#74738364): *System setup → DHW capacity*, gedrag bij *standaard* (handleiding)
 - [FransvWoerkom, 2024-06-25](https://gathering.tweakers.net/forum/list_message/79377300#79377300): H-serie timer; Smart DHW en DHW capacity bij J
 - [Thorsd, 2024-10-08](https://gathering.tweakers.net/forum/list_message/80346682#80346682): DHW capacity verlaagt het opwarmvermogen
 - [nMad, 2026-06-24](https://gathering.tweakers.net/forum/list_message/85553244#85553244): monteur zet DHW capacity op standaard
@@ -327,14 +341,16 @@ U komt er alleen bij als de warmtepomp uit staat.
 Een gebruiker met een J-serie had op *Auto* meerdere ontdooicycli per ochtend bij RH boven
 80 % en minder dan 6 °C. Na de wissel naar *Manual* had hij die niet meer. In de Service Cloud
 en bij de L-serie heet de optie *Ontdooi forceren* met de keuze *-* of *Aanvraag* (*request*);
-het topic geeft niet aan wat die keuze doet. Zie ook [Ontdooien](../general/defrost.md).
+het topic geeft niet aan wat die keuze doet.
+Volgens de handleiding start de unit op *Auto* een geforceerde ontdooiing na 3 uur draaien
+zonder ontdooicyclus bij een buitentemperatuur onder 5 °C. Zie ook [Ontdooien](../general/defrost.md).
 
 ### Bronnen
 
 - [cerebrum, 2026-01-04](https://gathering.tweakers.net/forum/list_message/84321840#84321840): *Installer Setup → System setup → Force Defrost*, op MANUAL, unit uit
 - [ErikVers, 2024-11-19](https://gathering.tweakers.net/forum/list_message/80758190#80758190): Auto ontdooit op tijdschema
 - [ErikVers, 2024-11-19](https://gathering.tweakers.net/forum/list_message/80758090#80758090): force defrost niet op auto
-- [cerebrum, 2024-11-19](https://gathering.tweakers.net/forum/list_message/80757786#80757786): van Auto naar Manual, geen extra ontdooicycli meer
+- [cerebrum, 2024-11-19](https://gathering.tweakers.net/forum/list_message/80757786#80757786): van Auto naar Manual, geen extra ontdooicycli meer; geforceerd ontdooien na 3 uur bij < 5 °C (handleiding)
 - [MisterMailman, 2024-11-19](https://gathering.tweakers.net/forum/list_message/80758126#80758126): Service Cloud: *Ontdooi forceren*, *-* of *Aanvraag*
 - [Joricobussen, 2026-01-04](https://gathering.tweakers.net/forum/list_message/84325724#84325724): L-serie: keuze *-* of *request*
 

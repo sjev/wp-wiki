@@ -26,12 +26,30 @@ Voorbeeld: de vloer geeft 1,5 kW af bij 25 °C water en 4,5 kW bij 35 °C. Het h
 1,5 kW bij 8 °C buiten en 4,5 kW bij −10 °C. De stooklijn is dan 25 °C @ 8 °C en
 35 °C @ −10 °C. Bij 0 °C buiten maakt de warmtepomp 29 °C water.
 
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#1e88e5, #e53935, #43a047"
+---
+xychart-beta
+    title "Stooklijn 25 °C @ 8 °C en 35 °C @ -10 °C"
+    x-axis "Buitentemperatuur (°C)" ["-10", "-7", "-4", "-1", "2", "5", "8"]
+    y-axis "Aanvoer (°C)" 20 --> 40
+    line [35, 33.3, 31.7, 30, 28.3, 26.7, 25]
+```
+
+Buiten de twee punten blijft de aanvoertemperatuur gelijk. Voorbeeld: 35 °C bij −5 °C en
+kouder, 28 °C bij 15 °C en warmer, met een rechte lijn ertussen.
+
 Met [vscope.at](https://vscope.at/) kunt u een stooklijn tekenen en de watertemperatuur bij
 elke buitentemperatuur aflezen.
 
 ### Bronnen
 
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, hoofdstuk *Stoken met een stooklijn*
+- [Daffy1982, 2023-11-26](https://gathering.tweakers.net/forum/list_message/77302484#77302484): vlakke delen buiten de twee punten; 35 °C @ −5 °C en 28 °C @ 15 °C (screenshot)
 
 ## Een eerste stooklijn bepalen
 
@@ -93,6 +111,31 @@ Wijkt de gemeten afgifte af van de berekening? Pas dan de stooklijn aan.
 - **Niet te steil.** Bij een steile lijn verandert de doeltemperatuur bij elke graad
   buitentemperatuur sterk. Als het plots kouder wordt, moet de warmtepomp dan ook veel
   harder werken, juist in het gebied met ontdooicycli.
+
+Schematisch voorbeeld op basis van de stooklijn hierboven. De extra lijnen zijn getekend
+ter illustratie en geen advies.
+
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#1e88e5, #e53935, #43a047"
+---
+xychart-beta
+    title "Verschuiven of vlakker maken"
+    x-axis "Buitentemperatuur (°C)" ["-10", "-7", "-4", "-1", "2", "5", "8"]
+    y-axis "Aanvoer (°C)" 20 --> 40
+    line [35, 33.3, 31.7, 30, 28.3, 26.7, 25]
+    line [37, 35.3, 33.7, 32, 30.3, 28.7, 27]
+    line [35, 34, 33, 32, 31, 30, 29]
+```
+
+- **Blauw:** de stooklijn van hierboven.
+- **Rood:** dezelfde lijn, 2 °C hoger. Elk punt schuift evenveel op. De helling blijft gelijk.
+  Zo werkt een correctie van een paar graden.
+- **Groen:** een vlakkere lijn. Het koude punt blijft gelijk en het warme deel ligt hoger.
+  De helling is kleiner, dus de doeltemperatuur verandert minder per graad buitentemperatuur.
 
 ### Bronnen
 

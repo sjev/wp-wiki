@@ -112,9 +112,41 @@ Het typenummer (5, 7, 9 kW) is niet het vermogen op de koudste dag. Bij lage
 buitentemperaturen levert een warmtepomp minder. Vergelijk het warmteverlies daarom met
 de tabel in de service manual, bij −7 of −10 °C en de watertemperatuur die u nodig hebt.
 
+Voorbeeld uit datasheets, bij −7 °C buiten en 35 °C aanvoer: een model van 7 kW levert
+5,5 kW (ene serie) of 6,8 kW (andere serie). Een model van 9 kW levert 6,4 of 7,5 kW. Bij
++2 °C levert het 7 kW-model 6,3 kW (ene serie).
+
+Ter illustratie: de grafiek zet het warmteverlies uit het graaddagenvoorbeeld (0,346 kW
+per graad, 18 °C stookgrens) naast het vermogen van een model van 7 kW. Het vermogen is tussen
+−7 en +2 °C geïnterpoleerd en daarboven rechtdoor getrokken. Bij ongeveer 0 °C wordt het vermogen te klein. Daaronder
+springt het element bij.
+
+```mermaid
+---
+config:
+  themeVariables:
+    xyChart:
+      plotColorPalette: "#1e88e5, #e53935"
+---
+xychart-beta
+    title "Warmteverlies en vermogen (ter illustratie)"
+    x-axis "Buitentemperatuur (°C)" ["-7", "-4", "-1", "2", "5"]
+    y-axis "Vermogen (kW)" 3 --> 9
+    line [8.65, 7.61, 6.57, 5.54, 4.50]
+    line [5.5, 5.77, 6.03, 6.3, 6.57]
+```
+
+- **Blauw:** warmteverlies van de woning (0,346 kW × (18 °C − buitentemperatuur)).
+- **Rood:** vermogen van de warmtepomp bij 35 °C aanvoer.
+- Waar blauw boven rood ligt, mist de warmtepomp vermogen. Het element vult dat aan.
+
 Ook ontdooien kost vermogen. Rond het vriespunt, bij vochtig weer, ontdooit de
 warmtepomp vaak. Het effectieve vermogen kan dan ongeveer 20 % lager zijn. Bij strenge
 vorst ontdooit hij minder vaak. Zie [Ontdooien](defrost.md).
+
+Een meting op de koudste dag van een winter toont het effect. Het geleverde vermogen
+schommelt tussen ongeveer 7 en 9 kW. Bij elke ontdooibeurt zakt het naar 4 à 4,5 kW. Het
+element springt dan kort bij, met 1 à 2 kW.
 
 Een klein tekort op de koudste uren is meestal geen probleem:
 
@@ -129,11 +161,11 @@ tapwater en 7 uur nachtverlaging laten 15 uur over.
 
 ### Bronnen
 
-- [poing, 2022-08-11](https://gathering.tweakers.net/forum/list_message/72398256#72398256): vermogen bij −7 °C lager dan het typenummer
-- [jurjen_g, 2022-08-11](https://gathering.tweakers.net/forum/list_message/72398490#72398490): tekort van 1 kW gedurende 10 uur; massa buffert
+- [poing, 2022-08-11](https://gathering.tweakers.net/forum/list_message/72398256#72398256): vermogen bij −7 °C lager dan het typenummer; datasheetwaarden (screenshot)
+- [jurjen_g, 2022-08-11](https://gathering.tweakers.net/forum/list_message/72398490#72398490): tekort van 1 kW gedurende 10 uur; massa buffert; datasheetwaarden (screenshot)
 - [JanAllElectric, 2022-01-09](https://gathering.tweakers.net/forum/list_message/70148864#70148864): vermogen zakt in rond het vriespunt, in de praktijk te weinig
 - [Thorsd, 2023-12-01](https://gathering.tweakers.net/forum/list_message/77367830#77367830): ontdooien kost ongeveer 20 % vermogen; minder bij strenge vorst
-- [Speedsmile, 2021-10-11](https://gathering.tweakers.net/forum/list_message/69022530#69022530): element komt boven op het compressorvermogen
+- [Speedsmile, 2021-10-11](https://gathering.tweakers.net/forum/list_message/69022530#69022530): element komt boven op het compressorvermogen; vermogen en element tijdens ontdooien (grafiek)
 - [blb4, 2023-12-19](https://gathering.tweakers.net/forum/list_message/77553994#77553994): tapwater en nachtverlaging verkorten de beschikbare uren
 
 ## Het minimale vermogen

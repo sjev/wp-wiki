@@ -9,11 +9,28 @@ verwarmingsspiraal, een driewegklep en een temperatuursensor in het vat nodig. T
 SWW-run zet de driewegklep het cv-water van de warmtepomp door de spiraal in het vat.
 Een buffervat is geen boilervat: het water in een buffervat is cv-water, geen tapwater.
 
+```mermaid
+flowchart LR
+    WP["Warmtepomp"] --> K{"Driewegklep"}
+    K -->|"verwarmen"| CV["Verwarmingscircuit"]
+    K -->|"SWW-run"| SP["Spiraal in boilervat"]
+    SP --> WP
+    CV --> WP
+    S["Temperatuursensor in vat"] -.->|"vat te koud: start SWW-run"| K
+```
+
+De driewegklep heeft een motor. Er zijn twee soorten. Een klep met een kamer sluit vaak niet
+helemaal af. Dat geeft problemen bij vloerverwarming of koeling. Een kogelkraan met een
+T-boring draait zwaarder, maar lekt weinig water tussen beide circuits. Bij een boilervat hoort ook
+een NTC-sensor. Een NTC met een andere B-waarde dan de regeling verwacht, meet fout: bij 60 °C
+ongeveer 1,5 °C (B 3560) tot 5,5 °C (B 4000) afwijking. Een thermostatische mengkraan op de
+tapwateruitgang beperkt de uitlooptemperatuur.
+
 Voor legionella en de wekelijkse verhitting, zie [legionella](legionella.md).
 
 ### Bronnen
 
-- [Ep Woody, 2020-12-17](https://gathering.tweakers.net/forum/list_message/65288280#65288280): topicstart deel 1, *Boilervat*
+- [Ep Woody, 2020-12-17](https://gathering.tweakers.net/forum/list_message/65288280#65288280): topicstart deel 1, *Boilervat*, *Driewegklep* (schema, foto)
 - [sjimmie, 2022-03-02](https://gathering.tweakers.net/forum/list_message/70790066#70790066): buffervat is niet bruikbaar voor SWW
 
 **Zie ook:** [Legionella](legionella.md) · [Ontdooien](defrost.md) · [Panasonic: instellingen](../panasonic/settings.md)
@@ -132,6 +149,9 @@ en de spiraal. Gemelde waarden:
 | 9 kW | 300 L | 20 → 45 °C | ca. 45 min |
 | — | 200 L | 47 → 52 °C | ca. 30 min |
 
+Voorbeeld uit een grafiek: een vat van 300 L gaat van ca. 42 naar ca. 53 °C in ongeveer
+anderhalf uur. De compressor begint op ca. 59 Hz en zakt tot ca. 17 Hz.
+
 Een venster van een uur is voor een dagelijkse run van een 200 L-vat meestal genoeg.
 Duurt opwarmen veel langer, controleer dan de instellingen en de aansluiting.
 
@@ -160,6 +180,9 @@ de warmtepomp of domotica. Eén run per dag is meestal genoeg.
 - **Vangnet.** Zet buiten het venster een lage doeltemperatuur, bijv. 42 °C. Het vat warmt dan
   alleen bij als het na veel douchen echt leeg is.
 
+Een regeling kan bijvoorbeeld een maximale opwarmtijd voor het vat hebben (bijv. 180 min) en
+een schakelverschil (bijv. −7 °C: de run start als het vat 7 °C onder het doel zakt).
+
 Start de warmtepomp te vaak voor het vat? Vergroot dan het temperatuurverschil waarbij het vat
 opnieuw opwarmt, of plan één dagelijkse run. Een sensor hoger in het vat (bijv. op 2/3 in
 plaats van 1/3 van de hoogte) start de run later. U doet dan langer met het vat.
@@ -172,7 +195,7 @@ plaats van 1/3 van de hoogte) start de run later. U doet dan langer met het vat.
 - [twain4me, 2021-01-17](https://gathering.tweakers.net/forum/list_message/65728900#65728900): vat als warmtebatterij voor zonnestroom
 - [I-King, 2022-06-16](https://gathering.tweakers.net/forum/list_message/71857398#71857398): 56 °C in de middag, 42 °C daarbuiten
 - [Thorsd, 2024-02-19](https://gathering.tweakers.net/forum/list_message/78183208#78183208): groter temperatuurverschil, dagelijkse run, sensor hoger
-- [Ethirty, 2024-08-13](https://gathering.tweakers.net/forum/list_message/79827810#79827810): sensor van 1/3 naar 2/3, langer met het vat doen
+- [Ethirty, 2024-08-13](https://gathering.tweakers.net/forum/list_message/79827810#79827810): sensor van 1/3 naar 2/3, langer met het vat doen; opwarmgrafiek en instelscherm (screenshot)
 
 ## Elektrisch element in het vat
 

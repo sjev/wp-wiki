@@ -66,14 +66,51 @@ het minimale vermogen van de warmtepomp altijd kwijt kan. Zie [Stooklijn](heatin
 Volgens twee gebruikers verlaagt een vat in de retour de efficiëntie niet. Staat het vat binnen, dan
 blijft het warmteverlies in de woning.
 
+```mermaid
+flowchart LR
+    WP["Warmtepomp"] -->|aanvoer| AF["Afgiftesysteem"]
+    AF -->|retour| V["Buffervat in de retour"]
+    V --> WP
+```
+
 **Parallel** scheidt het vat de kring van de warmtepomp (primair) van de kring van het
 afgiftesysteem (secundair). Elke kring heeft een eigen pomp. Een open verdeler of een
 low-loss header werkt hetzelfde: het is een parallel vat met (bijna) geen inhoud.
 Daarvoor zijn twee T-stukken op korte afstand genoeg.
 
+Vat met 4 aansluitingen. Elke kring heeft een eigen pomp:
+
+```mermaid
+flowchart LR
+    subgraph P["Primair: warmtepomp"]
+        WP["Warmtepomp"] --- PP["Pomp primair"]
+    end
+    V["Buffervat (4 aansluitingen)"]
+    subgraph S["Secundair: afgifte"]
+        SP["Pomp secundair"] --- AF["Afgiftesysteem"]
+    end
+    PP -->|aanvoer| V
+    V -->|retour| WP
+    V -->|aanvoer| SP
+    AF -->|retour| V
+```
+
 Met T-stukken haalt het afgiftesysteem het water direct uit de aanvoer van de warmtepomp.
 De aanvoertemperatuur blijft daardoor beter behouden. Het nadeel: de warmtepomp kan
 terugmoduleren op de retour, terwijl het afgiftesysteem veel warmte vraagt.
+
+Aansluiting met twee T-stukken. Het afgiftesysteem trekt water uit de aanvoer:
+
+```mermaid
+flowchart LR
+    WP["Warmtepomp"] -->|aanvoer| T1(("T-stuk"))
+    T1 --> V["Buffervat"]
+    V --> T2(("T-stuk"))
+    T1 -->|aanvoer| SP["Pomp secundair"]
+    SP --> AF["Afgiftesysteem"]
+    AF -->|retour| T2
+    T2 -->|retour| WP
+```
 
 ### Bronnen
 
@@ -84,7 +121,7 @@ terugmoduleren op de retour, terwijl het afgiftesysteem veel warmte vraagt.
 - [FransvWoerkom, 2022-12-06](https://gathering.tweakers.net/forum/list_message/73706528#73706528): hydraulische scheiding als parallel vat met nul inhoud tussen twee T-stukken
 - [FransvWoerkom, 2022-04-12](https://gathering.tweakers.net/forum/list_message/71229518#71229518): ontkoppeling, ook met een stuk pijp
 - [Thorsd, 2022-12-06](https://gathering.tweakers.net/forum/list_message/73704008#73704008): T-stukken vs. 4 aansluitingen; mengend vat
-- [Thorsd, 2022-12-06](https://gathering.tweakers.net/forum/list_message/73706308#73706308): terugmoduleren bij T-stuk-aansluiting
+- [Thorsd, 2022-12-06](https://gathering.tweakers.net/forum/list_message/73706308#73706308): terugmoduleren bij T-stuk-aansluiting (grafiek)
 
 ## Grootte
 
@@ -176,6 +213,6 @@ Zie [Panasonic: storingen, `H65`](../panasonic/troubleshooting.md#ontdooien-h65-
 
 - [FransvWoerkom, 2023-12-13](https://gathering.tweakers.net/forum/list_message/77497924#77497924): vat in de retour helpt bij ontdooien, voorkomt backup heater
 - [FransvWoerkom, 2023-03-10](https://gathering.tweakers.net/forum/list_message/74713018#74713018): vat in serie met de retour voor langer ontdooien
-- [blb4, 2023-01-28](https://gathering.tweakers.net/forum/list_message/74290750#74290750): 50 L in de retour met bypass; energie komt uit het vat
+- [blb4, 2023-01-28](https://gathering.tweakers.net/forum/list_message/74290750#74290750): 50 L in de retour met bypass; energie komt uit het vat (schema)
 - [FransvWoerkom, 2022-01-21](https://gathering.tweakers.net/forum/list_message/70310668#70310668): vloer als buffer voor ontdooien
 - [FransvWoerkom, 2022-11-13](https://gathering.tweakers.net/forum/list_message/73448620#73448620): koud retourwater in de aanvoer; vat helpt niet; koppelingen kunnen het hebben

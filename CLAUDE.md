@@ -29,6 +29,7 @@ docs/<brand>/                       brand-, model- or firmware-specific knowledg
 ## Research tools
 
 All print Markdown and read `data/posts/*.jsonl`. Quoted lines (`> `) are stripped.
+`[afbeelding]` marks a user image; its URL is in the post's `images` (quoted images excluded).
 
 | Command | Use |
 |---|---|

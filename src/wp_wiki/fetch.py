@@ -50,6 +50,9 @@ class Fetcher:
         return self.client.get(unquote(match.group(1)))
 
     def get(self, url: str) -> str:
+        return self.get_response(url).text
+
+    def get_response(self, url: str) -> httpx.Response:
         for attempt in range(1, self.retries + 1):
             self._throttle()
             try:
@@ -67,7 +70,7 @@ class Fetcher:
                 time.sleep(wait)
                 continue
             resp.raise_for_status()
-            return resp.text
+            return resp
         raise FetchError(f"Giving up on {url} after {self.retries} attempts")
 
 

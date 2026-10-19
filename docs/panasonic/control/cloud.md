@@ -25,6 +25,9 @@ Daarna kunt u de warmtepomp op afstand bedienen en uitlezen. Er zijn twee omgevi
 - De adapter werkt via een netwerkkabel of wifi. Wifi stelt u in met WPS. Zet WPS eerst aan
   op de router. Zonder WPS: zet een bestand `settings.txt` op een USB-stick met twee regels,
   `SSID=<netwerknaam>` en `KEY=<wachtwoord>`, en steek de stick in de adapter.
+- De adapter werkt alleen op 2,4 GHz (802.11 b/g/n). Hij heeft één Ethernet-poort en één USB-poort.
+  Volgens de handleiding laadt de adapter de wifi-gegevens van de USB-stick als u de WPS-knop
+  10 s ingedrukt houdt. De link-led gaat dan branden.
 - Monteer de bijgeleverde ferrietkern om de kabel naar de hoofdprint.
 - Valt de verbinding vaak weg met de adapter in de behuizing van de warmtepomp? Hang de
   adapter buiten de behuizing. Dit helpt niet altijd.
@@ -40,7 +43,7 @@ Daarna kunt u de warmtepomp op afstand bedienen en uitlezen. Er zijn twee omgevi
 - [wortelsky, 2024-12-18](https://gathering.tweakers.net/forum/list_message/81067110#81067110): wifi-module standaard bij de L-serie
 - [Beninho, 2023-10-31](https://gathering.tweakers.net/forum/list_message/77023626#77023626): WLAN standaard bij de L-serie; CZ-TAW1 nog nodig?
 - [FransvWoerkom, 2022-12-18](https://gathering.tweakers.net/forum/list_message/73847008#73847008): EMC-kern, reset, WPS op de router
-- [t.oswald, 2022-12-18](https://gathering.tweakers.net/forum/list_message/73847248#73847248): wifi instellen met `settings.txt`
+- [t.oswald, 2022-12-18](https://gathering.tweakers.net/forum/list_message/73847248#73847248): wifi instellen met `settings.txt` (handleiding)
 - [rykers, 2023-02-11](https://gathering.tweakers.net/forum/list_message/74436912#74436912): verbinding beter buiten de behuizing
 - [schrobbelbob, 2023-02-11](https://gathering.tweakers.net/forum/list_message/74437862#74437862): dagelijks verbinding kwijt, ook buiten de behuizing
 - [t.oswald, 2021-11-30](https://gathering.tweakers.net/forum/list_message/69654368#69654368): reset en opnieuw installeren
@@ -101,7 +104,7 @@ Tips:
   Panasonic werken op het moment van schakelen. Zie [Weektimers](#weektimers).
 - Via IFTTT kunt u de cloud koppelen aan andere apparaten. Voorbeelden: de shift aanpassen op
   de kamertemperatuur van een slimme thermostaat, of meer punten in de stooklijn maken met de
-  shift (−5 tot +5). U bent dan afhankelijk van internet, de Panasonic-cloud en IFTTT.
+  shift (−5 tot +5). De IFTTT-actie voor de cloud heet *Change Heat Mode settings*. U bent dan afhankelijk van internet, de Panasonic-cloud en IFTTT.
 - Een Home Assistant-integratie voor de Smart Cloud gooit de gewone gebruikerssessie eruit,
   omdat maar één login tegelijk actief kan zijn. Bij één gebruiker stopte de integratie toen de
   website op 8 mei 2025 verdween.
@@ -112,7 +115,7 @@ Tips:
 - [FransvWoerkom, 2025-04-26](https://gathering.tweakers.net/forum/list_message/82279868#82279868): Smart Cloud vervangen door de Comfort Cloud-app
 - [FransvWoerkom, 2026-04-14](https://gathering.tweakers.net/forum/list_message/85068942#85068942): app-timer afhankelijk van internet en servers; Comfort Cloud heette eerst Smart Cloud
 - [Ethirty, 2024-12-28](https://gathering.tweakers.net/forum/list_message/81146686#81146686): shift, SWW-temperatuur en verbruiksgrafieken in de app
-- [t.oswald, 2021-10-15](https://gathering.tweakers.net/forum/list_message/69061576#69061576): IFTTT met Tado, SmartLife en Smart Cloud
+- [t.oswald, 2021-10-15](https://gathering.tweakers.net/forum/list_message/69061576#69061576): IFTTT met Tado, SmartLife en Smart Cloud (screenshot)
 - [ErikVers, 2024-12-28](https://gathering.tweakers.net/forum/list_message/81144968#81144968): extra stooklijnpunten met shift via IFTTT
 - [Tiesert, 2023-01-06](https://gathering.tweakers.net/forum/list_message/74043386#74043386): afhankelijk van internet, cloud en IFTTT
 - [Deismyna, 2023-11-03](https://gathering.tweakers.net/forum/list_message/77056184#77056184): Home Assistant-integratie, maar één login actief
@@ -122,6 +125,9 @@ Tips:
 
 - U ziet en wijzigt alle instellingen van de warmtepomp. Instellingen gaan naar de warmtepomp
   alsof u ze op de controller invoert.
+- De Service Cloud heeft de tabbladen *Status*, *Instellingen* en *Statistieken*. Boven de
+  statistieken staat uw toegangsrecht, bijvoorbeeld *Volledige toegang*. Grafieken kunt u
+  als CSV downloaden.
 - Het tabblad *Status* toont actuele waarden, zoals de stand van de driewegklep en of de
   warmtepomp in *Power Off* of *Thermo Off* staat.
 - **Logging:** de warmtepomp logt meer dan 50 meetwaarden en setpoints elke 5 minuten. De
@@ -139,7 +145,7 @@ Tips:
 - [FransvWoerkom, 2025-07-10](https://gathering.tweakers.net/forum/list_message/82890964#82890964): stand driewegklep op het statusscherm
 - [FransvWoerkom, 2025-11-17](https://gathering.tweakers.net/forum/list_message/83958946#83958946): *Power Off* of *Thermo Off* op het statusscherm
 - [FransvWoerkom, 2026-01-28](https://gathering.tweakers.net/forum/list_message/84517528#84517528): logging 5 min, 7 dagen, 10 waarden per grafiek; datalog 30 s
-- [TomN87, 2026-08-18](https://gathering.tweakers.net/forum/list_message/85952120#85952120): meetpunt elke 5 minuten, korte stops niet zichtbaar
+- [TomN87, 2026-08-18](https://gathering.tweakers.net/forum/list_message/85952120#85952120): meetpunt elke 5 minuten, korte stops niet zichtbaar; tabbladen en CSV (screenshot)
 - [FransvWoerkom, 2025-04-26](https://gathering.tweakers.net/forum/list_message/82279868#82279868): geen stroomverbruik per periode in de Service Cloud
 
 ## Verbruik en COP in de cloud
@@ -238,6 +244,26 @@ HeishaMon is een open-source alternatief dat lokaal werkt
 
 Voor *Listen only* naast de CZ-TAW1 hebt u HeishaMon-firmware 3.1 of nieuwer nodig. Oudere
 firmware laat de verbinding van de CZ-TAW1 steeds wegvallen, ook in *Listen only*.
+
+Schema van de routes bij een kleine HeishaMon-print (*Listen only*). De cloudroute loopt via de
+CZ-TAW1. HeishaMon werkt lokaal.
+
+```mermaid
+flowchart LR
+    WP["Warmtepomp"]
+    TAW["CZ-TAW1 op CN-CNT"]
+    CLOUD["Panasonic-cloud"]
+    APP["App Comfort Cloud"]
+    SC["Service Cloud"]
+    IFTTT["IFTTT"]
+    HM["HeishaMon op CN-NMODE (Listen only)"]
+    WP --- TAW
+    TAW --- CLOUD
+    CLOUD --- APP
+    CLOUD --- SC
+    CLOUD --- IFTTT
+    WP --- HM
+```
 
 ### Bronnen
 

@@ -29,6 +29,25 @@ en [Panasonic: storingen bij het ontdooien](../panasonic/troubleshooting.md#ontd
   verdamper), niet naar de buitentemperatuur. Daalt die leidingtemperatuur ver onder de
   buitentemperatuur (bijv. 10 °C eronder), dan start het ontdooien. Een afwijkende sensor
   kunt u controleren in een bak ijswater (0 °C).
+- **Voorbeeld van een cyclus.** De verdampertemperatuur zakt eerst ver weg (in een voorbeeld
+  naar ongeveer −12 °C) en de ontdooiregeling start op het laagste punt. De compressor stopt
+  kort en gaat daarna hard draaien. Het pompdebiet stijgt (in een voorbeeld van 10 naar
+  20 l/min). De verdampertemperatuur stijgt naar ongeveer 0 °C. Het stroomverbruik springt
+  kort van ongeveer 0,5 kW naar 4–5 kW.
+
+```mermaid
+stateDiagram-v2
+    direction LR
+    [*] --> Verwarmen
+    Verwarmen: Normaal verwarmen
+    Verwarmen --> IJs: vocht bevriest op de verdamper
+    IJs: IJs op de verdamper
+    IJs --> Omkeren: verdampertemperatuur ver onder buitentemperatuur
+    Omkeren: Compressor stopt, koudemiddel keert om
+    Omkeren --> Ontdooien: warmte uit het cv-water
+    Ontdooien: Verdamper wordt warm, ijs smelt
+    Ontdooien --> Verwarmen: ontdooien klaar (6 tot 10 minuten)
+```
 
 ### Welk weer geeft de meeste ontdooicycli
 
@@ -48,9 +67,9 @@ boven nul.
 - [thehog, 2021-10-22](https://gathering.tweakers.net/forum/list_message/69141716#69141716): bevriest omdat hij draait, niet omdat hij uit staat
 - [ErikKo, 2023-11-26](https://gathering.tweakers.net/forum/list_message/77303766#77303766): compressor stopt voor het omkeren
 - [flippy, 2022-11-19](https://gathering.tweakers.net/forum/list_message/73520304#73520304): start op verdampertemperatuur; sensor in ijswater controleren
-- [martijn v o, 2022-12-10](https://gathering.tweakers.net/forum/list_message/73752962#73752962): start als de leiding ongeveer 10 °C onder de buitentemperatuur zit
+- [martijn v o, 2022-12-10](https://gathering.tweakers.net/forum/list_message/73752962#73752962): start als de leiding ongeveer 10 °C onder de buitentemperatuur zit; leidingtemperatuur ongeveer −12 tot 0 °C, debiet 10 naar 20 l/min (grafiek)
 - [t.oswald, 2021-10-22](https://gathering.tweakers.net/forum/list_message/69141230#69141230): meeste ontdooicycli bij 3–5 °C en hoge luchtvochtigheid
-- [dof, 2023-04-29](https://gathering.tweakers.net/forum/list_message/75196168#75196168): ontdooien bij 4 °C en vochtig weer
+- [dof, 2023-04-29](https://gathering.tweakers.net/forum/list_message/75196168#75196168): ontdooien bij 4 °C en vochtig weer; start op het laagste punt van de verdampertemperatuur; verbruik van 0,4–0,6 kW naar 4–5 kW (grafiek)
 - [ecn1985, 2025-12-29](https://gathering.tweakers.net/forum/list_message/84279072#84279072): mist rond het vriespunt geeft veel ontdooicycli
 - [FransvWoerkom, 2026-01-07](https://gathering.tweakers.net/forum/list_message/84352638#84352638): onder −2 °C bij droge oostenwind stoppen de ontdooicycli
 

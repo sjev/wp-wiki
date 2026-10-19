@@ -29,7 +29,8 @@ Bij hetzelfde vermogen geeft meer flow een kleinere ΔT. Een radiator of vloer g
 op de gemiddelde watertemperatuur. Met een kleine ΔT is het gemiddelde hoger bij dezelfde
 aanvoertemperatuur. Daardoor kan de aanvoertemperatuur omlaag, en dat verhoogt de COP.
 Voorbeeld: 25 °C aanvoer met ΔT 4 bij 5 l/min geeft evenveel warmte als 24 °C aanvoer met
-ΔT 2 bij 10 l/min.
+ΔT 2 bij 10 l/min. Een meting op een vloer laat hetzelfde zien: bij 2,6 kW en een gelijke
+aanvoertemperatuur gaat de ΔT van 5 naar 3 °C als de flow stijgt van 9,4 naar 15,5 l/min.
 
 Meer flow kost wel pompvermogen. Zo vindt u het optimum voor uw systeem:
 
@@ -54,7 +55,7 @@ bij vol vermogen.
 
 - [FransvWoerkom, 2022-12-06](https://gathering.tweakers.net/forum/list_message/73702080#73702080): formule vermogen = flow × ΔT × 69,73
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Optimale pompsnelheid*: gemiddelde watertemperatuur, methode, optimum per belasting
-- [John lamers, 2023-02-22](https://gathering.tweakers.net/forum/list_message/74550264#74550264): meer flow, kleinere ΔT bij gelijk vermogen
+- [John lamers, 2023-02-22](https://gathering.tweakers.net/forum/list_message/74550264#74550264): meer flow, kleinere ΔT bij gelijk vermogen (grafiek)
 - [Noutie, 2023-11-18](https://gathering.tweakers.net/forum/list_message/77219110#77219110): kleine ΔT, lagere aanvoer, winst groter dan pompstroom
 - [BarryH, 2023-11-19](https://gathering.tweakers.net/forum/list_message/77222670#77222670): kleine ΔT geeft hogere gemiddelde temperatuur en betere COP
 - [ErikVers, 2023-11-18](https://gathering.tweakers.net/forum/list_message/77216006#77216006): ΔT 20 % van de aanvoer; 6 °C vloer, 7 °C radiatoren
@@ -136,6 +137,18 @@ er bedoeld is.
 - Een RTL-ventiel meet de watertemperatuur (meestal retour, ongeveer 30 °C), niet de
   ruimtetemperatuur. Het werkt goed met een warmtepomp als de flow door de vloer voldoende is.
 
+Waterpad bij een mengverdeler naast radiatoren (voorbeeld uit de tekst hierboven):
+
+```mermaid
+flowchart LR
+    WP["Warmtepomp"] -->|"aanvoer, bijv. 40 °C"| R["Radiatoren"]
+    WP -->|"aanvoer, bijv. 40 °C"| MV["Mengverdeler met pomp (thermostaat bijv. 25 °C)"]
+    MV --> VG["Vloergroepen"]
+    VG --> MV
+    MV -->|"retour: mengsel van alle retouren"| WP
+    R -->|"retour"| WP
+```
+
 ### Bronnen
 
 - [flippy, 2022-03-09](https://gathering.tweakers.net/forum/list_message/70878802#70878802): open = met pomp, gesloten = zonder pomp; liever pomp eruit dan buffervat
@@ -213,8 +226,21 @@ pomp als alle kranen dicht zijn. Bij een warmtepomp is hij meestal een probleem.
 - **Bypass bij ontdooien.** Sommigen gebruiken een drukgevoelige bypass bij een seriebuffer.
   Tijdens het ontdooien gaat de pomp hard en opent de bypass. Dat vermindert ruisende
   leidingen. Controleer zo'n bypass wel: hij mag in normaal bedrijf niet openstaan.
+  Voorbeeld uit een installatieschema: een drukverschilregelaar tussen aanvoer en de
+  ingang van een buffervat van 50 l in de retour. Normaal is de flow 10–16 l/min.
 - Een zoneregeling die de pomp laat draaien terwijl alle zones dicht zijn, pompt het water
   alleen door de bypass rond. Dat kost energie en geeft geluid.
+
+Waterpad met een open bypass:
+
+```mermaid
+flowchart LR
+    WP["Warmtepomp met pomp"] -->|"aanvoer"| B{"Bypass open? (verschildruk te hoog)"}
+    B -->|"veel water: direct terug"| T["Retour naar warmtepomp"]
+    B -->|"weinig"| A["Afgiftesysteem"]
+    A --> T
+    T --> WP
+```
 
 ### Bronnen
 
@@ -224,7 +250,7 @@ pomp als alle kranen dicht zijn. Bij een warmtepomp is hij meestal een probleem.
 - [FransvWoerkom, 2022-08-08](https://gathering.tweakers.net/forum/list_message/72367360#72367360): open bypass, warmte niet kwijt
 - [sjimmie, 2023-11-08](https://gathering.tweakers.net/forum/list_message/77107636#77107636): bypass: water te snel terug; hoge flow helpt niet
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Valkuilen*: cv-ketel als bypass, terugslagklep
-- [blb4, 2023-01-28](https://gathering.tweakers.net/forum/list_message/74290750#74290750): bypass opent bij ontdooien; minder ruis
+- [blb4, 2023-01-28](https://gathering.tweakers.net/forum/list_message/74290750#74290750): bypass opent bij ontdooien; minder ruis; drukverschilregelaar, buffervat 50 l (schema)
 - [ErikVers, 2024-12-05](https://gathering.tweakers.net/forum/list_message/80933276#80933276): drukgevoelige bypass; risico op valse bypass
 - [CyberHanz, 2022-12-18](https://gathering.tweakers.net/forum/list_message/73850182#73850182): zones dicht, water door bypass rondgepompt
 

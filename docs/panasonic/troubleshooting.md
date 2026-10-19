@@ -50,6 +50,20 @@ oorzaken die in de praktijk het vaakst voorkomen.
 `H20` meldt dat de circulatiepomp niet goed draait. Een bekende oorzaak is een pomp die
 vastzit door magnetiet. De pomp kunt u uitbouwen, openen en schoonmaken.
 
+!!! warning "Hoge spanning"
+    De pompstekker voert tot 373 V gelijkspanning. Laat metingen op de print over aan een
+    installateur. Schakel de spanning uit voordat u een stekker los- of vastmaakt.
+
+De service manual meet bij `H20` het toerental van de pomp (storing bij meer dan 6000 of minder
+dan 1000 omw/min, 5 seconden lang). Het stappenplan controleert in deze volgorde:
+
+1. Draait de pomp? Zo niet, controleer de stekker van de pomp.
+2. Aandrijfspanning 280–373 Vdc (pin 1 en 4), stuurspanning 15 Vdc (pin 5 en 4) en
+   stuursignaal 0–6 V (pin 6 en 4). Ontbreekt een van deze, dan is de printplaat defect.
+3. Zijn alle spanningen goed en draait de pomp toch niet, dan is de pomp defect.
+
+De handleiding noemt de stekker `CN-PUMP2`. Op een J-model zat hij op `CN-PUMP1`.
+
 Oplossen:
 
 1. Open de automatische ontluchter in de warmtepomp (het zwarte dopje los).
@@ -57,6 +71,21 @@ Oplossen:
 3. Vul tijdens het ontluchten water bij. De druk zakt als de lucht ontsnapt.
 4. Vul langzaam. Maak het vuilfilter schoon. Controleer of alle kranen en groepen open staan.
 5. Zet zoneregeling en thermostaatkranen tijdelijk open, zodat zij de flow niet blokkeren.
+
+Beslisboom voor `H62`:
+
+```mermaid
+flowchart TD
+    A["H62: waterflow te laag"] --> B{"Net gevuld of afgetapt?"}
+    B -->|Ja| C["Open de ontluchter, start air purge, vul langzaam bij"]
+    B -->|Nee| D{"Alle kranen en groepen open? Zoneregeling en thermostaatkranen open?"}
+    D -->|Nee| E["Open ze tijdelijk"]
+    D -->|Ja| F{"Vuilfilter schoon?"}
+    F -->|Nee| G["Maak het filter schoon (magnetiet)"]
+    F -->|Ja| H{"Driewegklep en leidingen goed aangesloten?"}
+    H -->|Nee| I["Herstel stand of aansluiting, bijv. aanvoer op retour"]
+    H -->|Ja| J["Pomp: zie H20, bouw uit en maak schoon"]
+```
 
 Druppelt de ontluchter na het ontluchten? Dan zit er vaak nog lucht in het systeem. Ontlucht
 af en toe opnieuw en let op de druk. Druppelt hij na een paar dagen nog, dan kunt u hem
@@ -73,7 +102,7 @@ sluiten. Test dan wel af en toe op lucht op het hoogste punt en bij het magneetf
 - [gazmask, 2024-10-09](https://gathering.tweakers.net/forum/list_message/80355250#80355250): aanvoer en retour verwisseld
 - [ErikVers, 2022-03-02](https://gathering.tweakers.net/forum/list_message/70791408#70791408): lucht in nieuwe spiraal bij eerste start
 - [koevlaas2, 2022-03-02](https://gathering.tweakers.net/forum/list_message/70801158#70801158): pijl op driewegklep klopt niet
-- [bazzzzzz, 2024-05-12](https://gathering.tweakers.net/forum/list_message/78965128#78965128): `H20` door vastgelopen pomp; spanning op `CN-PUMP1`
+- [bazzzzzz, 2024-05-12](https://gathering.tweakers.net/forum/list_message/78965128#78965128): `H20` door vastgelopen pomp; spanning op `CN-PUMP1` (handleiding, foto)
 - [FransvWoerkom, 2024-05-12](https://gathering.tweakers.net/forum/list_message/78967846#78967846): magnetiet in pompmotor; filter, air purge
 - [Thorsd, 2024-05-13](https://gathering.tweakers.net/forum/list_message/78969582#78969582): automatische ontluchter open zetten
 - [FransvWoerkom, 2023-09-02](https://gathering.tweakers.net/forum/list_message/76405700#76405700): druppelende ontluchter, nog lucht in de leidingen
@@ -115,7 +144,8 @@ en het retourwater te koud is (gemeld bij een retour van 18 °C; bij 20 °C ging
 `H70` betekent: de overbelastingsbeveiliging (OLP) van de backup heater is onderbroken.
 Dit gebeurt als u de voeding van de backup heater uitschakelt terwijl de heater in de
 instellingen aan staat. Lucht in de heater geeft dezelfde code. Laat bij de eerste start
-het ontluchtingsprogramma minstens 15 minuten draaien.
+het ontluchtingsprogramma minstens 15 minuten draaien. Het scherm toont
+*Back-up heater OLP error* met de keuzes *Close* en *Reset*.
 
 Backup heater uitzetten zonder storing: doe dit in het menu, niet met de groep in de meterkast.
 
@@ -137,7 +167,7 @@ moet daar een draadbrug op.
 - [Cubico, 2026-01-04](https://gathering.tweakers.net/forum/list_message/84327864#84327864): toetscombinatie Custom Menu, 10 s; geen beveiliging meer
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Koelen*: Custom Menu, 5 s
 - [Maestro, 2022-03-31](https://gathering.tweakers.net/forum/list_message/71108442#71108442): `H70` na uitschakelen groep backup heater
-- [Phyc, 2022-12-02](https://gathering.tweakers.net/forum/list_message/73664976#73664976): minstens 15 min air purge tegen `H70`
+- [Phyc, 2022-12-02](https://gathering.tweakers.net/forum/list_message/73664976#73664976): minstens 15 min air purge tegen `H70` (screenshot)
 - [Thorsd, 2023-02-02](https://gathering.tweakers.net/forum/list_message/74338944#74338944): `H91` en OLP van de tankheater
 - [FransvWoerkom, 2023-06-19](https://gathering.tweakers.net/forum/list_message/75696494#75696494): droogkookbeveiliging op `CN6-1,2` of draadbrug
 

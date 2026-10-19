@@ -25,6 +25,8 @@ vorstbeveiliging, als het vermogen tekortschiet en voor de sterilisatierun.
 - Bij de 3-fase T-CAP gebruikt alleen de 6 en 9 kW-stand de fasen L1 en L2. U kiest het
   vermogen in de systeeminstellingen.
 - Op dezelfde voeding zit ook de aansluiting voor de tankheater (booster heater).
+- Het 3-fase schema toont drie relais (`RY-HT`, één per fase L1 tot L3) voor de backup heater en
+  een apart relais (`RY-BOOSTER`) voor de tankheater.
 
 !!! warning "Aparte groep"
     De handleiding vraagt aparte groepen voor de warmtepomp en de backup heater.
@@ -39,7 +41,7 @@ vorstbeveiliging, als het vermogen tekortschiet en voor de sterilisatierun.
 ### Bronnen
 
 - [FransvWoerkom, 2021-12-05](https://gathering.tweakers.net/forum/list_message/69721994#69721994): `MXC12H9E8`: 3-fase Power Supply 2, keuze 3, 6 of 9 kW
-- [FransvWoerkom, 2022-01-13](https://gathering.tweakers.net/forum/list_message/70207402#70207402): vermogen in systeeminstellingen; L1 en L2 alleen bij 6 en 9 kW
+- [FransvWoerkom, 2022-01-13](https://gathering.tweakers.net/forum/list_message/70207402#70207402): vermogen in systeeminstellingen; L1 en L2 alleen bij 6 en 9 kW; relais per fase en voor de tankheater (schema)
 - [_Piwi_, 2022-01-28](https://gathering.tweakers.net/forum/list_message/70399908#70399908): uit, 3, 6 of 9 kW; 13 A
 - [ErikKo, 2023-08-04](https://gathering.tweakers.net/forum/list_message/76123812#76123812): Power Supply 2: 3-fase, 13 A, 9 kW
 - [FransvWoerkom, 2022-11-23](https://gathering.tweakers.net/forum/list_message/73568264#73568264): backup heater en tankheater op Power Supply 2
@@ -67,11 +69,28 @@ vorstbeveiliging, als het vermogen tekortschiet en voor de sterilisatierun.
   *Vertragingstijd voor Heater AAN* en *Watertemperatuur voor Heater AAN/UIT*. Voorbeeld:
   onder −5 °C buiten, Ta 10 minuten 6 °C onder het doel: heater aan; nog 3 °C verschil: uit.
   Zet u de buitentemperatuur op −20 °C, dan gaat de heater bij gewone verwarming praktisch
-  nooit aan.
+  nooit aan. Het instelbereik is −20 tot 15 °C, in stappen van 1 °C.
+- **Voorbeeld uit een 9J-scherm.** Buitentemperatuur voor heater aan: −5 °C. Vertraging:
+  30 minuten. Heater aan bij ΔT van −4 °C ten opzichte van het doel, uit bij −2 °C.
 - **T-CAP.** Een T-CAP ontdooit vooral op de compressor. Zie de discussie bij
   [storingen: ontdooien](../troubleshooting.md#ontdooien-h65-h75).
 - **SWW.** De heater bij de start van een SWW-run kunt u niet apart uitzetten. Alleen de hele
   heater uitzetten helpt.
+
+Schema voor de regels koude start, vorstbeveiliging en vermogen tekort:
+
+```mermaid
+flowchart LR
+    A["Warmtepomp draait"] --> B{"Tr na 20 minuten onder 20 °C?"}
+    B -- ja --> H["Heater aan"]
+    A --> C{"Aanvoer of retour onder 6 °C, pomp 4 minuten aan?"}
+    C -- ja --> H
+    H --> U["Boven 28 °C: heater uit"]
+    A --> D{"Buitentemperatuur onder Vrijgave buitentemperatuur?"}
+    D -- ja --> E{"Ta onder doel, langer dan Vertragingstijd voor Heater AAN?"}
+    E -- ja --> H
+    H --> F["Verschil kleiner dan Watertemperatuur voor Heater AAN/UIT: heater uit"]
+```
 
 ### Bronnen
 
@@ -87,7 +106,8 @@ vorstbeveiliging, als het vermogen tekortschiet en voor de sterilisatierun.
 - [klump4u, 2022-03-07](https://gathering.tweakers.net/forum/list_message/70858890#70858890): namen van de menu-items *Heater AAN/UIT*
 - [Ep Woody, 2022-02-10](https://gathering.tweakers.net/forum/list_message/70550542#70550542): heater aan bij 4+ °C onder doel, uit bij 2 °C onder doel
 - [Nnoitra, 2026-01-09](https://gathering.tweakers.net/forum/list_message/84377020#84377020): voorbeeld −5 °C, 6 °C, 10 minuten, 3 °C
-- [sjimmie, 2021-04-30](https://gathering.tweakers.net/forum/list_message/67121594#67121594): heater pas vanaf −20 °C buiten
+- [nokiaan958GB, 2024-11-30](https://gathering.tweakers.net/forum/list_message/80888854#80888854): 9J: −5 °C, 30 minuten, ΔT −4 en −2 °C (screenshot)
+- [sjimmie, 2021-04-30](https://gathering.tweakers.net/forum/list_message/67121594#67121594): heater pas vanaf −20 °C buiten; bereik −20 tot 15 °C (foto)
 - [ASW1, 2024-01-26](https://gathering.tweakers.net/forum/list_message/77935984#77935984): buitentemperatuur voor heater op −20 °C
 - [FransvWoerkom, 2022-11-23](https://gathering.tweakers.net/forum/list_message/73568264#73568264): T-CAP ontdooit op de compressor
 - [cerebrum, 2024-02-08](https://gathering.tweakers.net/forum/list_message/78082104#78082104): inlaat < 20 °C bij SWW-start; niet apart uit te zetten
@@ -118,7 +138,7 @@ en [Wat ontdooien kost](../../general/defrost.md#wat-ontdooien-kost).
 - [SJB, 2021-12-02](https://gathering.tweakers.net/forum/list_message/69673398#69673398): `MDC05H3E5`, 85 uur, ongeveer 250 kWh per jaar
 - [falconz, 2021-12-03](https://gathering.tweakers.net/forum/list_message/69682818#69682818): 5H, bijna 100 uur per jaar
 - [ErikVers, 2024-11-29](https://gathering.tweakers.net/forum/list_message/80882162#80882162): 100 uur in 5 jaar, 60 kWh per jaar
-- [nokiaan958GB, 2024-11-30](https://gathering.tweakers.net/forum/list_message/80888854#80888854): 9J, 70 uur; 9 keer 10 minuten
+- [nokiaan958GB, 2024-11-30](https://gathering.tweakers.net/forum/list_message/80888854#80888854): 9J, 70 uur; 9 keer 10 minuten; instelwaarden heater (screenshot)
 - [blb4, 2026-01-09](https://gathering.tweakers.net/forum/list_message/84372106#84372106): 7J, Ta 34 °C, ongeveer 1 kWh per dag
 - [Nnoitra, 2026-01-09](https://gathering.tweakers.net/forum/list_message/84377020#84377020): 7J, 22 ontdooicycli, 5 kWh
 - [Phyc, 2026-01-09](https://gathering.tweakers.net/forum/list_message/84371758#84371758): 7J, 7 uur en 21 kWh in 24 uur

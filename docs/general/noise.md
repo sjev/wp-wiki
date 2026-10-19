@@ -22,7 +22,8 @@ over trillingen en over een omkasting.
   huis doorgeven. Binnen hoort u dan een lage bromtoon.
 - **Ontdooien.** Tijdens het ontdooien komt er een wolk stoom van de verdamper. Dat is normaal.
   Het geluid binnen bij het ontdooien komt meestal van de hoge flow in de leidingen. Zie
-  [Ontdooien](defrost.md).
+  [Ontdooien](defrost.md). Bij ongeveer 2 °C buiten volgt er ongeveer elk uur een ontdooibeurt.
+  De compressor loopt dan kort op tot ongeveer 80 Hz.
 
 Een warmtepomp maakt het meeste geluid bij vorst, als hij op hoog vermogen draait. Een
 tapwaterrun kan even hard zijn. Wilt u een unit beluisteren voor u koopt, doe dat bij koud
@@ -37,7 +38,7 @@ weer of tijdens een tapwaterrun.
 - [Andrehj, 2022-04-14](https://gathering.tweakers.net/forum/list_message/71246208#71246208): meeste geluid bij vrieskou
 - [sjimmie, 2022-04-14](https://gathering.tweakers.net/forum/list_message/71247458#71247458): tapwaterrun vaak harder dan verwarmen in de winter
 - [dof, 2023-06-10](https://gathering.tweakers.net/forum/list_message/75600024#75600024): meer geluid bij hard werken en bij ontdooien
-- [Pazo, 2023-12-03](https://gathering.tweakers.net/forum/list_message/77385552#77385552): stoom van de unit tijdens het ontdooien
+- [Pazo, 2023-12-03](https://gathering.tweakers.net/forum/list_message/77385552#77385552): stoom van de unit tijdens het ontdooien; ontdooibeurt ongeveer elk uur (grafiek)
 - [Ethirty, 2026-01-06](https://gathering.tweakers.net/forum/list_message/84347444#84347444): stoom na het ontdooien is normaal
 - [blb4, 2024-01-08](https://gathering.tweakers.net/forum/list_message/77725638#77725638): geluid binnen bij ontdooien komt uit het afgiftesysteem
 
@@ -93,7 +94,9 @@ warmtepompgeluid. Reken uw eigen situatie door; neem geen oplossing van een ande
   doet weinig tegen lage tonen. Zet de unit op zware tegels of een betonblok. De fabrikant meet
   het geluid ook op een betonnen ondergrond.
 - **Veren.** Komt er toch een brom het huis in, zet dan veren onder de massa. Veren zijn vaak
-  niet nodig als er genoeg massa onder staat.
+  niet nodig als er genoeg massa onder staat. Kies veervoeten op het gewicht van de unit: een
+  datasheet geeft per voet een belastingsbereik, bijv. 46 tot 100 kg. De veren maken de unit
+  samen met de onderbouw hoger; reken met die hoogte.
 - **Rubber.** Rubberen dempers worden hard bij vorst. Dan werken zij minder goed.
 - **Houten dak.** Een houten dak of garagedak heeft een slechte naam. De planken tussen de
   balken resoneren op de lage tonen van de compressor. Verdeel het gewicht met een frame over
@@ -111,7 +114,7 @@ warmtepompgeluid. Reken uw eigen situatie door; neem geen oplossing van een ande
 - [Wolly, 2022-03-17](https://gathering.tweakers.net/forum/list_message/70969026#70969026): houten dak heeft een slechte naam
 - [lithoijen, 2021-11-02](https://gathering.tweakers.net/forum/list_message/69268772#69268772): zwaar betonblok op houten dak, binnen niet hoorbaar
 - [dirkdeman, 2022-03-17](https://gathering.tweakers.net/forum/list_message/70969906#70969906): betonbandjes en veervoeten op garagedak
-- [JvdW, 2022-01-09](https://gathering.tweakers.net/forum/list_message/70154392#70154392): brom bij bevroren dak; veren losten het op
+- [JvdW, 2022-01-09](https://gathering.tweakers.net/forum/list_message/70154392#70154392): brom bij bevroren dak; veren losten het op; belastingsbereik per veervoet (handleiding)
 - [blb4, 2026-01-08](https://gathering.tweakers.net/forum/list_message/84364512#84364512): ijs op omkasting en voeten geeft brom
 - [pgeene, 2021-10-29](https://gathering.tweakers.net/forum/list_message/69232312#69232312): gevel met dempers en ontkoppelde pluggen; niet bij slaapkamer
 
@@ -138,6 +141,10 @@ Isolatie aan de binnenkant van het plaatwerk maakt de compressor stiller:
 
 - Plak antidreun- of bitumenmatten op de panelen. Dat dempt het rammelen van het plaatwerk.
 - Leg akoestisch schuim of isolatie rond de compressor of tegen de wanden.
+- Gebruik materiaal dat tegen 150 °C kan.
+  Achterpanelen zijn lastig te bereiken; haal eerst het bovenpaneel en de schroeven los.
+- Een kant-en-klare set van de fabrikant kost ongeveer € 200. De maten passen niet altijd en de
+  unit kan al gedempt zijn.
 - Verwacht geen wonderen. De ventilator blijft hoorbaar. De compressor is daarna op een
   laag toerental nog iets te horen.
 
@@ -152,10 +159,10 @@ Isolatie aan de binnenkant van het plaatwerk maakt de compressor stiller:
 ### Bronnen
 
 - [Signor Doekie, 2024-12-16](https://gathering.tweakers.net/forum/list_message/81042000#81042000): antidreun en isolatie op alle panelen; brom nagenoeg weg
-- [ron36, 2025-01-19](https://gathering.tweakers.net/forum/list_message/81368974#81368974): isolatie aan de binnenkant; geen wonderen
+- [ron36, 2025-01-19](https://gathering.tweakers.net/forum/list_message/81368974#81368974): isolatie aan de binnenkant; materiaal tot 150 °C; achterpaneel lastig; geen wonderen (foto)
 - [ron36, 2025-01-28](https://gathering.tweakers.net/forum/list_message/81471178#81471178): merkbare verbetering; fan blijft hoorbaar
 - [sjimmie, 2023-04-04](https://gathering.tweakers.net/forum/list_message/74960456#74960456): zelf isolatie rond de compressor geknipt
-- [bazzzzzz, 2023-04-03](https://gathering.tweakers.net/forum/list_message/74951294#74951294): effect moeilijk te beoordelen
+- [bazzzzzz, 2023-04-03](https://gathering.tweakers.net/forum/list_message/74951294#74951294): set van de fabrikant ongeveer € 200; maten kloppen niet; effect moeilijk te beoordelen (foto)
 - [Crazy-, 2021-03-21](https://gathering.tweakers.net/forum/list_message/66603688#66603688): unit is al stil, geen meerwaarde
 - [The Lord, 2021-03-22](https://gathering.tweakers.net/forum/list_message/66613920#66613920): twijfel over warmte van een geïsoleerde compressor
 - [X21r, 2026-01-07](https://gathering.tweakers.net/forum/list_message/84358038#84358038): compressor niet inpakken; koellucht nodig

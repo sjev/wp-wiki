@@ -26,7 +26,9 @@ Ook leest u hier hoe u een typenummer leest.
 - **Hydrosplit (L-serie).** De warmtewisselaar zit in de buitenunit. Het propaan blijft buiten.
   Tussen binnen en buiten lopen twee waterleidingen. Een F-gassencertificaat is niet nodig.
   Anders dan bij de oudere monoblocks zitten de backup heater, de circulatiepomp en de hoofdprint
-  in de binnenunit, net als bij een split.
+  in de binnenunit, net als bij een split. Ook het expansievat, de waterdruksensor, het
+  magnetische filter en de driewegklep zitten binnen. Het handleidingschema toont één
+  warmtewisselaar, in de buitenunit.
 
 ### Bronnen
 
@@ -34,8 +36,8 @@ Ook leest u hier hoe u een typenummer leest.
 - [Ethirty, 2023-11-19](https://gathering.tweakers.net/forum/list_message/77225690#77225690): alleen monoblock is water; all-in-one is bi-bloc met boiler en expansievat
 - [ErikVers, 2023-11-19](https://gathering.tweakers.net/forum/list_message/77225982#77225982): J klassieke monoblock, K split met F-gassen, L hydrosplit
 - [Carboy54, 2023-02-08](https://gathering.tweakers.net/forum/list_message/74398118#74398118): L-serie: hydraulische verbinding, geen F-gassencertificaat nodig
-- [FransvWoerkom, 2025-06-14](https://gathering.tweakers.net/forum/list_message/82685784#82685784): L: warmtewisselaar buiten; backup heater, pomp en print binnen
-- [Beninho, 2023-11-20](https://gathering.tweakers.net/forum/list_message/77239144#77239144): L: twee leidingen tussen binnen en buiten
+- [FransvWoerkom, 2025-06-14](https://gathering.tweakers.net/forum/list_message/82685784#82685784): L: warmtewisselaar buiten; backup heater, pomp en print binnen; watercircuit met driewegklep en expansievat (schema)
+- [Beninho, 2023-11-20](https://gathering.tweakers.net/forum/list_message/77239144#77239144): L: twee leidingen tussen binnen en buiten; onderdelen binnenunit (schema)
 
 ## Een typenummer lezen
 
@@ -104,13 +106,25 @@ Productie en verkoop (stand op de datum van de bron):
 - In maart 2023 melden distributeurs dat Panasonic de J-serie uitfaseert. De L-serie is de opvolger.
 - In november 2025 mag de K-serie (R32) nog ongeveer één jaar worden verkocht.
 
+De roadmap van Panasonic (FY22–FY23, gedeeld in februari 2023) toont de overgang van J naar K voor 1-fase modellen van
+3, 5, 7 en 9 kW. Voor 3-fase modellen en monoblocks staat geen einddatum op de roadmap.
+
+```mermaid
+flowchart LR
+    J["J-serie, 1-fase<br/>all-in-one compact en split"] --> U["Uitfasering"]
+    J --> K1["K-serie all-in-one compact<br/>vanaf april 2023"]
+    J --> K2["K-serie split<br/>vanaf juli 2023"]
+    M["Monoblock 5/7/9 kW en 12/16 kW, 1-fase<br/>geen einddatum"]
+    D["3-fase 9/12/16 kW, all-in-one en split<br/>geen einddatum"]
+```
+
 ### Bronnen
 
 - [Rimco, 2025-11-25](https://gathering.tweakers.net/forum/list_message/84028136#84028136): tabel per serie: vermogen bij +7 en −7 °C, compressor, koudemiddel
 - [ASW1, 2025-11-25](https://gathering.tweakers.net/forum/list_message/84028228#84028228): K-modellen liggen dicht bij elkaar
 - [martijn v o, 2022-10-16](https://gathering.tweakers.net/forum/list_message/73147516#73147516): K is R32, L is R290
 - [ErikVers, 2025-11-23](https://gathering.tweakers.net/forum/list_message/84014574#84014574): K (R32) nog één jaar verkocht; L meer vermogen bij −7 °C
-- [Carboy54, 2023-02-08](https://gathering.tweakers.net/forum/list_message/74398118#74398118): splits vervangen door K-serie; J-monoblocks blijven
+- [Carboy54, 2023-02-08](https://gathering.tweakers.net/forum/list_message/74398118#74398118): splits vervangen door K-serie; J-monoblocks blijven; K-start april en juli 2023 (schema)
 - [Carboy54, 2023-03-10](https://gathering.tweakers.net/forum/list_message/74718690#74718690): J-serie uitgefaseerd, L-serie opvolger
 - [Johan-1986, 2024-02-24](https://gathering.tweakers.net/forum/list_message/78241124#78241124): M-serie alleen als T-CAP
 - [dof, 2025-06-29](https://gathering.tweakers.net/forum/list_message/82802906#82802906): M-serie van 9 tot 30 kW; J 5/7/9 vrijwel identiek

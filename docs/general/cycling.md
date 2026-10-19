@@ -81,7 +81,10 @@ Richtwaarden uit de praktijk:
 - **Minimaal vermogen hoger dan het warmteverlies.** Dit is de hoofdoorzaak. Elke
   warmtepomp heeft een minimaal vermogen. Is het warmteverlies van het huis kleiner, dan
   kan hij alleen nog aan en uit gaan. Dit gebeurt in het voor- en naseizoen altijd, hoe
-  laag het minimum ook is. Het minimale vermogen hangt ook af van de buitentemperatuur.
+  laag het minimum ook is. Het minimale vermogen hangt ook af van de buitentemperatuur. Voorbeeld: bij ongeveer 12 °C buiten en 30 °C
+  aanvoer ligt het minimum boven 3 kW (COP ongeveer 6,25). Een ander voorbeeld uit een
+  grafiek: bij 9 tot 14 °C buiten neemt het minimum ongeveer 400 W op en levert het
+  ongeveer 2,8 kW warmte.
 - **Te weinig afgifte.** Het afgiftesysteem kan het minimale vermogen niet kwijt. Het water
   wordt dan snel warm en de warmtepomp stopt. Oorzaken: dichte groepen, thermostaatkranen
   of zonekleppen die dichtgaan, of een te lage aanvoertemperatuur.
@@ -138,7 +141,8 @@ compressor stopt. Duurt de pauze dan veel langer, dan zijn de radiatoren de oorz
 - **Thermostaat met hysterese en vertraging.** Een kleine hysterese geeft comfort. Een
   schakelvertraging voorkomt dat een stuiterende thermostaat de warmtepomp elke minuut
   schakelt. Bij een trage betonvloer en genoeg afgifte werkt zelfs een zeer kleine
-  hysterese goed. Een thermostaat die te vaak schakelt, kunt u een afvalvertraging geven.
+  hysterese goed. Een voorbeeld uit een grafiek: hysterese 0,01 °C, aanvoer 25 °C, retour ongeveer
+  21,75 °C en 0 tot 4 °C buiten geven één run per 24 uur. Een thermostaat die te vaak schakelt, kunt u een afvalvertraging geven.
 - **Draaien in blokken.** Stook in de warmste uren van de dag of gebruik een kleine
   nachtverlaging. De run in de ochtend wordt dan langer. Is de warmtevraag erg klein, dan
   blijft de warmtepomp daarna toch pendelen.
@@ -149,6 +153,23 @@ compressor stopt. Duurt de pauze dan veel langer, dan zijn de radiatoren de oorz
   ongeveer 0,58 kWh; een warmtepomp van 5 kW vult dat in 7 minuten. Pas bij veel grotere
   vaten merkt u effect. Zie [Buffervat](buffer-tank.md).
 
+```mermaid
+flowchart TD
+    S["Korte runs, veel starts"] --> C1["Te weinig afgifte"]
+    S --> C2["Kortsluiting radiator"]
+    S --> C3["Te lage flow"]
+    S --> C4["Steile stooklijn"]
+    S --> C5["Thermostaat schakelt te vaak"]
+    S --> C6["Minimum boven warmteverlies"]
+    C1 --> O1["Stooklijn omhoog + kamerthermostaat"]
+    C1 --> O2["Kringen open"]
+    C2 --> O3["Retouren gelijk inregelen"]
+    C3 --> O4["Flow omhoog, ΔT omlaag"]
+    C4 --> O7["Stooklijn vlakker"]
+    C5 --> O5["Hysterese en vertraging"]
+    C6 --> O6["Aan/uit accepteren"]
+```
+
 !!! note "Meningen verschillen"
     - **Hogere stooklijn plus thermostaat.** Liever een iets hogere aanvoertemperatuur en
       lange runs die een thermostaat begrenst, dan veel korte runs.
@@ -158,8 +179,8 @@ compressor stopt. Duurt de pauze dan veel langer, dan zijn de radiatoren de oorz
 
 ### Bronnen
 
-- [dof, 2023-11-04](https://gathering.tweakers.net/forum/list_message/77069222#77069222): test met vaste aanvoertemperatuur
-- [Thorsd, 2024-03-24](https://gathering.tweakers.net/forum/list_message/78536678#78536678): aanvoertemperatuur omhoog, externe thermostaat
+- [dof, 2023-11-04](https://gathering.tweakers.net/forum/list_message/77069222#77069222): test met vaste aanvoertemperatuur; minimum ongeveer 400 W verbruik (grafiek)
+- [Thorsd, 2024-03-24](https://gathering.tweakers.net/forum/list_message/78536678#78536678): aanvoertemperatuur omhoog, externe thermostaat; minimum boven 3 kW bij 12 °C buiten (grafiek)
 - [ErikVers, 2023-11-01](https://gathering.tweakers.net/forum/list_message/77029654#77029654): stilstand alleen door de thermostaat
 - [Thorsd, 2023-10-24](https://gathering.tweakers.net/forum/list_message/76944950#76944950): COP iets lager, effect op het jaar klein
 - [Ep Woody, 2022-09-26](https://gathering.tweakers.net/forum/list_message/72914242#72914242): hogere aanvoertemperatuur en lange runs met thermostaat
@@ -169,7 +190,7 @@ compressor stopt. Duurt de pauze dan veel langer, dan zijn de radiatoren de oorz
 - [dunklefaser, 2023-11-05](https://gathering.tweakers.net/forum/list_message/77070488#77070488): debiet verhogen voor meer afgifte
 - [FransvWoerkom, 2022-12-05](https://gathering.tweakers.net/forum/list_message/73697772#73697772): flow vrij of ΔT vrij
 - [sjimmie, 2021-09-15](https://gathering.tweakers.net/forum/list_message/68733440#68733440): hysterese en schakelvertraging
-- [padoempats, 2023-05-09](https://gathering.tweakers.net/forum/list_message/75288852#75288852): zeer kleine hysterese met betonvloer
+- [padoempats, 2023-05-09](https://gathering.tweakers.net/forum/list_message/75288852#75288852): zeer kleine hysterese met betonvloer; één run per 24 uur (grafiek)
 - [Thorsd, 2024-12-03](https://gathering.tweakers.net/forum/list_message/80919534#80919534): afvalvertraging op de thermostaat
 - [Daffy1982, 2023-12-15](https://gathering.tweakers.net/forum/list_message/77514278#77514278): nachtverlaging voor betere afgifte overdag
 - [RaymondD, 2023-12-19](https://gathering.tweakers.net/forum/list_message/77553352#77553352): na de ochtendrun blijft hij pendelen

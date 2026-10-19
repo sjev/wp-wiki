@@ -8,6 +8,7 @@ from bs4 import BeautifulSoup, Tag
 
 FORUM = "https://gathering.tweakers.net/forum"
 QUOTE_LINK = re.compile(r"/forum/list_message/(\d+)")
+IMAGE = "img.rml"  # user uploads; smileys have no class
 
 
 class Post(TypedDict):
@@ -24,6 +25,7 @@ class Post(TypedDict):
     edited: str | None
     quotes: list[int]
     links: list[str]
+    images: list[str]
     text: str
     html: str
 
@@ -47,6 +49,8 @@ def _to_text(content: Tag) -> str:
     node = BeautifulSoup(str(content), "lxml")
     for br in node.find_all("br"):
         br.replace_with("\n")
+    for img in node.select(IMAGE):
+        img.replace_with("[afbeelding]")
     for block in node.find_all(["h5", "h6", "li", "p", "div"]):
         block.insert_after("\n")
     # Reverse order handles nested quotes innermost first, giving "> > " prefixes.
@@ -80,6 +84,7 @@ def _parse_message(msg: Tag, thread_id: int, page: int) -> Post | None:
             if (href := str(a["href"])).startswith("http") and "/forum/list_message/" not in href
         }
     )
+    images = [str(img["src"]) for img in content.select(IMAGE) if not img.find_parent("blockquote")]
     timestamp = int(str(stamp["data-timestamp"]))
     return Post(
         id=post_id,
@@ -95,6 +100,7 @@ def _parse_message(msg: Tag, thread_id: int, page: int) -> Post | None:
         edited=edited,
         quotes=quotes,
         links=links,
+        images=images,
         text=_to_text(content),
         html=content.decode_contents().strip(),
     )

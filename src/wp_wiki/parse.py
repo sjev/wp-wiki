@@ -1,7 +1,9 @@
 """Parse GoT thread pages into post records. Selectors verified against live HTML, 2026-10."""
 
+import json
 import re
 from datetime import UTC, datetime
+from pathlib import Path
 from typing import TypedDict
 
 from bs4 import BeautifulSoup, Tag
@@ -28,6 +30,18 @@ class Post(TypedDict):
     images: list[str]
     text: str
     html: str
+
+
+def load_posts(posts_dir: Path) -> list[Post]:
+    return [
+        json.loads(line)
+        for f in sorted(posts_dir.glob("*.jsonl"))
+        for line in f.open(encoding="utf-8")
+    ]
+
+
+def strip_quotes(text: str) -> str:
+    return "\n".join(ln for ln in text.splitlines() if not ln.startswith(">"))
 
 
 def post_url(post_id: int) -> str:

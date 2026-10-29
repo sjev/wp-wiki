@@ -3,8 +3,7 @@
 import re
 from collections import Counter
 
-from wp_wiki.parse import Post
-from wp_wiki.stats import _strip_quotes
+from wp_wiki.parse import Post, strip_quotes
 
 MIN_CHARS = 150
 
@@ -23,7 +22,7 @@ def dossier(posts: list[Post], title: str, pattern: str, n: int = 40, max_chars:
     quoted = Counter(q for p in posts for q in set(p["quotes"]) if q in by_id)
     scored: list[tuple[int, Post, str]] = []
     for p in posts:
-        text = _strip_quotes(p["text"])
+        text = strip_quotes(p["text"])
         hits = len(rx.findall(text))
         if hits and len(text) >= MIN_CHARS:
             scored.append((min(hits, 10) + 3 * quoted[p["id"]], p, text))

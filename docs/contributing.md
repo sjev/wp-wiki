@@ -18,7 +18,7 @@ weight: 50
 
 5. Zet `title` en `weight` in de front matter. `weight` bepaalt de volgorde (10, 20, …).
    Voeg alleen tags toe uit `TAGS` in `src/wp_wiki/__init__.py`.
-6. Voer `inv ci` uit. Dit moet slagen.
+6. Voer `uv run wp-wiki check` uit. Dit moet slagen.
 7. Open een pull request.
 
 Regels:

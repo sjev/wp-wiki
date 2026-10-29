@@ -17,7 +17,7 @@ class _ConsoleFilter(logging.Filter):
         return not record.name.startswith("httpx") or record.levelno >= logging.WARNING
 
 
-def setup_logging(verbose: bool, log_file: Path) -> None:
+def setup_logging(log_file: Path) -> None:
     root = logging.getLogger()
     root.setLevel(logging.DEBUG)
     log_file.parent.mkdir(parents=True, exist_ok=True)
@@ -27,7 +27,7 @@ def setup_logging(verbose: bool, log_file: Path) -> None:
     file_handler.setLevel(logging.DEBUG)
     file_handler.setFormatter(logging.Formatter(FILE_FMT))
     root.addHandler(file_handler)
-    coloredlogs.install(level=logging.DEBUG if verbose else logging.INFO, fmt=FMT, logger=root)
+    coloredlogs.install(level=logging.INFO, fmt=FMT, logger=root)
     for handler in root.handlers:
         if handler is not file_handler:
             handler.addFilter(_ConsoleFilter())

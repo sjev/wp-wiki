@@ -58,7 +58,7 @@ coverage.xml
 .DS_Store
 Thumbs.db
 
-# Scraped forum data (size + copyright); rebuild with `inv scrape`
+# Scraped forum data (size + copyright); rebuild with `uv run wp-wiki fetch`
 data/
 
 # Work-in-progress notes and agent handovers

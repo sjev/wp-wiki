@@ -1,27 +1,30 @@
 # wp-wiki
 
-Dutch heat pump wiki, built from Tweakers forum threads. Each claim links back to its source post.
-First brand: Panasonic Aquarea with HeishaMon. Other brands can be added under `docs/<brand>/`.
-
-## Setup
-
-```bash
-source ./init.sh   # installs uv if missing, syncs the environment
-inv venv           # sync all dependency groups (dev + docs)
-inv --list
-```
+Dutch heat pump wiki, built from Tweakers forum threads. Every claim links to its source post.
+First brand: Panasonic Aquarea + HeishaMon. Read the wiki: [docs/](docs/_index.md).
 
 ## Workflow
 
-| Task | Action |
-|---|---|
-| `inv scrape` | Fetch new pages to `data/raw/`, parse to `data/posts/<thread>.jsonl` |
-| `inv scrape --thread 2178982 --refresh` | Re-fetch one thread completely |
-| `inv ci` | Lint, tests, citation check |
+Needs [uv](https://docs.astral.sh/uv/) and [Claude Code](https://claude.com/claude-code).
 
-The scraper waits 3 s or more between requests and accepts only the functional cookie consent.
-`data/` is not in git. Rebuild it with `inv scrape`.
+```bash
+uv run wp-wiki fetch        # 1. get the latest forum posts into data/
+uv run wp-wiki llm-update   # 2. Claude merges posts newer than last-post.txt into docs/
+git diff                    # 3. review; discard what you do not want
+uv run wp-wiki check        # 4. check pages, links and source links
+```
 
-To add a thread, add it to `THREADS` in `src/wp_wiki/__init__.py` and to `docs/sources.md`.
+Then commit `docs/` and `last-post.txt` together.
 
-See [CLAUDE.md](CLAUDE.md) for project rules and [Bijdragen](docs/contributing.md) for the citation format.
+## Layout
+
+| Path | Holds | In git |
+|---|---|---|
+| `docs/` | Wiki pages (Dutch) | yes |
+| `last-post.txt` | Newest post already in `docs/` | yes |
+| `CLAUDE.md` | Rules for writing pages; read by Claude | yes |
+| `src/wp_wiki/` | Scraper and tools | yes |
+| `data/` | Forum pages and posts (copyright; rebuild with `fetch`) | no |
+
+Add a thread: add it to `THREADS` in `src/wp_wiki/__init__.py` and to `docs/sources.md`.
+Code changes: run `./ci.sh` (lint, tests, check).

@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from wp_wiki.cite import check
-from wp_wiki.stats import load_posts
+from wp_wiki.parse import load_posts
 
 FIXTURES = Path(__file__).parent / "fixtures"
 URL = "https://gathering.tweakers.net/forum/list_message"

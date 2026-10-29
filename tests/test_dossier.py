@@ -1,7 +1,7 @@
 from pathlib import Path
 
 from wp_wiki.dossier import dossier
-from wp_wiki.stats import load_posts
+from wp_wiki.parse import load_posts
 
 FIXTURES = Path(__file__).parent / "fixtures"
 

@@ -7,11 +7,12 @@ from typing import Annotated
 import typer
 
 from wp_wiki import THREADS
+from wp_wiki.check import check as check_pages
 from wp_wiki.cite import check as check_cites
 from wp_wiki.dossier import dossier as make_dossier
 from wp_wiki.fetch import Fetcher, cached_pages, fetch_thread
 from wp_wiki.images import fetch_images
-from wp_wiki.log import setup_logging
+from wp_wiki.log import log_errors, setup_logging
 from wp_wiki.parse import Post, parse_page
 from wp_wiki.read import show_post, show_replies
 from wp_wiki.stats import TOPICS, load_posts, report
@@ -138,8 +139,10 @@ def cite(
     docs: Annotated[Path, typer.Argument()] = Path("docs"), data: DataDir = Path("data")
 ) -> None:
     """Verify that every source link in docs/ matches a post's author and date."""
-    errors = check_cites(docs, load_posts(data / "posts"))
-    for e in errors:
-        log.error(e)
-    log.info("%d citation errors", len(errors))
-    raise typer.Exit(1 if errors else 0)
+    raise typer.Exit(log_errors(check_cites(docs, load_posts(data / "posts")), "citation"))
+
+
+@app.command()
+def check(docs: Annotated[Path, typer.Argument()] = Path("docs")) -> None:
+    """Verify front matter, tags and relative links of every page in docs/."""
+    raise typer.Exit(log_errors(check_pages(docs), "page"))

@@ -1,16 +1,17 @@
 ---
+title: Storingen en foutcodes
+weight: 20
 tags: [Storing, J-serie, T-CAP]
 ---
-
-# Storingen en foutcodes
 
 Panasonic Aquarea toont een storing als code op de afstandsbediening: `H..` of `F..`.
 De service manual van uw model geeft per code een stappenplan. Deze pagina geeft de
 oorzaken die in de praktijk het vaakst voorkomen.
 
-!!! warning "Elektrische veiligheid"
-    Sommige controles gebeuren op de printplaat. Daar staat netspanning op (bijv. 320 V op
-    `CN-PUMP1`). Schakel de spanning uit voordat u stekkers of schroeven aanraakt.
+**Let op: Elektrische veiligheid.**
+
+Sommige controles gebeuren op de printplaat. Daar staat netspanning op (bijv. 320 V op
+`CN-PUMP1`). Schakel de spanning uit voordat u stekkers of schroeven aanraakt.
 
 ## Overzicht
 
@@ -50,9 +51,10 @@ oorzaken die in de praktijk het vaakst voorkomen.
 `H20` meldt dat de circulatiepomp niet goed draait. Een bekende oorzaak is een pomp die
 vastzit door magnetiet. De pomp kunt u uitbouwen, openen en schoonmaken.
 
-!!! warning "Hoge spanning"
-    De pompstekker voert tot 373 V gelijkspanning. Laat metingen op de print over aan een
-    installateur. Schakel de spanning uit voordat u een stekker los- of vastmaakt.
+**Let op: Hoge spanning.**
+
+De pompstekker voert tot 373 V gelijkspanning. Laat metingen op de print over aan een
+installateur. Schakel de spanning uit voordat u een stekker los- of vastmaakt.
 
 De service manual meet bij `H20` het toerental van de pomp (storing bij meer dan 6000 of minder
 dan 1000 omw/min, 5 seconden lang). Het stappenplan controleert in deze volgorde:
@@ -91,9 +93,10 @@ Druppelt de ontluchter na het ontluchten? Dan zit er vaak nog lucht in het syste
 af en toe opnieuw en let op de druk. Druppelt hij na een paar dagen nog, dan kunt u hem
 sluiten. Test dan wel af en toe op lucht op het hoogste punt en bij het magneetfilter.
 
-!!! warning "Vorstbeveiliging"
-    Bij `H62` werkt de vorstbeveiliging met de circulatiepomp niet meer. Los de storing in de
-    winter snel op.
+**Let op: Vorstbeveiliging.**
+
+Bij `H62` werkt de vorstbeveiliging met de circulatiepomp niet meer. Los de storing in de
+winter snel op.
 
 ### Bronnen
 
@@ -125,10 +128,11 @@ Oorzaken:
 `H75` volgt als het ontdooien niet lukt. Dit gebeurt vooral als de backup heater uit staat
 en het retourwater te koud is (gemeld bij een retour van 18 °C; bij 20 °C ging het goed).
 
-!!! note "Meningen verschillen"
-    Volgens een gebruiker gebruikt een T-CAP de backup heater nooit voor het ontdooien.
-    Een ander schrijft dat de backup heater tijdens het ontdooien wel bijspringt als de
-    warmtewisselaar dreigt te bevriezen.
+**Meningen verschillen.**
+
+Volgens een gebruiker gebruikt een T-CAP de backup heater nooit voor het ontdooien.
+Een ander schrijft dat de backup heater tijdens het ontdooien wel bijspringt als de
+warmtewisselaar dreigt te bevriezen.
 
 ### Bronnen
 
@@ -153,9 +157,10 @@ Backup heater uitzetten zonder storing: doe dit in het menu, niet met de groep i
 - het *Custom Menu*: hamburgerknop + pijl omlaag + pijl links, 5 tot 10 seconden vasthouden.
   De bronnen noemen 5 en 10 seconden.
 
-!!! warning "Geen beveiliging meer"
-    Een uitgeschakelde backup heater beschermt niet meer tegen bevriezing en helpt niet
-    meer bij het ontdooien (zie `H75`). Alleen de circulatiepomp beschermt dan het water.
+**Let op: Geen beveiliging meer.**
+
+Een uitgeschakelde backup heater beschermt niet meer tegen bevriezing en helpt niet
+meer bij het ontdooien (zie `H75`). Alleen de circulatiepomp beschermt dan het water.
 
 `H91` gaat over de beveiliging van de heater in het SWW-vat. Op de hoofdprint zit een
 aansluiting voor een droogkookbeveiliging (`CN6-1` en `CN6-2`). Zonder aparte beveiliging

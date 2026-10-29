@@ -1,8 +1,8 @@
 ---
+title: COP en meten
+weight: 90
 tags: [Optimalisatie, Installatie]
 ---
-
-# COP en meten
 
 De COP (coefficient of performance) is de warmte die de warmtepomp maakt, gedeeld door de
 stroom die hij daarvoor gebruikt. Deze pagina legt uit waar de COP van afhangt, welke waarden
@@ -130,9 +130,10 @@ de groep van het elektrische element laat zien hoeveel stroom dat gebruikt.
   (bijv. 5 A) bepaalt vooral de precisie; let daarnaast op de maximale stroom (bijv. 40 A).
   Een driefasige warmtepomp vraagt een driefasige meter.
 
-!!! warning "Netspanning"
-    Een kWh-meter plaatst u in een groep met 230 V of 400 V. Schakel de groep spanningsloos
-    voordat u werkt. Laat het werk doen door iemand die bevoegd is als u twijfelt.
+**Let op: Netspanning.**
+
+Een kWh-meter plaatst u in een groep met 230 V of 400 V. Schakel de groep spanningsloos
+voordat u werkt. Laat het werk doen door iemand die bevoegd is als u twijfelt.
 
 ### Bronnen
 
@@ -193,11 +194,12 @@ afronden is bij 10 l/min elke stap al 700 W.
   losse DS18B20 heeft een resolutie van 0,0625 °C en is niet gekalibreerd.
 - Een constante afwijking is minder erg als u alleen wilt zien of een wijziging helpt.
 
-!!! note "Meningen verschillen"
-    - **Een warmtemeter is nodig.** Rekenen met drie onnauwkeurige sensoren geeft geen
-      betrouwbare warmte. Een warmtemeter meet veel nauwkeuriger.
-    - **Twee goede sensoren zijn genoeg.** Ook de flow van een warmtemeter heeft een fout van
-      2 tot 5 %. Met twee goedkope DS18B20's haalt u voor weinig geld een hoge nauwkeurigheid.
+**Meningen verschillen.**
+
+- **Een warmtemeter is nodig.** Rekenen met drie onnauwkeurige sensoren geeft geen
+  betrouwbare warmte. Een warmtemeter meet veel nauwkeuriger.
+- **Twee goede sensoren zijn genoeg.** Ook de flow van een warmtemeter heeft een fout van
+  2 tot 5 %. Met twee goedkope DS18B20's haalt u voor weinig geld een hoge nauwkeurigheid.
 
 ### Bronnen
 

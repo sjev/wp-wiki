@@ -1,4 +1,7 @@
-# Bronnen
+---
+title: Bronnen
+weight: 40
+---
 
 | Merk | Topic | ID | Link |
 |---|---|---|---|

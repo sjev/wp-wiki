@@ -1,16 +1,17 @@
 ---
+title: Bekabeling en beveiliging
+weight: 20
 tags: [Veiligheid, Installatie, J-serie, L-serie, M-serie, T-CAP]
 ---
-
-# Bekabeling en beveiliging
 
 Deze pagina gaat over de elektrische aansluiting van een Panasonic Aquarea: voedingskabels,
 automaten, aardlek, werkschakelaars en de stuurdraden naar de print.
 
-!!! warning "Netspanning en de norm"
-    Op de voeding, de print en de klepaansluitingen staat 230 V of 400 V. Schakel alle groepen
-    uit en meet na voordat u iets aanraakt. Deze pagina vervangt de installatiehandleiding
-    en de NEN 1010 niet. Twijfelt u? Laat een erkend installateur de aansluiting maken.
+**Let op: Netspanning en de norm.**
+
+Op de voeding, de print en de klepaansluitingen staat 230 V of 400 V. Schakel alle groepen
+uit en meet na voordat u iets aanraakt. Deze pagina vervangt de installatiehandleiding
+en de NEN 1010 niet. Twijfelt u? Laat een erkend installateur de aansluiting maken.
 
 **Zie ook:** [Kamerthermostaat op `CN2`/`CN4`](../settings.md#kamerthermostaat) ·
 [Communicatiefout `H90`](../troubleshooting.md#communicatie-h90) ·
@@ -52,10 +53,11 @@ Met een netaansluiting van 3×25 A kiezen de meeste gebruikers lager:
 Een C-automaat mag. De kans dat de hoofdzekering eerder uitschakelt, is dan iets groter.
 Een C-karakteristiek lost een te lage stroomwaarde niet op.
 
-!!! note "Meningen verschillen"
-    Sommigen kiezen B20 voor de compressor: stroom boven 16 A komt zelden voor, maar een B16
-    zet de unit dan uit. Anderen houden B16 aan, omdat B20 dicht bij een hoofdzekering van
-    25 A zit en niet selectief is. Een B20 op 2,5 mm² kan ook te hoog zijn bij een lange kabel.
+**Meningen verschillen.**
+
+Sommigen kiezen B20 voor de compressor: stroom boven 16 A komt zelden voor, maar een B16
+zet de unit dan uit. Anderen houden B16 aan, omdat B20 dicht bij een hoofdzekering van
+25 A zit en niet selectief is. Een B20 op 2,5 mm² kan ook te hoog zijn bij een lange kabel.
 
 ### Bronnen
 
@@ -107,12 +109,13 @@ Een 1-fase unit kunt u op twee manieren op een 3-fase kast aansluiten:
 Sluit de unit niet als 1-fase kookgroep aan op een netaansluiting van 3×25 A. Compressor
 en backup heater samen vragen dan te veel van één fase.
 
-!!! note "Meningen verschillen"
-    Volgens één gebruiker moeten twee losse groepen op dezelfde fase zitten, omdat er anders
-    400 V tussen de groepen staat. Anderen gebruiken juist twee fasen met een gedeelde nul,
-    via een 3-fase automaat. Twee losse 1-fase groepen in één 5-aderige kabel mag volgens
-    sommigen niet: wie één groep uitzet, denkt dat de unit spanningsloos is. Een ander zegt
-    dat meer mag dan vaak wordt beweerd, mits u aan de voorwaarden voldoet.
+**Meningen verschillen.**
+
+Volgens één gebruiker moeten twee losse groepen op dezelfde fase zitten, omdat er anders
+400 V tussen de groepen staat. Anderen gebruiken juist twee fasen met een gedeelde nul,
+via een 3-fase automaat. Twee losse 1-fase groepen in één 5-aderige kabel mag volgens
+sommigen niet: wie één groep uitzet, denkt dat de unit spanningsloos is. Een ander zegt
+dat meer mag dan vaak wordt beweerd, mits u aan de voorwaarden voldoet.
 
 ### Bronnen
 
@@ -156,14 +159,16 @@ Bij de meterkast voegt hij niets toe.
 - Bekende storing: een draad die niet goed vastzit in een buitenwerkschakelaar, samen met
   vocht. Dat geeft uitval van de unit of `H90`.
 
-!!! warning "Spanning via de thermostaat"
-    Een extern gevoede thermostaat op `CN2` kan 230 V op de print zetten, ook als de groepen
-    en werkschakelaars uit staan. Zie [Kamerthermostaat](../settings.md#kamerthermostaat).
+**Let op: Spanning via de thermostaat.**
 
-!!! note "Meningen verschillen"
-    Volgens sommigen is een werkschakelaar officieel verplicht, met slot in de uit-stand.
-    Anderen zeggen dat de NEN 1010 hem niet verplicht en dat een automaat als lastscheider
-    mag dienen. Ook een stopcontact tot 16 A kan als lastscheider dienen.
+Een extern gevoede thermostaat op `CN2` kan 230 V op de print zetten, ook als de groepen
+en werkschakelaars uit staan. Zie [Kamerthermostaat](../settings.md#kamerthermostaat).
+
+**Meningen verschillen.**
+
+Volgens sommigen is een werkschakelaar officieel verplicht, met slot in de uit-stand.
+Anderen zeggen dat de NEN 1010 hem niet verplicht en dat een automaat als lastscheider
+mag dienen. Ook een stopcontact tot 16 A kan als lastscheider dienen.
 
 ### Bronnen
 

@@ -1,8 +1,8 @@
 ---
+title: Buffervat
+weight: 50
 tags: [Installatie, Optimalisatie]
 ---
-
-# Buffervat
 
 Een buffervat is een vat met cv-water tussen de warmtepomp en het afgiftesysteem.
 Voor de meeste woningen is een buffervat niet nodig. Een buffervat kost geld, maakt de
@@ -35,10 +35,11 @@ Geen buffervat nodig:
 Een buffervat lost pendelen meestal niet op. Zorg in plaats daarvan dat het afgiftesysteem
 het minimale vermogen van de warmtepomp altijd kwijt kan. Zie [Stooklijn](heating-curve.md).
 
-!!! note "Meningen verschillen"
-    Bijna alle ervaren gebruikers raden een buffervat af, behalve bij zoneregeling of
-    meerdere bronnen. Een gebruiker met een parallel buffervat vindt dat een buffervat altijd
-    parallel hoort, met een tweede pomp, en dat het energie bespaart.
+**Meningen verschillen.**
+
+Bijna alle ervaren gebruikers raden een buffervat af, behalve bij zoneregeling of
+meerdere bronnen. Een gebruiker met een parallel buffervat vindt dat een buffervat altijd
+parallel hoort, met een tweede pomp, en dat het energie bespaart.
 
 ### Bronnen
 

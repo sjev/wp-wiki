@@ -1,8 +1,8 @@
 ---
+title: Home Assistant
+weight: 30
 tags: [Home Assistant, HeishaMon, Cloud, Optimalisatie, J-serie, L-serie]
 ---
-
-# Home Assistant
 
 Met Home Assistant (HA) kunt u een Panasonic Aquarea uitlezen, grafieken maken en de
 warmtepomp automatisch sturen. Deze pagina beschrijft de koppelingen en de automatiseringen
@@ -114,10 +114,11 @@ van COP-waarden over de tijd is misleidend. De dag-COP is geproduceerde energie 
 verbruikte energie. Voorbeeld: 12 uur 1 kW met COP 6 en 12 uur 10 kW met COP 2. Het
 tijdgemiddelde is 4, de werkelijke dag-COP is 132 ÷ 62 ≈ 2,1.
 
-!!! note "Meningen verschillen"
-    Een gebruiker raadt de integratie
-    [HADailySensor](https://github.com/jeroenterheerdt/HADailySensor) aan voor een dagelijkse
-    SCOP. Een ander wijst erop dat die een tijdgemiddelde berekent.
+**Meningen verschillen.**
+
+Een gebruiker raadt de integratie
+[HADailySensor](https://github.com/jeroenterheerdt/HADailySensor) aan voor een dagelijkse
+SCOP. Een ander wijst erop dat die een tijdgemiddelde berekent.
 
 ### Bronnen
 
@@ -186,12 +187,13 @@ Shift of thermostaat hoger? Een hogere shift verhoogt de aanvoertemperatuur (Ta)
 hoger setpoint op een externe thermostaat doet niets met de Ta. De interne thermostaat van de
 controller verhoogt de Ta zelf als het setpoint lang uitblijft.
 
-!!! note "Meningen verschillen"
-    - Een shift gaat soms niet laag genoeg om oververhitting te voorkomen. Advies: verlaag
-      eerst de basisstooklijn.
-    - Met een externe thermostaat is de shift op de controller van een J-serie niet beschikbaar.
-      Een gebruiker past daarom via HA de hele stooklijn aan. Een gebruiker met een G-serie
-      kan wel shiften.
+**Meningen verschillen.**
+
+- Een shift gaat soms niet laag genoeg om oververhitting te voorkomen. Advies: verlaag
+  eerst de basisstooklijn.
+- Met een externe thermostaat is de shift op de controller van een J-serie niet beschikbaar.
+  Een gebruiker past daarom via HA de hele stooklijn aan. Een gebruiker met een G-serie
+  kan wel shiften.
 
 ### Bronnen
 
@@ -218,9 +220,10 @@ Een *scheduler*-integratie zet het setpoint van de woonkamer.
 Een verfijning: maak het setpoint een formule in plaats van twee standen, bijv.
 15 + (12 − gemiddelde buitentemperatuur) × factor.
 
-!!! note "Meningen verschillen"
-    Niet iedereen is voor nachtverlaging. Wat u 's nachts mist, moet de warmtepomp 's ochtends
-    inhalen. Sommigen houden hem liever lang op laag vermogen.
+**Meningen verschillen.**
+
+Niet iedereen is voor nachtverlaging. Wat u 's nachts mist, moet de warmtepomp 's ochtends
+inhalen. Sommigen houden hem liever lang op laag vermogen.
 
 ### Bronnen
 
@@ -271,12 +274,13 @@ Een gebruiker met een 9J zag de vakantiestand uit de Service Cloud en Smart Clou
 opgeslagen worden. HeishaMon heeft geen cloud. Wilt u de warmtepomp op afstand aanzetten, dan
 moet u zelf toegang van buitenaf regelen (bijv. via HA).
 
-!!! note "Meningen verschillen"
-    - Uit, en via HA een dag of 8 uur vóór thuiskomst weer aan.
-    - Thermostaat lager, bijv. 17 °C. Uit met vloerverwarming werkt minder goed.
-    - Gewoon 24/7 dezelfde temperatuur houden.
-    - Bij een lage instelling zag een gebruiker met alleen vloerverwarming de backup heater
-      bijschakelen en pendelen.
+**Meningen verschillen.**
+
+- Uit, en via HA een dag of 8 uur vóór thuiskomst weer aan.
+- Thermostaat lager, bijv. 17 °C. Uit met vloerverwarming werkt minder goed.
+- Gewoon 24/7 dezelfde temperatuur houden.
+- Bij een lage instelling zag een gebruiker met alleen vloerverwarming de backup heater
+  bijschakelen en pendelen.
 
 Na de vakantie doen sommigen een legionellarun, bijv. geforceerd via HeishaMon.
 Zie [Legionella](../../general/legionella.md).

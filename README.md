@@ -17,9 +17,7 @@ inv --list
 |---|---|
 | `inv scrape` | Fetch new pages to `data/raw/`, parse to `data/posts/<thread>.jsonl` |
 | `inv scrape --thread 2178982 --refresh` | Re-fetch one thread completely |
-| `inv serve` | Preview the wiki at http://127.0.0.1:8000 |
-| `inv build` | Strict docs build |
-| `inv ci` | Lint, tests, docs build |
+| `inv ci` | Lint, tests, citation check |
 
 The scraper waits 3 s or more between requests and accepts only the functional cookie consent.
 `data/` is not in git. Rebuild it with `inv scrape`.

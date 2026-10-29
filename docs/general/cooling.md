@@ -1,8 +1,8 @@
 ---
+title: Koelen
+weight: 100
 tags: [Optimalisatie, Installatie]
 ---
-
-# Koelen
 
 Een lucht-waterwarmtepomp kan in de zomer ook koud water maken. Dat water loopt door
 hetzelfde afgiftesysteem als in de winter: vloerverwarming, radiatoren, convectoren of
@@ -116,10 +116,11 @@ flowchart LR
 - **In de grond.** Isoleer ook in een mantelbuis dampdicht. Er kan water in de buis staan.
   Alternatief: een kant-en-klare geïsoleerde grondleiding.
 
-!!! note "Meningen verschillen"
-    Volgens één gebruiker verkopen sommige winkels isolatie die op Armaflex lijkt, maar niet
-    dampdicht is. Een ander wijst erop dat dit Tubolit is, ook van fabrikant Armacell.
-    Controleer dus of het product dampdicht is.
+**Meningen verschillen.**
+
+Volgens één gebruiker verkopen sommige winkels isolatie die op Armaflex lijkt, maar niet
+dampdicht is. Een ander wijst erop dat dit Tubolit is, ook van fabrikant Armacell.
+Controleer dus of het product dampdicht is.
 
 ### Bronnen
 
@@ -148,13 +149,14 @@ flowchart LR
   Kijk naar de retourtemperatuur. Is die snel gelijk aan de aanvoer, dan neemt het water geen
   warmte meer op en stopt de compressor.
 
-!!! note "Meningen verschillen"
-    - **Weinig effect.** Vloerkoeling geeft hooguit ongeveer 2 °C onder de buitentemperatuur.
-      Vloerverwarming werkt vooral met straling en "koudestraling bestaat niet".
-      Een kamer met radiatoren krijgt u zonder fancoils niet koel.
-    - **Wel comfort.** Op een koele vloer raakt uw lichaam zijn warmtestraling makkelijker kwijt.
-      De vloer neemt ook warmte op van warmere vlakken. Wonderen zijn er niet, maar het is
-      comfortabel. Na twee weken afwezigheid werd een huis snel leefbaar door de vloer te koelen.
+**Meningen verschillen.**
+
+- **Weinig effect.** Vloerkoeling geeft hooguit ongeveer 2 °C onder de buitentemperatuur.
+  Vloerverwarming werkt vooral met straling en "koudestraling bestaat niet".
+  Een kamer met radiatoren krijgt u zonder fancoils niet koel.
+- **Wel comfort.** Op een koele vloer raakt uw lichaam zijn warmtestraling makkelijker kwijt.
+  De vloer neemt ook warmte op van warmere vlakken. Wonderen zijn er niet, maar het is
+  comfortabel. Na twee weken afwezigheid werd een huis snel leefbaar door de vloer te koelen.
 
 ### Bronnen
 
@@ -182,12 +184,13 @@ flowchart LR
   (twee temperatuursensoren, een vochtsensor en een relais) kan de koelvraag onderbreken als
   de leiding kouder wordt dan het dauwpunt.
 
-!!! note "Meningen verschillen"
-    Over de ΔT tussen aanvoer en retour bij koelen:
+**Meningen verschillen.**
 
-    - **Kleine ΔT** (2–3 °C) en maximaal pompen.
-    - **Grotere ΔT** (4–5 °C). Dan pompt de warmtepomp minder en kan hij langer op laag vermogen
-      draaien.
+Over de ΔT tussen aanvoer en retour bij koelen:
+
+- **Kleine ΔT** (2–3 °C) en maximaal pompen.
+- **Grotere ΔT** (4–5 °C). Dan pompt de warmtepomp minder en kan hij langer op laag vermogen
+  draaien.
 
 ### Bronnen
 

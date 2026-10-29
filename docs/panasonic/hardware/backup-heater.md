@@ -1,8 +1,8 @@
 ---
+title: Backup heater
+weight: 30
 tags: [Installatie, Veiligheid, J-serie, T-CAP]
 ---
-
-# Backup heater
 
 De backup heater (BUH, BH) is een elektrisch element in de waterkring van de Panasonic Aquarea.
 Het element heeft een COP van 1. Elke kWh warmte kost dus 1 kWh stroom. De warmtepomp
@@ -28,15 +28,17 @@ vorstbeveiliging, als het vermogen tekortschiet en voor de sterilisatierun.
 - Het 3-fase schema toont drie relais (`RY-HT`, één per fase L1 tot L3) voor de backup heater en
   een apart relais (`RY-BOOSTER`) voor de tankheater.
 
-!!! warning "Aparte groep"
-    De handleiding vraagt aparte groepen voor de warmtepomp en de backup heater.
-    Een 5 kW-unit kan ongeveer 2,6 kW uit het net halen, de backup heater 3 kW. Samen is dat
-    ongeveer 25 A. Op één groep van 20 A gaat dat mis op het moment dat u de warmte het hardst
-    nodig hebt, bijv. bij vorst terwijl u niet thuis bent.
+**Let op: Aparte groep.**
 
-!!! note "Meningen verschillen"
-    Volgens één gebruiker past een 5J met backup heater samen onder 20 A, omdat de 5J bij
-    A2W35 nog geen 7 A trekt. Anderen wijzen erop dat dit niet volgens de handleiding is.
+De handleiding vraagt aparte groepen voor de warmtepomp en de backup heater.
+Een 5 kW-unit kan ongeveer 2,6 kW uit het net halen, de backup heater 3 kW. Samen is dat
+ongeveer 25 A. Op één groep van 20 A gaat dat mis op het moment dat u de warmte het hardst
+nodig hebt, bijv. bij vorst terwijl u niet thuis bent.
+
+**Meningen verschillen.**
+
+Volgens één gebruiker past een 5J met backup heater samen onder 20 A, omdat de 5J bij
+A2W35 nog geen 7 A trekt. Anderen wijzen erop dat dit niet volgens de handleiding is.
 
 ### Bronnen
 
@@ -164,21 +166,23 @@ Houd de toetsen 5 tot 10 seconden vast.
 Bij een koude start na een lange stilstand zette alleen de combinatie van alle uit-standen de
 heater uit. Het opwarmen duurde daarna lang, met een lage COP.
 
-!!! warning "Risico's als de heater uit staat"
-    - **Bevriezing.** Alleen de circulatiepomp beschermt dan het water. Dat werkt alleen
-      zolang het water vrij door het huis kan stromen, zonder dichte zoneregeling.
-    - **Ontdooien mislukt.** Zonder heater haalt de warmtepomp de energie uit het cv-water.
-      Is dat te koud, dan ontdooit de verdamper niet helemaal. De warmtepomp kan dan vastlopen
-      zonder foutmelding, of stopt met `H75`.
-    - **Geen reserve.** Valt de compressor uit, dan verwarmt de heater het huis niet meer.
-    - **Geen sterilisatie** met de interne heater.
+**Let op: Risico's als de heater uit staat.**
 
-!!! note "Meningen verschillen"
-    - **Uitzetten.** Bij een grote vloer met genoeg afgifte kan de heater uit. Een 7J draaide
-      4 jaar zonder heater zonder problemen. Met de heater aan kostte één koude dag 21 kWh extra.
-    - **Aan laten.** De besparing is klein: ongeveer €9 per jaar bij 60 kWh. Een hogere
-      stooklijn om de heater te ontwijken kost ook energie. Laat de heater aan en kijk in
-      koude periodes niet te veel naar de grafieken.
+- **Bevriezing.** Alleen de circulatiepomp beschermt dan het water. Dat werkt alleen
+  zolang het water vrij door het huis kan stromen, zonder dichte zoneregeling.
+- **Ontdooien mislukt.** Zonder heater haalt de warmtepomp de energie uit het cv-water.
+  Is dat te koud, dan ontdooit de verdamper niet helemaal. De warmtepomp kan dan vastlopen
+  zonder foutmelding, of stopt met `H75`.
+- **Geen reserve.** Valt de compressor uit, dan verwarmt de heater het huis niet meer.
+- **Geen sterilisatie** met de interne heater.
+
+**Meningen verschillen.**
+
+- **Uitzetten.** Bij een grote vloer met genoeg afgifte kan de heater uit. Een 7J draaide
+  4 jaar zonder heater zonder problemen. Met de heater aan kostte één koude dag 21 kWh extra.
+- **Aan laten.** De besparing is klein: ongeveer €9 per jaar bij 60 kWh. Een hogere
+  stooklijn om de heater te ontwijken kost ook energie. Laat de heater aan en kijk in
+  koude periodes niet te veel naar de grafieken.
 
 ### Bronnen
 
@@ -216,9 +220,10 @@ De tankheater is een apart element in het SWW-vat. Het is niet de backup heater.
 Voor de keuze tussen element en backup heater bij de legionellarun, zie
 [Legionella: welke verwarming](../../general/legionella.md#welke-verwarming).
 
-!!! warning "Netspanning"
-    Een tankheater werkt op netspanning. Schakel de spanning uit voordat u aan het element of
-    de aansluiting werkt.
+**Let op: Netspanning.**
+
+Een tankheater werkt op netspanning. Schakel de spanning uit voordat u aan het element of
+de aansluiting werkt.
 
 ### Bronnen
 

@@ -1,8 +1,8 @@
 ---
+title: Vermogen kiezen
+weight: 10
 tags: [Installatie]
 ---
-
-# Vermogen kiezen
 
 Het vermogen van een warmtepomp moet passen bij het warmteverlies van de woning op de
 koudste dagen. Het minimale vermogen moet passen bij de mildere dagen. Het afgiftesysteem
@@ -204,15 +204,16 @@ een minimaal vermogen dat laag genoeg is voor het voor- en naseizoen. Heeft een 
 model hetzelfde minimale vermogen als een kleiner model, dan kost het grotere model vooral
 geld. Een groter model kan wel meer geluid maken bij vol vermogen.
 
-!!! note "Meningen verschillen"
-    - **Liever iets te groot.** Een warmtepomp die het op de koudste dagen maar net haalt,
-      geeft risico op een koud huis. Ontdooien pleit ook
-      voor een ruimer model.
-    - **Iets te klein is te overzien.** De koudste dagen zijn er maar een paar per jaar.
-      Het element of een extra kachel vangt die op. Een groter model kost meer.
-    - **Bewust kleiner kiezen, voor beter moduleren, kan tegenvallen.** Een gebruiker koos
-      een kleiner model dan de vollasturen aangaven. Rond het vriespunt bleef er te weinig
-      vermogen over.
+**Meningen verschillen.**
+
+- **Liever iets te groot.** Een warmtepomp die het op de koudste dagen maar net haalt,
+  geeft risico op een koud huis. Ontdooien pleit ook
+  voor een ruimer model.
+- **Iets te klein is te overzien.** De koudste dagen zijn er maar een paar per jaar.
+  Het element of een extra kachel vangt die op. Een groter model kost meer.
+- **Bewust kleiner kiezen, voor beter moduleren, kan tegenvallen.** Een gebruiker koos
+  een kleiner model dan de vollasturen aangaven. Rond het vriespunt bleef er te weinig
+  vermogen over.
 
 Twijfelt u, kijk dan eerst of u te warm stookt. Een gebruiker dacht dat zijn warmtepomp te
 klein was. Het bleek 24 °C binnen te zijn.
@@ -240,11 +241,12 @@ element 24 uur per dag draait, levert veel warmte.
 - **Kosten.** De gasaansluiting blijft geld kosten. Een gebruiker noemde in 2021 ongeveer
   € 200 per jaar.
 
-!!! note "Meningen verschillen"
-    Een gebruiker vindt hybride een optie als het huis bij strenge vorst krap is: het wordt
-    zelden −10 °C en maar een paar dagen per jaar vriest het. Een ander vindt hybride geen
-    goede keuze, omdat het gas er toch af moet. Hij wijst erop dat een koude periode ook
-    een week kan duren. Kies dan liever een grotere warmtepomp.
+**Meningen verschillen.**
+
+Een gebruiker vindt hybride een optie als het huis bij strenge vorst krap is: het wordt
+zelden −10 °C en maar een paar dagen per jaar vriest het. Een ander vindt hybride geen
+goede keuze, omdat het gas er toch af moet. Hij wijst erop dat een koude periode ook
+een week kan duren. Kies dan liever een grotere warmtepomp.
 
 ### Bronnen
 

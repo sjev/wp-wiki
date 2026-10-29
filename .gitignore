@@ -61,8 +61,5 @@ Thumbs.db
 # Scraped forum data (size + copyright); rebuild with `inv scrape`
 data/
 
-# MkDocs build output
-site/
-
 # Work-in-progress notes and agent handovers
 wip/

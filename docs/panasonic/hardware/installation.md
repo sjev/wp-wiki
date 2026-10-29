@@ -1,8 +1,8 @@
 ---
+title: Plaatsing en installatie
+weight: 10
 tags: [Installatie, Veiligheid, J-serie, T-CAP]
 ---
-
-# Plaatsing en installatie
 
 Een Panasonic Aquarea monoblock kunt u zelf installeren. Alle koeltechniek zit in de
 buitenunit. U sluit alleen water en stroom aan. Deze pagina gaat over plaatsing, fundering,
@@ -13,14 +13,15 @@ Voor leidingmaten, filters, lucht en druk in het algemeen, zie
 [Storingen en foutcodes](../troubleshooting.md).
 
 **Zie ook:** [Ontdooien](../../general/defrost.md) · [Buffervat](../../general/buffer-tank.md) ·
-[Instellingen](../settings.md) · [Bekabeling](wiring.md) · [Modellen](../index.md)
+[Instellingen](../settings.md) · [Bekabeling](wiring.md) · [Modellen](../_index.md)
 
-!!! warning "Split en bibloc: koelleidingen alleen door een gecertificeerd installateur"
-    Bij een split of bibloc loopt koudemiddel tussen binnen- en buitenunit. Aansluiten,
-    vacuüm trekken en vullen van die leidingen is werk onder de F-gassenregels. Doe dit niet
-    zelf. Een gecertificeerd (STEK-)monteur doet dit. De rest (plaatsen, water, stroom) kunt u
-    wel zelf voorbereiden. Een monoblock heeft dit probleem niet, maar het water buiten kan
-    bevriezen (zie [Vorst en stroomuitval](#vorst-en-stroomuitval)).
+**Let op: Split en bibloc: koelleidingen alleen door een gecertificeerd installateur.**
+
+Bij een split of bibloc loopt koudemiddel tussen binnen- en buitenunit. Aansluiten,
+vacuüm trekken en vullen van die leidingen is werk onder de F-gassenregels. Doe dit niet
+zelf. Een gecertificeerd (STEK-)monteur doet dit. De rest (plaatsen, water, stroom) kunt u
+wel zelf voorbereiden. Een monoblock heeft dit probleem niet, maar het water buiten kan
+bevriezen (zie [Vorst en stroomuitval](#vorst-en-stroomuitval)).
 
 ### Bronnen
 
@@ -42,13 +43,14 @@ Voor Panasonic komt daar bij:
 - **Gewicht.** Een unit met water en steunen weegt ongeveer 100 kg. Houd daar rekening mee
   bij plaatsing op een dak.
 
-!!! note "Meningen verschillen"
-    - Volgens de handleiding van de J-serie is 100 mm aan de achterkant genoeg.
-    - De oudere design manual (H-serie) noemt 300 mm. Gebruikers vinden 100 mm te krap voor
-      leidingen en onderhoud.
-    - De pagina *Minimum distances for outdoor units* in de design manual noemt drie afstanden
-      per zijde: 100, 300 en 1000 mm.
-    - 250–300 mm is volgens een leverancier genoeg, omdat er ook lucht van onderen komt.
+**Meningen verschillen.**
+
+- Volgens de handleiding van de J-serie is 100 mm aan de achterkant genoeg.
+- De oudere design manual (H-serie) noemt 300 mm. Gebruikers vinden 100 mm te krap voor
+  leidingen en onderhoud.
+- De pagina *Minimum distances for outdoor units* in de design manual noemt drie afstanden
+  per zijde: 100, 300 en 1000 mm.
+- 250–300 mm is volgens een leverancier genoeg, omdat er ook lucht van onderen komt.
 
 ### Bronnen
 
@@ -70,10 +72,11 @@ Voor Panasonic komt daar bij:
 - **Waterpas en hoogte.** Met draadeind en moeren op bigfoots stelt u de unit waterpas en
   staat hij vrij boven het grind. Dat helpt ook bij het dooiwater.
 
-!!! note "Meningen verschillen"
-    - **Demping.** Bigfoots, rubber of veren onder de unit beperken trillingen en geluid.
-    - **Massa.** Veren en dempers zijn niet nodig. Bout de unit vast op zwaar beton
-      (ongeveer 100 kg), zodat hij niet kan bewegen.
+**Meningen verschillen.**
+
+- **Demping.** Bigfoots, rubber of veren onder de unit beperken trillingen en geluid.
+- **Massa.** Veren en dempers zijn niet nodig. Bout de unit vast op zwaar beton
+  (ongeveer 100 kg), zodat hij niet kan bewegen.
 
 ### Bronnen
 
@@ -98,14 +101,15 @@ er veel water uit de hele bodemplaat (*base pan*), ook uit de gaten helemaal lin
   bodemplaatverwarming met één open afvoer. Gaten dichtmaken zonder die verwarming geeft
   kans op ijs in de bodemplaat.
 
-!!! note "Afvoer onder een binnenunit (all-in-one, bibloc)"
-    Onder sommige binnenunits zit een extra afvoeropening. Wat die doet, is niet duidelijk.
-    Panasonic noemde hem een waterafvoer en adviseerde aansluiten op het riool (K-serie).
-    Een installateur noemt het een aftappunt om de tank te legen. Bij een L-serie bibloc
-    schrijft Panasonic een 17 mm slang voor. De handleiding eist doorlopend afschot, een
-    vorstvrije plek en een uitlaat naar buiten, niet in een rioolbuis waar ammoniak of
-    zwavelgas kan ontstaan. Bij condens (koelen) komt er minstens 6 mm extra isolatie bij.
-    Een gebruiker met een split T-CAP ziet er geen water uit komen.
+**Afvoer onder een binnenunit (all-in-one, bibloc).**
+
+Onder sommige binnenunits zit een extra afvoeropening. Wat die doet, is niet duidelijk.
+Panasonic noemde hem een waterafvoer en adviseerde aansluiten op het riool (K-serie).
+Een installateur noemt het een aftappunt om de tank te legen. Bij een L-serie bibloc
+schrijft Panasonic een 17 mm slang voor. De handleiding eist doorlopend afschot, een
+vorstvrije plek en een uitlaat naar buiten, niet in een rioolbuis waar ammoniak of
+zwavelgas kan ontstaan. Bij condens (koelen) komt er minstens 6 mm extra isolatie bij.
+Een gebruiker met een split T-CAP ziet er geen water uit komen.
 
 ### Bronnen
 
@@ -158,9 +162,10 @@ flowchart LR
     F --> U
 ```
 
-!!! note "Meningen verschillen"
-    - Gebruik binnen liever meerlaagse buis of Hep2O, en houd de omvlochten slang buiten.
-    - Flexslang tot binnen is makkelijker voor doe-het-zelvers, maar lastig als u wilt koelen.
+**Meningen verschillen.**
+
+- Gebruik binnen liever meerlaagse buis of Hep2O, en houd de omvlochten slang buiten.
+- Flexslang tot binnen is makkelijker voor doe-het-zelvers, maar lastig als u wilt koelen.
 
 ### Bronnen
 
@@ -197,9 +202,10 @@ In de monoblock zit een expansievat van 6 L. Volgens de handleiding is dat genoe
 - **Minimale inhoud.** De design manual noemt voor de J-serie tot 9 kW een minimale
   systeeminhoud van 30 L. Zie [Buffervat](../../general/buffer-tank.md).
 
-!!! note "Meningen verschillen"
-    Voor de grootte van een extra vat noemen gebruikers twee vuistregels: 10 % van de
-    waterinhoud (cv) of 4 % (warmtepomp, volgens warmtepomp-weetjes).
+**Meningen verschillen.**
+
+Voor de grootte van een extra vat noemen gebruikers twee vuistregels: 10 % van de
+waterinhoud (cv) of 4 % (warmtepomp, volgens warmtepomp-weetjes).
 
 ### Bronnen
 
@@ -231,18 +237,20 @@ van de warmtepomp het water: de pomp gaat draaien en zo nodig ook de compressor.
   de klep.
 - **Glycol** wordt afgeraden.
 
-!!! warning "Bevriezing bij stroomuitval"
-    Valt de stroom lang uit bij vorst, dan bevriest het water in de buitenunit en de
-    buitenleidingen. Bent u thuis: schakel de stroom uit, sluit de afsluiters en draai de
-    slangen los om af te tappen.
+**Let op: Bevriezing bij stroomuitval.**
 
-!!! note "Meningen verschillen"
-    - **Risico accepteren.** Veel gebruikers plaatsen geen vorstkleppen. Een lange
-      stroomstoring terwijl u niet thuis bent, is zeldzaam. Zij zorgen voor afsluiters en een
-      aftappunt.
-    - **Vorstkleppen** (bijv. Caleffi) zijn bij een leverancier standaard. Zij laten de unit
-      leeglopen als het water te koud wordt. Ze werken alleen goed met een vulautomaat, en
-      mogelijk storen ze de eigen vorstbeveiliging van Panasonic.
+Valt de stroom lang uit bij vorst, dan bevriest het water in de buitenunit en de
+buitenleidingen. Bent u thuis: schakel de stroom uit, sluit de afsluiters en draai de
+slangen los om af te tappen.
+
+**Meningen verschillen.**
+
+- **Risico accepteren.** Veel gebruikers plaatsen geen vorstkleppen. Een lange
+  stroomstoring terwijl u niet thuis bent, is zeldzaam. Zij zorgen voor afsluiters en een
+  aftappunt.
+- **Vorstkleppen** (bijv. Caleffi) zijn bij een leverancier standaard. Zij laten de unit
+  leeglopen als het water te koud wordt. Ze werken alleen goed met een vulautomaat, en
+  mogelijk storen ze de eigen vorstbeveiliging van Panasonic.
 
 ### Bronnen
 
@@ -274,11 +282,12 @@ van de warmtepomp het water: de pomp gaat draaien en zo nodig ook de compressor.
 
 Krijgt u `H62` of `H20`? Zie [Storingen en foutcodes](../troubleshooting.md).
 
-!!! note "Meningen verschillen"
-    - Laat de automatische ontluchter open staan.
-    - Druppelt hij na een paar dagen nog, dan mag hij dicht. Ontlucht dan af en toe op het
-      hoogste punt en bij het filter. Druppelen komt vaak door lucht die nog in het systeem
-      zit.
+**Meningen verschillen.**
+
+- Laat de automatische ontluchter open staan.
+- Druppelt hij na een paar dagen nog, dan mag hij dicht. Ontlucht dan af en toe op het
+  hoogste punt en bij het filter. Druppelen komt vaak door lucht die nog in het systeem
+  zit.
 
 ### Bronnen
 

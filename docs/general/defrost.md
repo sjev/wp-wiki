@@ -1,8 +1,8 @@
 ---
+title: Ontdooien
+weight: 60
 tags: [Optimalisatie, Installatie]
 ---
-
-# Ontdooien
 
 Een lucht-waterwarmtepomp haalt warmte uit de buitenlucht. Daarbij kan ijs groeien op de
 verdamper. Van tijd tot tijd ontdooit de warmtepomp dat ijs. Dat heet ontdooien, *defrost*
@@ -117,14 +117,15 @@ heel jaar valt het verbruik van het element vaak mee: tientallen tot ruim honder
   40 l/min). Dat geeft ruis in de leidingen. Zie
   [Waar de warmte vandaan komt](#waar-de-warmte-vandaan-komt) voor oplossingen.
 
-!!! note "Meningen verschillen"
-    - **Ontdooien kost weinig.** De warmte om het ijs te smelten komt vrij bij het bevriezen
-      van de waterdamp. Het grootste verlies is de tijd waarin de warmtepomp niet verwarmt.
-    - **Ontdooien kost veel.** Ook zonder element kost elke cyclus energie die de warmtepomp
-      daarna moet terugwinnen. Het ijs op de verdamper verlaagt bovendien de COP tussen de
-      cycli in. Op vochtige dagen rond 0 °C daalde de COP van boven 4 naar onder 3.
-    - **Het element is niet het grootste probleem.** Gemeten is ongeveer 2 minuten
-      elementtijd per cyclus. Dure ontdooidagen komen vooral door het stoppen en starten.
+**Meningen verschillen.**
+
+- **Ontdooien kost weinig.** De warmte om het ijs te smelten komt vrij bij het bevriezen
+  van de waterdamp. Het grootste verlies is de tijd waarin de warmtepomp niet verwarmt.
+- **Ontdooien kost veel.** Ook zonder element kost elke cyclus energie die de warmtepomp
+  daarna moet terugwinnen. Het ijs op de verdamper verlaagt bovendien de COP tussen de
+  cycli in. Op vochtige dagen rond 0 °C daalde de COP van boven 4 naar onder 3.
+- **Het element is niet het grootste probleem.** Gemeten is ongeveer 2 minuten
+  elementtijd per cyclus. Dure ontdooidagen komen vooral door het stoppen en starten.
 
 ### Bronnen
 
@@ -189,16 +190,17 @@ Het weer bepaalt het meeste. Met instellingen verandert u weinig. Dit helpt wel:
 - **Minder warmtevraag.** Rustiger draaien geeft minder ontdooicycli, maar ook minder warmte in
   huis. Per geleverde kWh wint u bijna niets.
 
-!!! note "Meningen verschillen"
-    - **Aanvoer 1 °C hoger.** Een warmere retour levert meer warmte voor het ontdooien en
-      vraagt minder van het element. Test het: vergelijk het totale verbruik over een paar uur
-      met hetzelfde weer.
-    - **Geen effect op het aantal.** Het aantal ontdooicycli hangt af van buitentemperatuur,
-      luchtvochtigheid en retourtemperatuur. Een hogere aanvoer vermindert het aantal niet direct.
-    - **Lagere aanvoer.** Na een overstap naar lagere aanvoer leken er iets minder ontdooicycli
-      te zijn, omdat de compressor minder hard werkt. Het element moest wel langer helpen.
-    - **Stille modus.** Volgens een gebruiker geeft een stille modus meer ontdooicycli. Een ander
-      raadt hem bij koud weer af.
+**Meningen verschillen.**
+
+- **Aanvoer 1 °C hoger.** Een warmere retour levert meer warmte voor het ontdooien en
+  vraagt minder van het element. Test het: vergelijk het totale verbruik over een paar uur
+  met hetzelfde weer.
+- **Geen effect op het aantal.** Het aantal ontdooicycli hangt af van buitentemperatuur,
+  luchtvochtigheid en retourtemperatuur. Een hogere aanvoer vermindert het aantal niet direct.
+- **Lagere aanvoer.** Na een overstap naar lagere aanvoer leken er iets minder ontdooicycli
+  te zijn, omdat de compressor minder hard werkt. Het element moest wel langer helpen.
+- **Stille modus.** Volgens een gebruiker geeft een stille modus meer ontdooicycli. Een ander
+  raadt hem bij koud weer af.
 
 ### Bronnen
 

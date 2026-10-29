@@ -1,8 +1,8 @@
 ---
+title: Comfort Cloud en Service Cloud
+weight: 10
 tags: [Cloud, J-serie, L-serie, M-serie]
 ---
-
-# Comfort Cloud en Service Cloud
 
 Met de netwerkadapter CZ-TAW1 verbindt u een Panasonic Aquarea met de servers van Panasonic.
 Daarna kunt u de warmtepomp op afstand bedienen en uitlezen. Er zijn twee omgevingen:
@@ -72,9 +72,10 @@ Tips:
   gebruikersomgeving, registreer het opnieuw onder een nieuwe naam en meld het daarna weer aan
   bij de Service Cloud.
 
-!!! note "Meningen verschillen"
-    Sommige gebruikers moesten voor de twee accounts verschillende e-mailadressen gebruiken.
-    Anderen konden hetzelfde adres gebruiken.
+**Meningen verschillen.**
+
+Sommige gebruikers moesten voor de twee accounts verschillende e-mailadressen gebruiken.
+Anderen konden hetzelfde adres gebruiken.
 
 ### Bronnen
 
@@ -156,10 +157,11 @@ vermogen (bijv. 3 kW). Het verbruik wordt ook naar beneden afgerond. Daarom wijk
 in de cloud en op de controller af van een kWh-meter. De COP die de controller daaruit
 berekent, klopt dus ook niet.
 
-!!! note "Meningen verschillen"
-    Volgens sommige gebruikers geeft de Comfort Cloud meer verbruik dan de controller
-    (meer dan 1 kWh per dag, of ongeveer 10 %). Eén gebruiker vindt dat dichter bij zijn
-    kWh-meter. Een ander zegt dat de cloud te hoog meet.
+**Meningen verschillen.**
+
+Volgens sommige gebruikers geeft de Comfort Cloud meer verbruik dan de controller
+(meer dan 1 kWh per dag, of ongeveer 10 %). Eén gebruiker vindt dat dichter bij zijn
+kWh-meter. Een ander zegt dat de cloud te hoog meet.
 
 ### Bronnen
 
@@ -196,10 +198,11 @@ wijziging van de stooklijn de SWW-timer in de Comfort Cloud uit. Gevolg: geen wa
 Na het instellen moet u een timer ook activeren. Op de controller ziet u dan het timersymbool
 met een doorgetrokken streepje eronder.
 
-!!! note "Meningen verschillen"
-    De meeste ervaren gebruikers raden aan de weektimer alleen op de controller in te stellen
-    en alles van de cloudtimer te verwijderen. Een andere gebruiker raadt juist de timer in de
-    Comfort Cloud-app aan.
+**Meningen verschillen.**
+
+De meeste ervaren gebruikers raden aan de weektimer alleen op de controller in te stellen
+en alles van de cloudtimer te verwijderen. Een andere gebruiker raadt juist de timer in de
+Comfort Cloud-app aan.
 
 ### Instellingen wijzigen
 

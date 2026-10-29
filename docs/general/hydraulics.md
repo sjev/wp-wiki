@@ -1,8 +1,8 @@
 ---
+title: Hydrauliek
+weight: 40
 tags: [Installatie, Optimalisatie]
 ---
-
-# Hydrauliek
 
 Hydrauliek gaat over het water tussen de warmtepomp en het afgiftesysteem: hoeveel water
 stroomt er, hoe warm gaat het heen en terug, en waar loopt het langs. Een warmtepomp werkt
@@ -44,12 +44,13 @@ Meer flow kost wel pompvermogen. Zo vindt u het optimum voor uw systeem:
 Het optimum verschuift met de belasting: bij laag vermogen ligt het bij een lagere flow dan
 bij vol vermogen.
 
-!!! note "Meningen verschillen"
-    - **Kleine ΔT, hoge flow.** De winst van een lagere aanvoertemperatuur is groter dan de
-      extra stroom voor de pomp. Zet de pomp hoger zolang de leidingen niet ruisen.
-    - **Grotere ΔT.** Een kleine ΔT vraagt veel van de pomp, en de warmtepomp krijgt warm water
-      terug. Een ΔT van ongeveer 20 % van de aanvoertemperatuur is een oude vuistregel;
-      dat is ongeveer 6 °C bij vloerverwarming en 7 °C bij radiatoren.
+**Meningen verschillen.**
+
+- **Kleine ΔT, hoge flow.** De winst van een lagere aanvoertemperatuur is groter dan de
+  extra stroom voor de pomp. Zet de pomp hoger zolang de leidingen niet ruisen.
+- **Grotere ΔT.** Een kleine ΔT vraagt veel van de pomp, en de warmtepomp krijgt warm water
+  terug. Een ΔT van ongeveer 20 % van de aanvoertemperatuur is een oude vuistregel;
+  dat is ongeveer 6 °C bij vloerverwarming en 7 °C bij radiatoren.
 
 ### Bronnen
 
@@ -89,11 +90,12 @@ warmwaterbereiding. Kies de leidingen daarop.
 - **RVS-flexslang** bij de warmtepomp vermindert trillingen via de leidingen.
 - 32 mm meerlagenbuis op rol is stug en moeilijk alleen te verwerken.
 
-!!! note "Meningen verschillen"
-    - **Zo dik mogelijk.** Neem altijd de grootste maat als u leidingen aanlegt.
-    - **Niet overdrijven.** Ook met 28 mm naar de verdelers en 22 mm naar de zolder haalt een
-      12 kW-warmtepomp 35 l/min. Een compromis is 26 mm meerlagenbuis met zoveel mogelijk
-      zelfgebogen bochten.
+**Meningen verschillen.**
+
+- **Zo dik mogelijk.** Neem altijd de grootste maat als u leidingen aanlegt.
+- **Niet overdrijven.** Ook met 28 mm naar de verdelers en 22 mm naar de zolder haalt een
+  12 kW-warmtepomp 35 l/min. Een compromis is 26 mm meerlagenbuis met zoveel mogelijk
+  zelfgebogen bochten.
 
 ### Bronnen
 
@@ -192,8 +194,9 @@ heet, de rest blijft lauw, en u zet de aanvoer hoger dan nodig.
 Hoe beter ingeregeld, hoe lager de aanvoertemperatuur kan. Met veel groepen van gelijke lengte
 is het effect klein. Zon op een deel van de vloer verandert de balans weer.
 
-!!! note "Teveel geknepen"
-    Groepen die te ver zijn dichtgedraaid tijdens het inregelen, kunnen een flowstoring geven.
+**Teveel geknepen.**
+
+Groepen die te ver zijn dichtgedraaid tijdens het inregelen, kunnen een flowstoring geven.
 
 ### Bronnen
 
@@ -271,9 +274,10 @@ circulatiepomp laten vastlopen.
   de pomp niet.
 - Haal stalen onderdelen die u niet meer nodig hebt weg en spoel het systeem met leidingwater.
 
-!!! note "Meningen verschillen"
-    Over de microbellenontluchter zijn de meningen verdeeld. Sommigen vinden hem nuttig tegen
-    roestvorming. Anderen vinden hem zinloos bij kunststof en koper en lage temperaturen.
+**Meningen verschillen.**
+
+Over de microbellenontluchter zijn de meningen verdeeld. Sommigen vinden hem nuttig tegen
+roestvorming. Anderen vinden hem zinloos bij kunststof en koper en lage temperaturen.
 
 ### Lucht
 

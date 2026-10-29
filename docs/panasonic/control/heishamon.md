@@ -1,8 +1,8 @@
 ---
+title: HeishaMon
+weight: 20
 tags: [HeishaMon]
 ---
-
-# HeishaMon
 
 HeishaMon is een open-source module voor Panasonic Aquarea. De module leest de data van de
 warmtepomp uit en kan de belangrijkste instellingen wijzigen. Zij vervangt of vult de
@@ -87,10 +87,11 @@ De print heeft ook `CN-NMODE`, een 4-pins JST PH-connector. Die is elektrisch ve
 - De binnenunit van de M-serie (WH-ADC…) heeft `CN-CNT2` voor de netwerkadapter en `CN-CNT`
   voor het uitbreidingsboard.
 
-!!! warning "Netspanning op de print"
-    Op de hoofdprint staan hoge spanningen (bijv. 320 V op `CN-PUMP1`; handleiding H20: 280–373 V DC (handleiding, foto)). Schakel de spanning uit
-    voordat u een kabel aansluit. De handleiding noemt voor de pomp-aansluiting 280–373 V DC (pin 1 en 4)
-    en noemt die `CN-PUMP2`; op de print van een J-serie heet hij `CN-PUMP1`.
+**Let op: Netspanning op de print.**
+
+Op de hoofdprint staan hoge spanningen (bijv. 320 V op `CN-PUMP1`; handleiding H20: 280–373 V DC (handleiding, foto)). Schakel de spanning uit
+voordat u een kabel aansluit. De handleiding noemt voor de pomp-aansluiting 280–373 V DC (pin 1 en 4)
+en noemt die `CN-PUMP2`; op de print van een J-serie heet hij `CN-PUMP1`.
 
 ### Bronnen
 
@@ -133,11 +134,12 @@ De print heeft ook `CN-NMODE`, een 4-pins JST PH-connector. Die is elektrisch ve
 Na een firmware-update: controleer uw automatiseringen. Bij v1.0 kreeg de module een factory
 reset en veranderden de topics. Slechte wifi gaf in oude versies veel MQTT-reconnects.
 
-!!! note "Meningen verschillen"
-    - **Niets voor beginners.** Wie de antwoorden niet zelf in het topic kan vinden, kan beter
-      de standaard netwerkmodule en de app van Panasonic nemen.
-    - **Uitlezen valt mee.** Een beginner kreeg broker, database en dashboard werkend. Sturen
-      vond hij lastiger.
+**Meningen verschillen.**
+
+- **Niets voor beginners.** Wie de antwoorden niet zelf in het topic kan vinden, kan beter
+  de standaard netwerkmodule en de app van Panasonic nemen.
+- **Uitlezen valt mee.** Een beginner kreeg broker, database en dashboard werkend. Sturen
+  vond hij lastiger.
 
 ### Bronnen
 

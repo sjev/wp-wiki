@@ -1,8 +1,8 @@
 ---
+title: Geluid en omkasting
+weight: 110
 tags: [Installatie, Optimalisatie]
 ---
-
-# Geluid en omkasting
 
 De buitenunit van een lucht-waterwarmtepomp maakt geluid. Of dat hinder geeft, hangt af van
 de plaats, de ondergrond en de omgeving. Deze pagina gaat over het geluid van de buitenunit,
@@ -69,11 +69,12 @@ warmtepompgeluid. Reken uw eigen situatie door; neem geen oplossing van een ande
   of schuur tussen de unit en de buren helpt.
 - **Overleg.** Praat voor de plaatsing met de buren.
 
-!!! note "Meningen verschillen"
-    - **Reken streng.** De norm geldt op vollast. Een omkasting of geluidsscherm kan nodig zijn
-      om te voldoen.
-    - **In de praktijk valt het mee.** De warmtepomp draait bijna nooit op vollast. Veel units
-      staan vlak bij een raam en niemand hoort ze. Een omkasting kunt u later nog plaatsen.
+**Meningen verschillen.**
+
+- **Reken streng.** De norm geldt op vollast. Een omkasting of geluidsscherm kan nodig zijn
+  om te voldoen.
+- **In de praktijk valt het mee.** De warmtepomp draait bijna nooit op vollast. Veel units
+  staan vlak bij een raam en niemand hoort ze. Een omkasting kunt u later nog plaatsen.
 
 ### Bronnen
 
@@ -124,9 +125,10 @@ Sluit de unit aan met flexibele slangen, bijv. RVS-flex. Dan gaan minder trillin
 leidingen het huis in. Slangen vangen ook het krimpen en uitzetten van de leidingen op. Zonder
 slangen kunnen koppelingen en steunen op den duur breken.
 
-!!! note "Meningen verschillen"
-    Een unit die al jaren direct op kunststof buis is aangesloten, zonder flex, gaf geen
-    problemen. Anderen raden dat af, omdat de unit op vol vermogen flink kan trillen.
+**Meningen verschillen.**
+
+Een unit die al jaren direct op kunststof buis is aangesloten, zonder flex, gaf geen
+problemen. Anderen raden dat af, omdat de unit op vol vermogen flink kan trillen.
 
 ### Bronnen
 
@@ -148,13 +150,14 @@ Isolatie aan de binnenkant van het plaatwerk maakt de compressor stiller:
 - Verwacht geen wonderen. De ventilator blijft hoorbaar. De compressor is daarna op een
   laag toerental nog iets te horen.
 
-!!! note "Meningen verschillen"
-    - **Het helpt.** Na isolatie is vooral de ventilator nog te horen en twijfelt men of de unit
-      draait.
-    - **Het effect is klein of moeilijk te meten.** Een unit die al stil is, wordt er niet veel
-      stiller van.
-    - **Pas op met de compressor.** Een compressor heeft koellucht nodig. Pak hem niet helemaal
-      in. Dempen in de omgeving van de compressor is veiliger.
+**Meningen verschillen.**
+
+- **Het helpt.** Na isolatie is vooral de ventilator nog te horen en twijfelt men of de unit
+  draait.
+- **Het effect is klein of moeilijk te meten.** Een unit die al stil is, wordt er niet veel
+  stiller van.
+- **Pas op met de compressor.** Een compressor heeft koellucht nodig. Pak hem niet helemaal
+  in. Dempen in de omgeving van de compressor is veiliger.
 
 ### Bronnen
 

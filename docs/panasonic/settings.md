@@ -1,8 +1,8 @@
 ---
+title: Instellingen
+weight: 10
 tags: [Optimalisatie, HeishaMon, T-CAP, J-serie, L-serie, Veiligheid]
 ---
-
-# Instellingen
 
 Hoe de Panasonic Aquarea de [stooklijn](../general/heating-curve.md) en de
 kamerthermostaat gebruikt.
@@ -86,8 +86,9 @@ Er zijn twee aansluitingen:
 
 Bij `CN4` moet de instelling *External control* aan staan.
 
-!!! warning "230 V op `CN2`"
-    Op `CN2` staat netspanning. Gebruik een thermostaat en kabel die geschikt zijn voor 230 V.
+**Let op: 230 V op `CN2`.**
+
+Op `CN2` staat netspanning. Gebruik een thermostaat en kabel die geschikt zijn voor 230 V.
 
 ### Bronnen
 
@@ -101,12 +102,13 @@ bij het ontdooien (COP 1). Boven 27 °C haalt hij de energie uit het cv-water. T
 houden de Tr hoger: de stooklijn en de ΔT van de waterpomp. Voorbeeld: Ta 33 °C bij 3 °C
 buiten en ΔT 5 geeft Tr 28 °C.
 
-!!! note "Meningen verschillen"
-    - Ook met Tr 28 °C kan de heater bijschakelen als de Tr tijdens het ontdooien onder
-      27 °C zakt, bijv. bij een klein seriebuffervat.
-    - Bij een T-CAP met veel vloerverwarming kost Tr boven 27 °C zoveel vermogen dat het huis
-      te warm wordt. Ontdooien met COP 1 is dan de betere keuze.
-    - Een gebruiker zag bij Tr 26 °C en 11 ontdooicycli de heater nooit aangaan.
+**Meningen verschillen.**
+
+- Ook met Tr 28 °C kan de heater bijschakelen als de Tr tijdens het ontdooien onder
+  27 °C zakt, bijv. bij een klein seriebuffervat.
+- Bij een T-CAP met veel vloerverwarming kost Tr boven 27 °C zoveel vermogen dat het huis
+  te warm wordt. Ontdooien met COP 1 is dan de betere keuze.
+- Een gebruiker zag bij Tr 26 °C en 11 ontdooicycli de heater nooit aangaan.
 
 Zie ook [storingen: ontdooien](troubleshooting.md#ontdooien-h65-h75).
 
@@ -153,13 +155,14 @@ topicstart daalt het rendement. Met HeishaMon zet u de modus met `SetQuietMode`,
   uur zonder QM, 4 kW in ruim 1,5 uur met QM2 of QM3. Op de J-serie zagen gebruikers geen
   verschil.
 
-!!! note "Meningen verschillen: stille modus en ontdooien"
-    - Meerdere gebruikers schrijven dat QM meer ontdooicycli geeft, door de lagere
-      ventilatorsnelheid. Een hogere luchtsnelheid bij gelijk vermogen geeft minder
-      ontdooicycli.
-    - Een ander verwacht juist minder cycli, omdat QM ook de compressor begrenst.
-    - Minder cycli per uur met QM komen ook door het lagere vermogen. Per opgewekte kWh
-      blijft het aantal volgens een installateur gelijk of stijgt het iets.
+**Meningen verschillen: stille modus en ontdooien.**
+
+- Meerdere gebruikers schrijven dat QM meer ontdooicycli geeft, door de lagere
+  ventilatorsnelheid. Een hogere luchtsnelheid bij gelijk vermogen geeft minder
+  ontdooicycli.
+- Een ander verwacht juist minder cycli, omdat QM ook de compressor begrenst.
+- Minder cycli per uur met QM komen ook door het lagere vermogen. Per opgewekte kWh
+  blijft het aantal volgens een installateur gelijk of stijgt het iets.
 
 Zie ook [Ontdooien](../general/defrost.md) en [Pendelen](../general/cycling.md).
 
@@ -208,10 +211,11 @@ lees de flow af.
   buitentemperatuur of de compressorfrequentie. Zet de pomp dan op *max duty*, niet op ΔT.
   Zie het voorbeeld in [HeishaMon: rules](control/heishamon.md#rules).
 
-!!! note "Meningen verschillen: max duty en SWW"
-    - Een gebruiker zag een SWW-run op 35 Hz bij max 12 l/min. Met een hogere max duty liep
-      de run op 75 Hz. Met een lage max duty kunt u volgens hem SWW op laag vermogen maken.
-    - Een ander ziet de flow bij een *Force DHW*-run ruim boven de ingestelde max uitkomen.
+**Meningen verschillen: max duty en SWW.**
+
+- Een gebruiker zag een SWW-run op 35 Hz bij max 12 l/min. Met een hogere max duty liep
+  de run op 75 Hz. Met een lage max duty kunt u volgens hem SWW op laag vermogen maken.
+- Een ander ziet de flow bij een *Force DHW*-run ruim boven de ingestelde max uitkomen.
 
 Voor flowstoringen, zie [Storingen: `H62`](troubleshooting.md#water-en-flow-h62-h20).
 
@@ -287,9 +291,10 @@ Verloop en voorwaarden:
 - Haalt de run het doel niet? Mogelijke oorzaken: groot vat, veel tapwater tijdens de run,
   slecht aangesloten element, maximaalthermostaat te laag.
 
-!!! warning "Legionella"
-    Een afgebroken run desinfecteert het vat niet. Controleer na de run dat het doel is
-    gehaald. Zie [Legionella](../general/legionella.md).
+**Let op: Legionella.**
+
+Een afgebroken run desinfecteert het vat niet. Controleer na de run dat het doel is
+gehaald. Zie [Legionella](../general/legionella.md).
 
 Bekend probleem (J-serie met externe tankheater): na een ontdooicyclus met de backup heater
 ging de tankheater niet meer aan, als *doel − DHW-delta* boven de tanktemperatuur lag. Een

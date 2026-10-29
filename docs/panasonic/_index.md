@@ -1,8 +1,8 @@
 ---
+title: Panasonic Aquarea
+weight: 30
 tags: [J-serie, K-serie, L-serie, M-serie, T-CAP, R290]
 ---
-
-# Panasonic Aquarea
 
 Panasonic Aquarea is een reeks lucht-waterwarmtepompen. Op het forum gaat het vooral over de
 series H, J, K, L en M. Deze pagina vergelijkt de series, de uitvoeringen en de koudemiddelen.
@@ -142,10 +142,11 @@ R290 is propaan. De L-serie gebruikt R290, de J- en K-serie R32 en de H-serie R4
 - R290-modellen zijn volgens Panasonic Europa 15–20 % duurder dan R32-modellen.
 - De meeste R290-warmtepompen halen 60 °C of meer. Zie [Legionella](../general/legionella.md).
 
-!!! warning "Propaan (R290) in de L-serie"
-    De L-serie heeft geen dubbele warmtewisselaar. Lekt de warmtewisselaar, dan kan propaan via
-    het cv-water de woning in. Daarom verbiedt de handleiding automatische ontluchters en
-    ontgassers (bijv. Vacustream) in het systeem. Ontlucht met de handmatige ontluchter.
+**Let op: Propaan (R290) in de L-serie.**
+
+De L-serie heeft geen dubbele warmtewisselaar. Lekt de warmtewisselaar, dan kan propaan via
+het cv-water de woning in. Daarom verbiedt de handleiding automatische ontluchters en
+ontgassers (bijv. Vacustream) in het systeem. Ontlucht met de handmatige ontluchter.
 
 ### Bronnen
 
@@ -178,10 +179,11 @@ de praktijk:
   past bij een groot huis met veel vloerverwarming en vraagt meer systeeminhoud. De H-serie
   T-CAP had dit gedrag minder.
 
-!!! note "Meningen verschillen"
-    De topicstart noemt 2500 W voor de J-serie. Een andere gebruiker rekent bij 12 °C buiten en
-    30 °C aanvoer met ruim 3 kW. Voor de K-serie zijn geen metingen van het thermisch minimum.
-    Eén gebruiker gaat uit van dezelfde waarden als de L-serie.
+**Meningen verschillen.**
+
+De topicstart noemt 2500 W voor de J-serie. Een andere gebruiker rekent bij 12 °C buiten en
+30 °C aanvoer met ruim 3 kW. Voor de K-serie zijn geen metingen van het thermisch minimum.
+Eén gebruiker gaat uit van dezelfde waarden als de L-serie.
 
 Hoe u de stooklijn op het minimum afstemt: [Panasonic: instellingen](settings.md) en
 [Pendelen](../general/cycling.md).
@@ -239,10 +241,11 @@ Algemene uitleg: [Ontdooien](../general/defrost.md).
   bij de pomp hangen. Automatische ontluchters mogen niet (zie hierboven).
 - **J-serie T-CAP.** Hoog minimum bij 4–5 °C of lager, zie [Minimaal vermogen](#minimaal-vermogen).
 
-!!! note "Meningen verschillen"
-    Volgens een andere gebruiker is het vorstgedrag van de M-serie goed gedocumenteerd en ligt een
-    probleem bijna altijd aan de instellingen. Andere gebruikers vinden de losse M-monoblock
-    minder geschikt voor het Nederlandse klimaat.
+**Meningen verschillen.**
+
+Volgens een andere gebruiker is het vorstgedrag van de M-serie goed gedocumenteerd en ligt een
+probleem bijna altijd aan de instellingen. Andere gebruikers vinden de losse M-monoblock
+minder geschikt voor het Nederlandse klimaat.
 
 ### Bronnen
 

@@ -1,8 +1,8 @@
 ---
+title: Pendelen
+weight: 30
 tags: [Optimalisatie]
 ---
-
-# Pendelen
 
 Pendelen betekent: de compressor maakt veel korte runs met korte pauzes. De warmtepomp
 start, bereikt snel zijn doeltemperatuur, stopt en start kort daarna weer. Dit gebeurt
@@ -25,14 +25,15 @@ Voor het instellen van een stooklijn, zie [Stooklijn](heating-curve.md).
 De COP hangt vooral af van de buitentemperatuur en de aanvoertemperatuur, niet van het
 vermogen. Een zachte start of een iets langere run verandert de COP van een run weinig.
 
-!!! note "Meningen verschillen"
-    - **Pendelen is weinig erg.** Een compressor kan volgens een gebruiker minstens
-      150.000 starts aan. Met 24 starts per dag gaat hij dan nog 15 jaar mee. Een periode
-      van pendelen maakt op de hele levensduur weinig uit.
-    - **Die rekensom is te optimistisch.** Niemand pendelt 24 uur per dag, het hele jaar.
-    - **Zoek een balans.** Wie alleen op minder starts stuurt, verliest misschien
-      efficiëntie of comfort. Een compressor die 16 in plaats van 15 jaar meegaat, maar al
-      die jaren slecht draait, is geen winst.
+**Meningen verschillen.**
+
+- **Pendelen is weinig erg.** Een compressor kan volgens een gebruiker minstens
+  150.000 starts aan. Met 24 starts per dag gaat hij dan nog 15 jaar mee. Een periode
+  van pendelen maakt op de hele levensduur weinig uit.
+- **Die rekensom is te optimistisch.** Niemand pendelt 24 uur per dag, het hele jaar.
+- **Zoek een balans.** Wie alleen op minder starts stuurt, verliest misschien
+  efficiëntie of comfort. Een compressor die 16 in plaats van 15 jaar meegaat, maar al
+  die jaren slecht draait, is geen winst.
 
 ### Bronnen
 
@@ -170,12 +171,13 @@ flowchart TD
     C6 --> O6["Aan/uit accepteren"]
 ```
 
-!!! note "Meningen verschillen"
-    - **Hogere stooklijn plus thermostaat.** Liever een iets hogere aanvoertemperatuur en
-      lange runs die een thermostaat begrenst, dan veel korte runs.
-    - **Niet lager dan de afgifte toelaat.** Stel de stooklijn niet lager in dan nodig om
-      het minimale vermogen kwijt te raken. Dan pendelt er niets en is de COP maximaal.
-      Wordt het te warm, gebruik dan bloktijden of een thermostaat; zet de flow niet lager.
+**Meningen verschillen.**
+
+- **Hogere stooklijn plus thermostaat.** Liever een iets hogere aanvoertemperatuur en
+  lange runs die een thermostaat begrenst, dan veel korte runs.
+- **Niet lager dan de afgifte toelaat.** Stel de stooklijn niet lager in dan nodig om
+  het minimale vermogen kwijt te raken. Dan pendelt er niets en is de COP maximaal.
+  Wordt het te warm, gebruik dan bloktijden of een thermostaat; zet de flow niet lager.
 
 ### Bronnen
 

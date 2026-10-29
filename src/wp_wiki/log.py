@@ -34,3 +34,12 @@ def setup_logging(verbose: bool, log_file: Path) -> None:
     # httpcore DEBUG is per-socket noise even in the file.
     logging.getLogger("httpcore").setLevel(logging.INFO)
     logging.getLogger("httpx").setLevel(logging.INFO)
+
+
+def log_errors(errors: list[str], kind: str) -> int:
+    """Log each error and a count; return the exit code."""
+    log = logging.getLogger(__name__)
+    for e in errors:
+        log.error(e)
+    log.info("%d %s errors", len(errors), kind)
+    return 1 if errors else 0

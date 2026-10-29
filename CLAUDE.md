@@ -37,6 +37,7 @@ All print Markdown and read `data/posts/*.jsonl`. Quoted lines (`> `) are stripp
 | `uv run wp-wiki replies <id> [<id> …] [--n 6] [--chars 800]` | Post + the replies that quote it. This is where the answers are. |
 | `uv run wp-wiki post <id> [--start '<text>'] [--end '<text>'] [--chars N]` | Full post or one chapter of it. |
 | `uv run wp-wiki cite [docs]` | Check every source link: post exists, author and date match. |
+| `uv run wp-wiki check [docs]` | Check front matter (`title`, `weight`), tags and relative links. |
 | `uv run wp-wiki stats` | Corpus overview → `data/stats.md`. |
 
 Topic-start FAQs (curated, ~53k chars): `74751460` (thread #2) and `65288280` (thread #1).
@@ -49,7 +50,7 @@ Topic-start FAQs (curated, ~53k chars): `74751460` (thread #2) and `65288280` (t
 3. `replies` on those IDs. Extract rules, values, causes, steps. Note who disagrees.
 4. Check every value against the full post text before you use it.
 5. Write the page. Reference examples: `docs/general/heating-curve.md`, `docs/panasonic/troubleshooting.md`.
-6. Link only to pages that exist. `uv run mkdocs build --strict -d /tmp/<name>` must pass.
+6. Link only to pages that exist. `uv run wp-wiki check` must report 0 errors.
 7. `uv run wp-wiki cite` must report 0 errors.
 8. Panasonic facts found while writing a general page: add them to `wip/panasonic-findings.md`.
 
@@ -61,7 +62,7 @@ Topic-start FAQs (curated, ~53k chars): `74751460` (thread #2) and `65288280` (t
 
 ## Languages
 
-- Wiki pages, nav labels, site texts: **Dutch**. Short sentences, active voice, plain words
+- Wiki pages and page titles: **Dutch**. Short sentences, active voice, plain words
   (ASD-STE100 principles; its English word list does not apply).
 - Code, comments, `CLAUDE.md`, README, commits: English.
 - Folder and file names (URLs): English, e.g. `general/heating-curve.md`.
@@ -80,14 +81,23 @@ Topic-start FAQs (curated, ~53k chars): `74751460` (thread #2) and `65288280` (t
 - Placement: valid for any heat pump → `general/`; depends on brand, model or firmware → `<brand>/`.
   Do not copy general content into brand sections; link to it.
 - For HeishaMon topics and rules, also link the upstream [HeishaMon docs](https://github.com/Egyras/HeishaMon).
-- State model, firmware, and date when a claim depends on them. Show disagreements in a
-  `!!! note "Meningen verschillen"`; do not pick a side silently.
-- Safety-related content (electrical, refrigerant, legionella) gets a `!!! warning` admonition.
-- Add each new page to `nav` in `mkdocs.yml`. `inv build` runs `--strict` and must pass.
+- State model, firmware, and date when a claim depends on them. Show disagreements under a
+  bold lead-in paragraph `**Meningen verschillen.**`; do not pick a side silently.
+- Safety-related content (electrical, refrigerant, legionella) gets a bold lead-in paragraph
+  `**Let op: <title>.**`. The text follows as normal paragraphs or a list, without indent.
+- Never copy, hotlink or embed forum images. Put facts from an image in text, and add the kind
+  to its Bronnen line: `(foto)`, `(schema)`, `(grafiek)`, `(screenshot)`, `(handleiding)`.
+- Visuals: Mermaid only. Each value and node comes from the page or a cited post. Dutch labels,
+  max ~12 nodes. `xychart-beta` has no legend: name each line by colour below the chart.
+  Never draw electrical wiring unless a cited image shows that exact wiring.
+- Format: plain CommonMark, tables and fenced `mermaid`. No site-specific syntax (no admonitions).
+- Front matter `title:` and `weight:` (10, 20, …; order within the folder). No `# H1` in the body.
+- A folder is a section. Its `_index.md` holds the section `title` and `weight`.
+- `inv ci` runs lint, test, check and cite. It must pass.
 
 ## Tags
 
-- Front matter `tags: [...]`. Only tags from `tags_allowed` in `mkdocs.yml`:
+- Front matter `tags: [...]`. Only tags from `TAGS` in `src/wp_wiki/__init__.py`:
   model series (`J-serie` `K-serie` `L-serie` `M-serie` `T-CAP` `R290`),
   control (`HeishaMon` `Home Assistant` `Cloud`),
   type (`Veiligheid` `Installatie` `Optimalisatie` `Storing`).

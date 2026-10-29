@@ -1,4 +1,7 @@
-# Bijdragen
+---
+title: Bijdragen
+weight: 50
+---
 
 1. Zoek de forumberichten die uw wijziging onderbouwen.
 2. Schrijf of wijzig een pagina in `docs/`:
@@ -13,8 +16,9 @@
     - [<auteur>, <JJJJ-MM-DD>](https://gathering.tweakers.net/forum/list_message/<id>#<id>): <wat het bericht onderbouwt>
     ```
 
-5. Voeg tags toe in de front matter. Gebruik alleen tags uit de lijst in `mkdocs.yml`.
-6. Voer `inv build` uit. Dit moet slagen zonder waarschuwingen.
+5. Zet `title` en `weight` in de front matter. `weight` bepaalt de volgorde (10, 20, …).
+   Voeg alleen tags toe uit `TAGS` in `src/wp_wiki/__init__.py`.
+6. Voer `inv ci` uit. Dit moet slagen.
 7. Open een pull request.
 
 Regels:

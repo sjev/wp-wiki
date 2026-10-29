@@ -1,8 +1,8 @@
 ---
+title: Sensoren
+weight: 40
 tags: [Installatie, Optimalisatie, J-serie, T-CAP]
 ---
-
-# Sensoren
 
 De Panasonic Aquarea meet temperaturen met NTC-thermistors: buiten, aanvoer en retour,
 de SWW-tank, en optioneel buffervat, zones en kamer. Deze pagina beschrijft de plaats,
@@ -14,10 +14,11 @@ Foutcodes van sensoren (`H43`, `H67`, `H15`, `F36`) staan op
 **Zie ook:** [Stooklijn](../../general/heating-curve.md) · [Pendelen](../../general/cycling.md) ·
 [Ontdooien](../../general/defrost.md) · [Instellingen](../settings.md) · [Bekabeling](wiring.md) · [HeishaMon](../control/heishamon.md)
 
-!!! warning "Spanning uit"
-    Sensoren zitten op de printplaat van de warmtepomp. Daar staat ook netspanning op.
-    Schakel de spanning uit voordat u een sensor losmaakt of een weerstand aansluit.
-    Een sensor losmaken onder spanning geeft bovendien een foutcode.
+**Let op: Spanning uit.**
+
+Sensoren zitten op de printplaat van de warmtepomp. Daar staat ook netspanning op.
+Schakel de spanning uit voordat u een sensor losmaakt of een weerstand aansluit.
+Een sensor losmaken onder spanning geeft bovendien een foutcode.
 
 ## Buitensensor
 
@@ -75,9 +76,10 @@ Sensoren die gelijk waren bij 15 °C verschilden na een SWW-run naar 53 °C 1,5 
 Een grotere afwijking (bijv. 10 °C bij een tanksensor) lost kalibratie niet op. Controleer
 het type sensor en de plaats. In een SWW-vat is het boven de sensor warmer dan op de sensor.
 
-!!! note "Meningen verschillen"
-    De topicstart noemt ↵ + terug + rechts. Een andere gebruiker noemt terug + ↵ + links.
-    Controleer de toetsen in de service manual van uw model.
+**Meningen verschillen.**
+
+De topicstart noemt ↵ + terug + rechts. Een andere gebruiker noemt terug + ↵ + links.
+Controleer de toetsen in de service manual van uw model.
 
 ### Bronnen
 
@@ -100,10 +102,11 @@ Wilt u nauwkeuriger meten, plaats dan eigen sensoren (bijv. DS18B20) in een domp
 koelpasta. Op HeishaMon hangen meerdere DS18B20-sensoren parallel aan één 1-wire-bus
 (GND, data, 3,3 V).
 
-!!! note "Meningen verschillen"
-    Op een `WH-WXG16ME8` met control box `WH-CME8` gaf de warmtepomp alleen hele graden door,
-    ook via HeishaMon. In 2023 meldde een gebruiker ook hele graden in HeishaMon.
-    Mogelijk hangt dit af van model of firmware.
+**Meningen verschillen.**
+
+Op een `WH-WXG16ME8` met control box `WH-CME8` gaf de warmtepomp alleen hele graden door,
+ook via HeishaMon. In 2023 meldde een gebruiker ook hele graden in HeishaMon.
+Mogelijk hangt dit af van model of firmware.
 
 ### Bronnen
 
@@ -203,9 +206,10 @@ De sensoren in de
 eerste rij zijn elektrisch gelijk en dus uitwisselbaar; ze verschillen alleen in behuizing
 en kabel. De goedkoopste is meestal de solar- of buffersensor.
 
-!!! note "Meningen verschillen"
-    Voor de B-waarde noemt dezelfde gebruiker in 2021 eerst 3700 K en later ongeveer 3750 K.
-    Controleer de tabel in de service manual van uw model.
+**Meningen verschillen.**
+
+Voor de B-waarde noemt dezelfde gebruiker in 2021 eerst 3700 K en later ongeveer 3750 K.
+Controleer de tabel in de service manual van uw model.
 
 **Zelf maken, 6,5 kΩ-type.** Een NTC van 6523 Ω is moeilijk te koop. Neem een NTC van 6,8 kΩ.
 De B-waarde daarvan is hoger dan bij Panasonic. Corrigeer met een weerstand parallel (lage
@@ -277,24 +281,26 @@ Een DS18B20 in de behuizing van de TSOD meet de echte temperatuur; een script co
 stooklijn tegelijk. Bij 2 °C draaide de warmtepomp daarna op 23–27 Hz in plaats van 34/35 Hz.
 Schakel nooit onder 0 °C.
 
-!!! warning "Ontdooien en vorst"
-    De buitentemperatuur stuurt ook het ontdooien. Schakel alleen boven 0 °C, zodat de
-    warmtepomp nooit denkt dat het dooit terwijl het vriest. Wat een vervalste
-    buitentemperatuur op lange termijn met de compressor doet, is niet bekend.
+**Let op: Ontdooien en vorst.**
 
-!!! note "Meningen verschillen"
-    Volgens de T-CAP service manual hangt het ontdooien af van het verschil tussen
-    buitentemperatuur en verdampertemperatuur (outdoor pipe). Een gebruiker waarschuwt daarom
-    voor onnodige ontdooicycli. De bouwers van methode 2 en 3 zagen het aantal ontdooicycli
-    niet veranderen; volgens één van hen gebruikt het ontdooien de alternatieve sensor niet.
-    Een ander zag ontdooicycli iets eerder of later starten.
+De buitentemperatuur stuurt ook het ontdooien. Schakel alleen boven 0 °C, zodat de
+warmtepomp nooit denkt dat het dooit terwijl het vriest. Wat een vervalste
+buitentemperatuur op lange termijn met de compressor doet, is niet bekend.
 
-    De T-CAP service manual (paragraaf 14.2.2) laat de ontdooigrens zien als lijn van
-    buitentemperatuur tegen pijptemperatuur. Boven circa 5 °C buiten ligt de grens vlak
-    bij −6 °C pijptemperatuur. Daaronder daalt de grens tot circa −28 °C bij −20 °C buiten.
-    Bij AUTO force defrost op de afstandsbediening start de warmtepomp na 3 uur zonder
-    ontdooien onder 5 °C buiten een geforceerde ontdooicyclus. Een gebruiker met een
-    alternatieve sensor op 6 °C las in die grafiek −6 °C pijptemperatuur af.
+**Meningen verschillen.**
+
+Volgens de T-CAP service manual hangt het ontdooien af van het verschil tussen
+buitentemperatuur en verdampertemperatuur (outdoor pipe). Een gebruiker waarschuwt daarom
+voor onnodige ontdooicycli. De bouwers van methode 2 en 3 zagen het aantal ontdooicycli
+niet veranderen; volgens één van hen gebruikt het ontdooien de alternatieve sensor niet.
+Een ander zag ontdooicycli iets eerder of later starten.
+
+De T-CAP service manual (paragraaf 14.2.2) laat de ontdooigrens zien als lijn van
+buitentemperatuur tegen pijptemperatuur. Boven circa 5 °C buiten ligt de grens vlak
+bij −6 °C pijptemperatuur. Daaronder daalt de grens tot circa −28 °C bij −20 °C buiten.
+Bij AUTO force defrost op de afstandsbediening start de warmtepomp na 3 uur zonder
+ontdooien onder 5 °C buiten een geforceerde ontdooicyclus. Een gebruiker met een
+alternatieve sensor op 6 °C las in die grafiek −6 °C pijptemperatuur af.
 
 Een alternatief zonder hardware is sturen met HeishaMon, zie
 [Instellingen: sturen op minimaal vermogen](../settings.md#sturen-op-minimaal-vermogen-heishamon).

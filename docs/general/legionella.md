@@ -1,13 +1,14 @@
 ---
+title: Legionella
+weight: 80
 tags: [Veiligheid]
 ---
 
-# Legionella
+**Let op: Gezondheidsrisico.**
 
-!!! warning "Gezondheidsrisico"
-    Legionella kan groeien in een warmwatervat dat de warmtepomp op een lage temperatuur
-    houdt. Deze pagina geeft praktijkervaring van gebruikers. Zij is geen medisch of
-    wettelijk advies. Volg de officiële richtlijnen voor drinkwater.
+Legionella kan groeien in een warmwatervat dat de warmtepomp op een lage temperatuur
+houdt. Deze pagina geeft praktijkervaring van gebruikers. Zij is geen medisch of
+wettelijk advies. Volg de officiële richtlijnen voor drinkwater.
 
 Een warmtepomp verwarmt het tapwater met de compressor meestal tot ongeveer 52–55 °C.
 Daarom is legionella bij een warmtepomp een punt van aandacht.
@@ -105,11 +106,12 @@ Sommige warmtepompboilers en de meeste propaanwarmtepompen (R290) halen 60 °C o
 op de compressor. Een warmtepompboiler deed een wekelijkse run tot 63 °C op de compressor;
 dat duurde ongeveer vijf uur.
 
-!!! note "Meningen verschillen"
-    - Volgens sommigen is de compressor goed genoeg als het toestel 60 °C of meer haalt.
-    - Anderen vinden een element beter. 62 °C is vaak de maximale bedrijfstemperatuur van het
-      toestel; het duurt dan lang en het is zwaar voor de machine. De warmtepomp kan die tijd
-      beter het huis verwarmen.
+**Meningen verschillen.**
+
+- Volgens sommigen is de compressor goed genoeg als het toestel 60 °C of meer haalt.
+- Anderen vinden een element beter. 62 °C is vaak de maximale bedrijfstemperatuur van het
+  toestel; het duurt dan lang en het is zwaar voor de machine. De warmtepomp kan die tijd
+  beter het huis verwarmen.
 
 ### Bronnen
 
@@ -152,17 +154,18 @@ een 300-litervat.
 
 ## Is een run nodig?
 
-!!! note "Meningen verschillen"
-    - **Elke week een run.** De kosten zijn klein. De besparing weegt niet op tegen het risico.
-      Constant 50–55 °C is volgens de richtlijnen niet genoeg, omdat het water onderin niet
-      altijd zo warm is.
-    - **Geen vaste run.** Sommige gebruikers vinden het risico aanvaardbaar als het vat elke
-      dag leeg gaat. Zij doen alleen een run na een vakantie.
-    - **Hygiëneboiler.** Hierin stroomt het tapwater door een spiraal. Volgens gebruikers is
-      dan geen legionellabestrijding nodig.
-    - **Hogere temperatuur zonder run.** Volgens een gebruiker twijfelen drinkwaterexperts of
-      een lage temperatuur met een wekelijkse run op lange termijn hygiënisch genoeg is. Hij
-      verwijst naar [KWR](https://www.kwrwater.nl/actueel/vernieuwing-legionella-regelgeving-krijgt-basis-in-nieuwste-wetenschappelijke-inzichten/).
+**Meningen verschillen.**
+
+- **Elke week een run.** De kosten zijn klein. De besparing weegt niet op tegen het risico.
+  Constant 50–55 °C is volgens de richtlijnen niet genoeg, omdat het water onderin niet
+  altijd zo warm is.
+- **Geen vaste run.** Sommige gebruikers vinden het risico aanvaardbaar als het vat elke
+  dag leeg gaat. Zij doen alleen een run na een vakantie.
+- **Hygiëneboiler.** Hierin stroomt het tapwater door een spiraal. Volgens gebruikers is
+  dan geen legionellabestrijding nodig.
+- **Hogere temperatuur zonder run.** Volgens een gebruiker twijfelen drinkwaterexperts of
+  een lage temperatuur met een wekelijkse run op lange termijn hygiënisch genoeg is. Hij
+  verwijst naar [KWR](https://www.kwrwater.nl/actueel/vernieuwing-legionella-regelgeving-krijgt-basis-in-nieuwste-wetenschappelijke-inzichten/).
 
 ### Bronnen
 

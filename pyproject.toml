@@ -28,10 +28,6 @@ dev = [
     "pytest-cov>=4.0",
     "ruff>=0.4",
 ]
-docs = [
-    "mkdocs>=1.6,<2",
-    "mkdocs-material>=9.5",
-]
 
 [tool.mypy]
 python_version = "3.12"

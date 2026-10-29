@@ -30,10 +30,10 @@ def test(c):
 
 @task
 def ci(c):
-    """Run lint, tests and a strict docs build."""
+    """Run lint, tests, the page check and the citation check."""
     lint(c)
     test(c)
-    build(c)
+    check(c)
     cite(c)
     print("All checks passed!")
 
@@ -60,21 +60,15 @@ def dossier(c, topic, pattern="", n=40):
 
 
 @task
+def check(c):
+    """Check front matter, tags and relative links in docs/."""
+    c.run("uv run wp-wiki check")
+
+
+@task
 def cite(c):
     """Check that source links in docs/ match post author and date."""
     c.run("uv run wp-wiki cite")
-
-
-@task
-def serve(c):
-    """Serve docs locally with live reload."""
-    c.run("uv run mkdocs serve", pty=True)
-
-
-@task
-def build(c):
-    """Build docs; fail on warnings such as broken links."""
-    c.run("uv run mkdocs build --strict")
 
 
 @task

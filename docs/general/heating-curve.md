@@ -1,8 +1,8 @@
 ---
+title: Stooklijn
+weight: 20
 tags: [Optimalisatie]
 ---
-
-# Stooklijn
 
 Een stooklijn (weersafhankelijke regeling, WAR) koppelt de buitentemperatuur aan de
 aanvoertemperatuur van het cv-water. Hoe kouder het buiten is, hoe warmer het water.
@@ -147,16 +147,17 @@ xychart-beta
 
 ## Nachtverlaging
 
-!!! note "Meningen verschillen"
-    - **Geen of weinig nachtverlaging.** Een warmtepomp werkt het best als hij lang draait op
-      een lage temperatuur. Een flinke nachtverlaging kost in de ochtend veel vermogen.
-      Een verlaging van 21 naar 19 °C van 23:00 tot 10:00 maakte het opwarmen in de ochtend
-      moeilijk.
-    - **Kleine nachtverlaging.** Een verlaging van ongeveer 0,7 °C van 22:00 tot 05:00
-      voorkomt stoken in de koudste uren, met de meeste ontdooicycli. Er blijft genoeg tijd
-      om het huis voor de ochtend op te warmen.
-    - **'s Nachts uit.** Dit geeft één lange run in de ochtend. Dit is niet het zuinigst,
-      maar het past bij beperkte afgifte en persoonlijke wensen.
+**Meningen verschillen.**
+
+- **Geen of weinig nachtverlaging.** Een warmtepomp werkt het best als hij lang draait op
+  een lage temperatuur. Een flinke nachtverlaging kost in de ochtend veel vermogen.
+  Een verlaging van 21 naar 19 °C van 23:00 tot 10:00 maakte het opwarmen in de ochtend
+  moeilijk.
+- **Kleine nachtverlaging.** Een verlaging van ongeveer 0,7 °C van 22:00 tot 05:00
+  voorkomt stoken in de koudste uren, met de meeste ontdooicycli. Er blijft genoeg tijd
+  om het huis voor de ochtend op te warmen.
+- **'s Nachts uit.** Dit geeft één lange run in de ochtend. Dit is niet het zuinigst,
+  maar het past bij beperkte afgifte en persoonlijke wensen.
 
 ### Bronnen
 

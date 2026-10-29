@@ -1,8 +1,8 @@
 ---
+title: Tapwater (SWW)
+weight: 70
 tags: [Optimalisatie, Installatie]
 ---
-
-# Tapwater (SWW)
 
 Een warmtepomp kan ook sanitair warm water (SWW) maken. U hebt dan een boilervat met een
 verwarmingsspiraal, een driewegklep en een temperatuursensor in het vat nodig. Tijdens een
@@ -53,11 +53,12 @@ niet tot de rand vult, vraagt minder.
 Let ook op het stilstandverlies. Een goedkoop vat met een slecht energielabel (bijv. label C)
 verliest veel warmte.
 
-!!! note "Meningen verschillen"
-    - **300 L is vaak genoeg.** Weinig huishoudens gebruiken echt 300 L van 50 °C per dag.
-    - **Groter bij veel badgebruik.** Huishoudens met een bad en een regendouche vinden 300 L
-      soms te klein. Een bad plus een douchebeurt binnen een uur kan 250 L kosten.
-      Vaten van 400 L of meer met een spiraal voor een warmtepomp zijn moeilijk te vinden.
+**Meningen verschillen.**
+
+- **300 L is vaak genoeg.** Weinig huishoudens gebruiken echt 300 L van 50 °C per dag.
+- **Groter bij veel badgebruik.** Huishoudens met een bad en een regendouche vinden 300 L
+  soms te klein. Een bad plus een douchebeurt binnen een uur kan 250 L kosten.
+  Vaten van 400 L of meer met een spiraal voor een warmtepomp zijn moeilijk te vinden.
 
 ### Bronnen
 
@@ -92,13 +93,14 @@ Voorbeelden uit de praktijk:
 | 300 L | 3,4 m² | ca. 7 kW | 41 → 53 °C in ongeveer een uur |
 | 300 L | bovenste spiraal (zonneboilervat) | 9 kW | werkt ook in de winter |
 
-!!! note "Meningen verschillen"
-    Op het forum circuleren vuistregels als "3 m²", "0,3 m² per kW" en "1,2 m² voor 9 kW".
-    - **Groter is beter.** Een tweede spiraal in serie geeft extra rendement. De flow bepaalt
-      veel; probeer het in uw eigen situatie.
-    - **Het valt mee.** Het nodige oppervlak is te berekenen als tegenstroom-warmtewisselaar,
-      bijv. met de [rekentool van econo.nl](https://www.econo.nl/). Een kleine spiraal werkt
-      vaak prima.
+**Meningen verschillen.**
+
+Op het forum circuleren vuistregels als "3 m²", "0,3 m² per kW" en "1,2 m² voor 9 kW".
+- **Groter is beter.** Een tweede spiraal in serie geeft extra rendement. De flow bepaalt
+  veel; probeer het in uw eigen situatie.
+- **Het valt mee.** Het nodige oppervlak is te berekenen als tegenstroom-warmtewisselaar,
+  bijv. met de [rekentool van econo.nl](https://www.econo.nl/). Een kleine spiraal werkt
+  vaak prima.
 
 ### Bronnen
 
@@ -211,9 +213,10 @@ daarom alleen voor temperaturen die de warmtepomp niet haalt, of als extra in de
 - Slaat het element vaak aan bij een gewone run, controleer dan de instellingen. Het element
   hoort de dagelijkse run niet te doen.
 
-!!! warning "Elektrische veiligheid"
-    Een element werkt op netspanning. Schakel de spanning uit voordat u aan het element of de
-    bedrading werkt.
+**Let op: Elektrische veiligheid.**
+
+Een element werkt op netspanning. Schakel de spanning uit voordat u aan het element of de
+bedrading werkt.
 
 ### Bronnen
 
@@ -241,11 +244,12 @@ beter werken.
 
 Houd het retourwater bij ontdooien boven 20 °C. Dat geldt bij SWW en bij verwarmen.
 
-!!! note "Meningen verschillen"
-    - **Zelden ontdooien tijdens een SWW-run.** Het water is dan warm en de buitenunit
-      ontdooit pas weer na de run.
-    - **Juist vaker.** Tijdens een SWW-run draait de compressor op een hogere frequentie.
-      Daardoor ontdooit de warmtepomp vaker dan bij verwarmen.
+**Meningen verschillen.**
+
+- **Zelden ontdooien tijdens een SWW-run.** Het water is dan warm en de buitenunit
+  ontdooit pas weer na de run.
+- **Juist vaker.** Tijdens een SWW-run draait de compressor op een hogere frequentie.
+  Daardoor ontdooit de warmtepomp vaker dan bij verwarmen.
 
 ### Bronnen
 

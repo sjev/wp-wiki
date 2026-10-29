@@ -74,6 +74,38 @@ De afstandsbediening kan als kamerthermostaat werken, maar heeft nadelen:
 - Hij past een *compensation curve* toe op basis van de kamertemperatuur. U kunt die niet
   uitzetten.
 
+- De sensor van de afstandsbediening zit rechts onder in het scherm. Lichaamswarmte van
+  iemand die er vlak voor staat, beïnvloedt de meting. Dit herstelt na enkele minuten.
+  Een wijziging van de thermostaatcorrectie met 0,5 °C kan zo toch een veel groter effect
+  tonen.
+- De Zone1-waarde *Actual temperature* in de cloud heeft een resolutie van 0,5 °C. De
+  waarde *RC-1: Room thermostat internal sensor temperature* en het display zijn naar
+  beneden afgerond op hele graden.
+
+**Meningen verschillen.**
+
+Het display toont hele graden. Eén gebruiker zegt dat het afrondt naar de dichtstbijzijnde
+graad (21,6 wordt 22). Een ander zegt dat het naar beneden afrondt. De nauwkeurigheid van de
+sensoren zelf is niet bekend.
+
+Wilt u op de [stooklijn](../general/heating-curve.md) sturen in plaats van op de
+kamertemperatuur? Kies dan op de afstandsbediening *Systeeminstellingen → Zone & sensor →
+Sensor* op *Watertemperatuur*. Staat de sensor nog op ruimtethermostaat, dan verwarmt de
+unit niet zolang de kamer boven het setpoint blijft. Na de wissel is de afstandsbediening
+geen thermostaat meer. U kunt dan de stooklijn verschuiven (−5 tot +5), ook met de weektimer,
+bijv. voor een lagere of hogere stand bij wisselende energieprijzen.
+
+Met de watersensor staat de warmtepomp altijd aan. Dat gaat goed als stooklijn en afgifte
+passen bij het warmteverlies. Anders kan het te warm worden. Een externe thermostaat is
+dan een optie.
+
+Een externe thermostaat geeft alleen een aan/uit-signaal. De warmtepomp en de cloud kennen
+het setpoint en de kamertemperatuur dan niet. De cloud kan die temperatuur dus niet tonen.
+Alleen als de installateur de afstandsbediening in de kamer hangt en als interne
+thermostaat instelt, ziet u de kamertemperatuur in de cloud en verdwijnt de shift van ±5.
+De HACS-integratie werkt via de cloud en kan daarom hetzelfde als de app. Een lokaal
+alternatief is HeishaMon, zie [HeishaMon](control/heishamon.md).
+
 Een externe thermostaat met een kleinere, instelbare schakeldrempel werkt beter.
 Er zijn twee aansluitingen:
 
@@ -94,6 +126,15 @@ Op `CN2` staat netspanning. Gebruik een thermostaat en kabel die geschikt zijn v
 
 - [twain4me, 2023-03-13](https://gathering.tweakers.net/forum/list_message/74751460#74751460): topicstart, *Kamerthermostaat*, verschillen `CN2`/`CN4`
 - [ErikVers, 2024-03-02](https://gathering.tweakers.net/forum/list_message/78319782#78319782): compensation curve is niet uit te zetten
+- [FransvWoerkom, 2026-10-18](https://gathering.tweakers.net/forum/list_message/86378812#86378812): sensor wisselen via *Zone & sensor*
+- [PappleD, 2026-10-19](https://gathering.tweakers.net/forum/list_message/86379036#86379036): sensor stond op ruimtethermostaat, unit verwarmde niet
+- [FransvWoerkom, 2026-10-19](https://gathering.tweakers.net/forum/list_message/86386104#86386104): shift ook met de weektimer
+- [RichieB, 2026-10-26](https://gathering.tweakers.net/forum/list_message/86432924#86432924): shift is een tijdelijke correctie van max ±5
+- [Thorsd, 2026-10-26](https://gathering.tweakers.net/forum/list_message/86433060#86433060): met externe thermostaat geen shift
+- [FransvWoerkom, 2026-10-26](https://gathering.tweakers.net/forum/list_message/86437272#86437272): externe thermostaat is aan/uit; interne thermostaat in de kamer; HACS via cloud
+- [Tinkerer84, 2026-10-26](https://gathering.tweakers.net/forum/list_message/86437090#86437090): watersensor: warmtepomp altijd aan
+- [ErikVers, 2026-10-27](https://gathering.tweakers.net/forum/list_message/86445632#86445632): sensor rechtsonder; lichaamswarmte; display per graad
+- [FransvWoerkom, 2026-10-28](https://gathering.tweakers.net/forum/list_message/86448654#86448654): resolutie 0,5 °C in de cloud; display naar beneden afgerond
 
 ## Backup heater bij het ontdooien
 
@@ -206,6 +247,10 @@ lees de flow af.
 - Een lagere flow geeft een grotere ΔT. Het water moet dan warmer zijn voor hetzelfde
   vermogen. Dat kost compressorvermogen. Het optimum ligt waar pompvermogen plus extra
   compressorvermogen het laagst is.
+- **ΔT-stand tegen overshoot.** Een gebruiker meldt dat de pomp in de ΔT-stand start rond
+  10 l/min en pas later versnelt. Het verschil tussen Ta en Tr wordt dan groter (hier soms
+  10 °C tijdens de start). De compressor gaat dan eerder terug in toerental. Een vaste
+  hoge max duty geeft juist overshoot. Zie [Pendelen](../general/cycling.md).
 - **Ontdooien negeert max duty.** De pomp gaat dan naar circa 30–32 l/min.
 - **Dynamische pompsnelheid.** Met HeishaMon kunt u de max duty laten volgen op de
   buitentemperatuur of de compressorfrequentie. Zet de pomp dan op *max duty*, niet op ΔT.
@@ -231,6 +276,7 @@ Voor flowstoringen, zie [Storingen: `H62`](troubleshooting.md#water-en-flow-h62-
 - [thehog, 2021-02-15](https://gathering.tweakers.net/forum/list_message/66159696#66159696): ontdooien negeert max duty, 32 l/min
 - [sjimmie, 2021-02-09](https://gathering.tweakers.net/forum/list_message/66074886#66074886): max 15 l/min, bij ontdooien 30 l/min
 - [dlrozendaal, 2024-10-16](https://gathering.tweakers.net/forum/list_message/80415276#80415276): pomp volgt compressorfrequentie; stand max duty
+- [ercolano, 2026-10-28](https://gathering.tweakers.net/forum/list_message/86451310#86451310): ΔT-stand start laag en geeft grotere Ta–Tr; QM3 als tijdelijke oplossing
 - [blb4, 2023-03-27](https://gathering.tweakers.net/forum/list_message/74885816#74885816): lage max duty beperkt SWW-vermogen
 - [padoempats, 2023-03-27](https://gathering.tweakers.net/forum/list_message/74886608#74886608): flow bij *Force DHW* boven ingestelde max
 

@@ -146,10 +146,19 @@ compressor stopt. Duurt de pauze dan veel langer, dan zijn de radiatoren de oorz
   21,75 °C en 0 tot 4 °C buiten geven één run per 24 uur. Een thermostaat die te vaak schakelt, kunt u een afvalvertraging geven.
 - **Draaien in blokken.** Stook in de warmste uren van de dag of gebruik een kleine
   nachtverlaging. De run in de ochtend wordt dan langer. Is de warmtevraag erg klein, dan
-  blijft de warmtepomp daarna toch pendelen.
+  blijft de warmtepomp daarna toch pendelen. Een gebruiker zet de warmtepomp 's nachts uit
+  met de timer (22:00–07:00); met een goed geïsoleerd huis kan dat tot 10:00. Een ander
+  raadt 00:00–09:00 aan: dat mijdt dure uren en het koudste moment, en langer doordraaien
+  is beter dan eerder beginnen.
 - **Aan/uit accepteren.** Ligt het minimale vermogen boven de warmtevraag, dan moduleert de
   warmtepomp in tijd, net als een cv-ketel. Een thermostaat die af en toe uitschakelt, is
   dan de normale regeling.
+- **Overshoot bij de start.** Kan de warmtepomp zijn warmte niet kwijt, dan stijgt de
+  aanvoer (Ta) snel boven het doel (Td) en slaat hij af. Een kleine afgifte of een te
+  lage stooklijn geeft dit. Een hoge pompsnelheid maakt het erger: de retour (Tr) loopt
+  dan mee omhoog en de compressor krijgt geen tijd om terug te toeren. Zie
+  [Panasonic: pompsnelheid](../panasonic/settings.md#pompsnelheid-en-max-duty) en
+  [stille modus](../panasonic/settings.md#stille-modus).
 - **Buffervat.** Een klein buffervat helpt weinig. 50 liter met 10 °C verschil bevat
   ongeveer 0,58 kWh; een warmtepomp van 5 kW vult dat in 7 minuten. Pas bij veel grotere
   vaten merkt u effect. Zie [Buffervat](buffer-tank.md).
@@ -195,6 +204,10 @@ flowchart TD
 - [padoempats, 2023-05-09](https://gathering.tweakers.net/forum/list_message/75288852#75288852): zeer kleine hysterese met betonvloer; één run per 24 uur (grafiek)
 - [Thorsd, 2024-12-03](https://gathering.tweakers.net/forum/list_message/80919534#80919534): afvalvertraging op de thermostaat
 - [Daffy1982, 2023-12-15](https://gathering.tweakers.net/forum/list_message/77514278#77514278): nachtverlaging voor betere afgifte overdag
+- [RichieB, 2026-10-26](https://gathering.tweakers.net/forum/list_message/86436568#86436568): warmte niet kwijt; afgifte of stooklijn omhoog, of 's nachts uit
+- [Tinkerer84, 2026-10-26](https://gathering.tweakers.net/forum/list_message/86437090#86437090): stooklijn te laag voor de afgifte; met watersensor altijd aan
+- [ErikVers, 2026-10-27](https://gathering.tweakers.net/forum/list_message/86445658#86445658): timer 00:00–09:00 in plaats van 22:00–07:00
+- [ercolano, 2026-10-28](https://gathering.tweakers.net/forum/list_message/86451310#86451310): hoge pompsnelheid geeft overshoot; vlakkere stooklijn
 - [RaymondD, 2023-12-19](https://gathering.tweakers.net/forum/list_message/77553352#77553352): na de ochtendrun blijft hij pendelen
 - [FransvWoerkom, 2022-12-26](https://gathering.tweakers.net/forum/list_message/73928524#73928524): pendelen is pulsduurmodulatie
 - [blb4, 2025-12-23](https://gathering.tweakers.net/forum/list_message/84242874#84242874): ramen open of af en toe uitschakelen

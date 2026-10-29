@@ -195,6 +195,12 @@ In de monoblock zit een expansievat van 6 L. Volgens de handleiding is dat genoe
 - **Extra vat.** U kunt het overal in het circuit plaatsen, bijv. op zolder. Trek de 6 L van
   het interne vat af van wat u nodig hebt. Een gebruiker noemt een voordruk van 0,5 bar
   bovenin en 1 bar beneden, maar is niet zeker. Controleer dit voor uw situatie.
+- **Oud cv-vat.** Het interne vat gaat ooit lek. Een gebruiker raadt aan een lek vat van
+  de oude ketel gewoon los te schroeven en af te doppen als u het niet nodig hebt.
+- **Dalende druk.** Een gebruiker met een 7J zag de waterdruk langzaam dalen zonder extra
+  vat, waarschijnlijk via het overdrukventiel. Na het aansluiten van een extra vat op zolder
+  bleef de druk gelijk. Dit is één melding; of het ook voor andere modellen geldt, is niet
+  bekend.
 - **Hoogte.** Boven ongeveer 7–9 m hoogteverschil vraagt Panasonic volgens gebruikers een
   extra vat. Controleer de grens in de handleiding van uw model.
 - **Verwarming in het vat.** Het interne vat heeft een elektrisch element tegen bevriezing.
@@ -213,6 +219,9 @@ waterinhoud (cv) of 4 % (warmtepomp, volgens warmtepomp-weetjes).
 - [Separator, 2023-08-28](https://gathering.tweakers.net/forum/list_message/76351062#76351062): expansievat 6 L voor 150 L
 - [FransvWoerkom, 2022-12-02](https://gathering.tweakers.net/forum/list_message/73662164#73662164): uitzetting bij vloerverwarming; design manual 5.3.5
 - [FransvWoerkom, 2024-02-04](https://gathering.tweakers.net/forum/list_message/78037134#78037134): 150 L gebaseerd op radiatortemperatuur; extra vat vaak niet nodig
+- [Cr3ator, 2026-10-21](https://gathering.tweakers.net/forum/list_message/86395740#86395740): intern vat gaat ooit lek; oud vat afschroeven en afdoppen
+- [loyske, 2026-10-21](https://gathering.tweakers.net/forum/list_message/86396042#86396042): 7J: druk liep terug zonder extern vat
+- [loyske, 2026-10-22](https://gathering.tweakers.net/forum/list_message/86402514#86402514): druk blijft gelijk met extra vat; waarschijnlijk overdrukventiel
 - [ConQuestador, 2022-12-01](https://gathering.tweakers.net/forum/list_message/73657128#73657128): op lage temperatuur weinig uitzetting
 - [blb4, 2024-02-04](https://gathering.tweakers.net/forum/list_message/78037150#78037150): plaats vrij; 10 % of 4 %; 6 L aftrekken; voordruk 0,5/1 bar
 - [betaplayer, 2024-02-05](https://gathering.tweakers.net/forum/list_message/78037828#78037828): extra vat vanaf 7 of 9 m hoogte

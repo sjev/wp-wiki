@@ -103,6 +103,10 @@ Anderen konden hetzelfde adres gebruiken.
   SWW-temperatuur aan en ziet u grafieken van het (geschatte) verbruik.
 - De app heeft een eigen weektimer. Die werkt alleen als het internet en de servers van
   Panasonic werken op het moment van schakelen. Zie [Weektimers](#weektimers).
+- De Nederlandse vertaling van de cloud en de afstandsbediening is soms onduidelijk. Zo
+  staat *Looswater* voor de temperatuur van het gas dat uit de compressor komt (Engels:
+  *Outlet temperature*). Gebruik Engels als u in de Service Manual zoekt. Een browserplugin
+  per website kan de taal instellen, maar een eerdere Google-plugin bestaat niet meer.
 - Via IFTTT kunt u de cloud koppelen aan andere apparaten. Voorbeelden: de shift aanpassen op
   de kamertemperatuur van een slimme thermostaat, of meer punten in de stooklijn maken met de
   shift (−5 tot +5). De IFTTT-actie voor de cloud heet *Change Heat Mode settings*. U bent dan afhankelijk van internet, de Panasonic-cloud en IFTTT.
@@ -117,6 +121,7 @@ Anderen konden hetzelfde adres gebruiken.
 - [FransvWoerkom, 2026-04-14](https://gathering.tweakers.net/forum/list_message/85068942#85068942): app-timer afhankelijk van internet en servers; Comfort Cloud heette eerst Smart Cloud
 - [Ethirty, 2024-12-28](https://gathering.tweakers.net/forum/list_message/81146686#81146686): shift, SWW-temperatuur en verbruiksgrafieken in de app
 - [t.oswald, 2021-10-15](https://gathering.tweakers.net/forum/list_message/69061576#69061576): IFTTT met Tado, SmartLife en Smart Cloud (screenshot)
+- [FransvWoerkom, 2026-10-28](https://gathering.tweakers.net/forum/list_message/86452472#86452472): vertaling *Looswater*; Engels voor de Service Manual
 - [ErikVers, 2024-12-28](https://gathering.tweakers.net/forum/list_message/81144968#81144968): extra stooklijnpunten met shift via IFTTT
 - [Tiesert, 2023-01-06](https://gathering.tweakers.net/forum/list_message/74043386#74043386): afhankelijk van internet, cloud en IFTTT
 - [Deismyna, 2023-11-03](https://gathering.tweakers.net/forum/list_message/77056184#77056184): Home Assistant-integratie, maar één login actief
